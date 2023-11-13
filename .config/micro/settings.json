@@ -1,0 +1,11 @@
+{
+    "autoclose": false,
+    "autosu": true,
+    "colorscheme": "atom-dark",
+    "hlsearch": true,
+    "initlua": true,
+    "mkparents": true,
+    "tabhighlight": true,
+    "tabreverse": false,
+    "tabsize": 2
+}
