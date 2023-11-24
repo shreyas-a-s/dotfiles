@@ -25,7 +25,6 @@ mkdir -p ~/.local/share/fonts/custom
 
 # Symlink the files
 rm ~/.bashrc && ln -s .bashrc ~/
-ln -s .fonts/* ~/.local/share/fonts/custom/
 rm ~/.config/starship.toml && ln -s .config/starship/toml ~/.config/
 rm ~/.config/user-dirs.dirs && ln -s .config/user-dirs.dirs ~/.config/
 rm ~/.config/fish/config.fish && ln -s .config/fish/config.fish ~/.config/fish/
@@ -38,6 +37,7 @@ rm ~/.config/nvim/init.lua && ln -s .config/nvim/init.lua ~/.config/nvim/
 rm ~/.config/picom/picom.conf && ln -s .config/picom/picom.conf ~/.config/picom/
 rm ~/.config/zsh/.zshrc && ln -s .config/zsh/.zshrc ~/.config/zsh/
 rm ~/.config/zsh/zsh-history-substring-search.zsh && ln -s .config/zsh/zsh-history-substring-search.zsh ~/.config/zsh/
+ln -s .fonts/* ~/.local/share/fonts/custom/
 
 # Post-installation things
 fc-cache -vf
