@@ -4,7 +4,7 @@
 SCRIPT_DIR=$(dirname -- "$( readlink -f -- "$0"; )") && cd "$SCRIPT_DIR" || exit
 
 # Gentle reminder
-echo "This script will delete already present config files. Continue? (yes/no)" && read -r deletion_choice
+printf "This script will delete already present config files. Continue? (yes/no): " && read -r deletion_choice
 case $deletion_choice in
   n|no|No|NO|N)
     exit 1 ;;
@@ -52,7 +52,7 @@ case "$(sh -c 'ps -p $$ -o ppid=' | xargs ps -o comm= -p)" in
 esac
 
 # Declutter HOME directory
-echo "Do you want to declutter your home folder by removing some files? (yes/no)" && read -r declutter_choice
+printf "Do you want to declutter your home folder by removing some files? (yes/no): " && read -r declutter_choice
 case $declutter_choice in
   y|yes|Yes|YES)
     rm -f ~/.bash_logout
