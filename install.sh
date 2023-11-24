@@ -40,7 +40,7 @@ rm -f ~/.config/zsh/zsh-history-substring-search.zsh; ln -s $(pwd)/.config/zsh/z
 ln -s $(pwd)/.fonts/* ~/.local/share/fonts/custom/
 
 # Post-installation things
-fc-cache -vf
+fc-cache -f
 mv ~/.bash_history ~/.config/bash/bash_history
 case "$(sh -c 'ps -p $$ -o ppid=' | xargs ps -o comm= -p)" in
   bash)
