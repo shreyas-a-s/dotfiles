@@ -12,7 +12,6 @@ esac
 
 # Create necessary directories
 mkdir -p ~/.config
-mkdir -p ~/.fonts
 mkdir -p ~/.config/bash
 mkdir -p ~/.config/fish
 mkdir -p ~/.config/i3
@@ -22,10 +21,11 @@ mkdir -p ~/.config/micro
 mkdir -p ~/.config/nvim
 mkdir -p ~/.config/picom
 mkdir -p ~/.config/zsh
+mkdir -p ~/.local/share/fonts/custom
 
 # Symlink the files
 rm ~/.bashrc && ln -s .bashrc ~/
-ln -s .fonts/CodeNewRomanNerdFontMono-Regular.otf
+ln -s .fonts/* ~/.local/share/fonts/custom/
 rm ~/.config/starship.toml && ln -s .config/starship/toml ~/.config/
 rm ~/.config/user-dirs.dirs && ln -s .config/user-dirs.dirs ~/.config/
 rm ~/.config/fish/config.fish && ln -s .config/fish/config.fish ~/.config/fish/
