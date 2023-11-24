@@ -24,20 +24,20 @@ mkdir -p ~/.config/zsh
 mkdir -p ~/.local/share/fonts/custom
 
 # Symlink the files
-rm ~/.bashrc && ln -s .bashrc ~/
-rm ~/.config/starship.toml && ln -s .config/starship/toml ~/.config/
-rm ~/.config/user-dirs.dirs && ln -s .config/user-dirs.dirs ~/.config/
-rm ~/.config/fish/config.fish && ln -s .config/fish/config.fish ~/.config/fish/
-rm ~/.config/i3/config && ln -s .config/i3/config ~/.config/i3/
-rm ~/.config/i3status/config && ln -s .config/i3status/config ~/.config/i3status/
-rm ~/.config/lscolors/lscolors.sh && ln -s .config/lscolors/lscolors.sh ~/.config/lscolors/
-rm ~/.config/lscolors/lscolors.csh && ln -s .config/lscolors/lscolors.csh ~/.config/lscolors/
-rm ~/.config/micro/settings/json && ln -s .config/micro/settings.json ~/.config/micro/
-rm ~/.config/nvim/init.lua && ln -s .config/nvim/init.lua ~/.config/nvim/
-rm ~/.config/picom/picom.conf && ln -s .config/picom/picom.conf ~/.config/picom/
-rm ~/.config/zsh/.zshrc && ln -s .config/zsh/.zshrc ~/.config/zsh/
-rm ~/.config/zsh/zsh-history-substring-search.zsh && ln -s .config/zsh/zsh-history-substring-search.zsh ~/.config/zsh/
-ln -s .fonts/* ~/.local/share/fonts/custom/
+rm -f ~/.bashrc; ln -s $(pwd)/.bashrc ~/
+rm -f ~/.config/starship.toml; ln -s $(pwd)/.config/starship.toml ~/.config/
+rm -f ~/.config/user-dirs.dirs; ln -s $(pwd)/.config/user-dirs.dirs ~/.config/
+rm -f ~/.config/fish/config.fish; ln -s $(pwd)/.config/fish/config.fish ~/.config/fish/
+rm -f ~/.config/i3/config; ln -s $(pwd)/.config/i3/config ~/.config/i3/
+rm -f ~/.config/i3status/config; ln -s $(pwd)/.config/i3status/config ~/.config/i3status/
+rm -f ~/.config/lscolors/lscolors.sh; ln -s $(pwd)/.config/lscolors/lscolors.sh ~/.config/lscolors/
+rm -f ~/.config/lscolors/lscolors.csh; ln -s $(pwd)/.config/lscolors/lscolors.csh ~/.config/lscolors/
+rm -f ~/.config/micro/settings.json; ln -s $(pwd)/.config/micro/settings.json ~/.config/micro/
+rm -f ~/.config/nvim/init.lua; ln -s $(pwd)/.config/nvim/init.lua ~/.config/nvim/
+rm -f ~/.config/picom/picom.conf; ln -s $(pwd)/.config/picom/picom.conf ~/.config/picom/
+rm -f ~/.config/zsh/.zshrc; ln -s $(pwd)/.config/zsh/.zshrc ~/.config/zsh/
+rm -f ~/.config/zsh/zsh-history-substring-search.zsh; ln -s $(pwd)/.config/zsh/zsh-history-substring-search.zsh ~/.config/zsh/
+ln -s $(pwd)/.fonts/* ~/.local/share/fonts/custom/
 
 # Post-installation things
 fc-cache -vf
@@ -55,9 +55,9 @@ esac
 echo "Do you want to declutter your home folder by removing some files? (yes/no)" && read -r declutter_choice
 case $declutter_choice in
   y|yes|Yes|YES)
-    rm ~/.bash_logout
-    rm ~/.profile
-    rm ~/.sudo_as_admin_successful
-    rm ~/.wget-hsts
+    rm -f ~/.bash_logout
+    rm -f ~/.profile
+    rm -f ~/.sudo_as_admin_successful
+    rm -f ~/.wget-hsts
 esac
 
