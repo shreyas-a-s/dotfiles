@@ -57,15 +57,13 @@ end
 # To select correct neovim
 if which nvim > /dev/null
   alias vim='nvim'
-else if flatpak list | grep nvim > /dev/null
-  alias vim='flatpak run io.neovim.nvim'
 end
 
 # To set XDG Base Directory for wget
 [ -f $XDG_CONFIG_HOME/wgetrc ] || touch $XDG_CONFIG_HOME/wgetrc && alias wget='wget --hsts-file=$XDG_CACHE_HOME/wget-hsts'
 
 # Update all packages on system
-alias allup='sudo apt update && sudo apt upgrade -y; flatpak update -y; which neovim-appimage-updater > /dev/null && neovim-appimage-updater'
+alias allup='sudo apt update && sudo apt upgrade -y; sudo snap refresh'
 
 # Tree command - Show all files including hidden ones
 alias tree='tree -a'
