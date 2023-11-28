@@ -73,6 +73,10 @@ if [ -d "/usr/games/" ] ;
   then PATH="/usr/games/:$PATH"
 fi
 
+if [ -d "/snap/bin/" ] ;
+  then PATH="/snap/bin/:$PATH"
+fi
+
 ### SETOPT ###
 setopt histignorealldups # do not put duplicated command into history list
 setopt histsavenodups # do not save duplicated command

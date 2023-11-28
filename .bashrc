@@ -61,6 +61,10 @@ if [ -d "/usr/games/" ] ;
   then PATH="/usr/games/:$PATH"
 fi
 
+if [ -d "/snap/bin/" ] ;
+  then PATH="/snap/bin/:$PATH"
+fi
+
 ### SHOPT ###
 shopt -s autocd # change to named directory
 shopt -s cdspell # autocorrects cd misspellings

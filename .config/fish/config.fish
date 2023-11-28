@@ -44,8 +44,12 @@ if [ -d "/var/lib/flatpak/exports/bin/" ]
   set -Ux PATH "/var/lib/flatpak/exports/bin/:$PATH"
 end  
 
-if [ -d "/usr/games/" ] ;
+if [ -d "/usr/games/" ]
   set -Ux PATH "/usr/games/:$PATH"
+end
+
+if [ -d "/snap/bin/" ]
+  set -Ux PATH "/snap/bin/:$PATH"
 end
 
 ### ALIASES ###
