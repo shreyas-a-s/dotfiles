@@ -11,7 +11,7 @@ set -U fish_greeting
  set TERM "xterm-256color"                         # getting proper colors
  set -gx WGETRC $XDG_CONFIG_HOME/wgetrc            # set xdg base directory for wget
  set LESSHISTFILE -                                # prevent creation of ~/.lesshst file
-if which nvim > /dev/null
+if command -v nvim > /dev/null
   set EDITOR "nvim"
   set VISUAL "nvim"
   set SUDO_EDITOR "nvim"
@@ -23,9 +23,9 @@ if [ -f "$HOME/.config/lscolors/lscolors.csh" ]
 end
 
 #### SET MANPAGER ###
-if which bat > /dev/null
+if command -v bat > /dev/null
   set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-else if which batcat > /dev/null
+else if command -v batcat > /dev/null
   set -x MANPAGER "sh -c 'col -bx | batcat -l man -p'"
 end
 
@@ -57,7 +57,7 @@ end
 ### ALIASES ###
 
 # To select correct neovim
-if which nvim > /dev/null
+if command -v nvim > /dev/null
   alias vim='nvim'
 end
 
@@ -68,7 +68,7 @@ end
 alias tree='tree -a'
 
 # Better ls commands
-if which lsd > /dev/null
+if command -v lsd > /dev/null
   alias ls='lsd -A'
   function ll
     if [ -z "$argv" ] && [ "$argv[1]" = "-g" ]
@@ -106,9 +106,9 @@ if [ -f "/usr/bin/trash" ]
 end
 
 # Colorize cat command
-if which bat > /dev/null
+if command -v bat > /dev/null
   alias cat='bat --style=plain'
-else if which batcat > /dev/null
+else if command -v batcat > /dev/null
   alias cat='batcat --style=plain'
 end
 
@@ -123,14 +123,14 @@ alias history='history -R | command cat -n'
 
 ### RANDOM COLOR SCRIPT ###
 # Get this script from my Github: github.com/shreyas-a-s/shell-color-scripts
-if which colorscript > /dev/null
+if command -v colorscript > /dev/null
   colorscript random
 end
 
 ### AUTOJUMP ###
 if [ -f /usr/share/autojump/autojump.fish ]
   . /usr/share/autojump/autojump.fish
-else if which zoxide > /dev/null
+else if command -v zoxide > /dev/null
   zoxide init fish | source
 end
 
@@ -156,7 +156,7 @@ end
 
 # Replacing 'apt' with 'nala' and 'sudo vim' with 'sudoedit'
 function sudo
-  if [ "$argv[1]" = "apt" ] && [ (which nala > /dev/null; echo $status) -eq 0 ]
+  if [ "$argv[1]" = "apt" ] && [ (command -v nala > /dev/null; echo $status) -eq 0 ]
     set argv[1] nala && command sudo $argv
   else if [ "$argv[1]" = "vim" -a (type vim > /dev/null; echo $status) -eq 0 ]
     set -e argv[1]
@@ -246,6 +246,6 @@ end
 _plugin-bang-bang_key_bindings
 
 ### SETTING THE STARSHIP PROMPT ###
-if which starship > /dev/null
+if command -v starship > /dev/null
   starship init fish | source
 end

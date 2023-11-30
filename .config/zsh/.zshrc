@@ -8,7 +8,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 export TERM="xterm-256color"                                  # getting proper colors
 export WGETRC=$XDG_CONFIG_HOME/wgetrc                         # to set xdg base directory for wget
 export LESSHISTFILE=-                                         # prevent creation of ~/.lesshst file
-if which nvim > /dev/null; then
+if command -v nvim > /dev/null; then
   export EDITOR="nvim"
   export VISUAL="nvim"
   export SUDO_EDITOR="nvim"
@@ -45,9 +45,9 @@ function _fix_cursor {
 precmd_functions+=(_fix_cursor)
 
 ### SET MANPAGER
-if which bat > /dev/null; then
+if command -v bat > /dev/null; then
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-elif which batcat > /dev/null; then
+elif command -v batcat > /dev/null; then
   export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 fi
 
@@ -93,7 +93,7 @@ unsetopt listtypes # don't show trailing identifying marks for files while listi
 ### ALIASES ###
 
 # To select correct neovim
-if which nvim > /dev/null; then
+if command -v nvim > /dev/null; then
   alias vim='nvim'
 fi
 
@@ -104,7 +104,7 @@ fi
 alias tree='tree -a'
 
 # Better ls commands
-if which lsd > /dev/null; then
+if command -v lsd > /dev/null; then
   alias ls='lsd -A'
   function ll {
     if [ "$1" = "-g" ]; then
@@ -137,14 +137,14 @@ alias mv='mv -iv'
 alias mkdir='mkdir -pv'
 
 # Enable command-line trash
-if which trash > /dev/null; then
+if command -v trash > /dev/null; then
   alias rm='trash'
 fi
 
 # Colorize cat command
-if which bat > /dev/null; then
+if command -v bat > /dev/null; then
   alias cat='bat --style=plain'
-elif which batcat > /dev/null; then
+elif command -v batcat > /dev/null; then
   alias cat='batcat --style=plain'
 fi
 
@@ -152,7 +152,7 @@ fi
 alias sudo='nocorrect sudo -E '
 
 # Change apt command to nala
-if which nala > /dev/null; then
+if command -v nala > /dev/null; then
   alias apt='nala'
 fi
 
@@ -171,7 +171,7 @@ fi
 ### AUTOJUMP
 if [ -f "/usr/share/autojump/autojump.zsh" ]; then
   . /usr/share/autojump/autojump.zsh
-elif which zoxide > /dev/null; then
+elif command -v zoxide > /dev/null; then
   eval "$(zoxide init zsh)"
 fi
 
@@ -268,7 +268,7 @@ else
 fi
 
 ### SETTING THE STARSHIP PROMPT ###
-if which starship > /dev/null; then
+if command -v starship > /dev/null; then
   eval "$(starship init zsh)"
 fi
 

@@ -9,7 +9,7 @@ export TERM="xterm-256color"                                  # getting proper c
 export WGETRC=$XDG_CONFIG_HOME/wgetrc                         # to set xdg base directory for wget
 export HISTCONTROL=ignoredups:erasedups:ignorespace           # no duplicate entries and no lines that start with a space
 export LESSHISTFILE=-                                         # prevent creation of ~/.lesshst file
-if which nvim > /dev/null; then
+if command -v nvim > /dev/null; then
   export EDITOR="nvim"
   export VISUAL="nvim"
   export SUDO_EDITOR="nvim"
@@ -26,9 +26,9 @@ if [ -f "$HOME/.config/lscolors/lscolors.sh" ]; then
 fi
 
 ### SET MANPAGER ###
-if which bat > /dev/null; then
+if command -v bat > /dev/null; then
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-elif which batcat > /dev/null; then
+elif command -v batcat > /dev/null; then
   export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 fi
 
@@ -85,7 +85,7 @@ bind "set show-all-if-ambiguous On"
 ### ALIASES ###
 
 # To select correct neovim
-if which nvim > /dev/null; then
+if command -v nvim > /dev/null; then
   alias vim='nvim'
 fi
 
@@ -96,7 +96,7 @@ fi
 alias tree='tree -a'
 
 # Better ls commands
-if which lsd > /dev/null; then
+if command -v lsd > /dev/null; then
   alias ls='lsd -A'
   function ll {
     if [ "$1" = "-g" ]; then
@@ -129,14 +129,14 @@ alias mv='mv -iv'
 alias mkdir='mkdir -pv'
 
 # Enable command-line trash
-if which trash > /dev/null; then
+if command -v trash > /dev/null; then
   alias rm='trash'
 fi
 
 # Colorize cat command
-if which bat > /dev/null; then
+if command -v bat > /dev/null; then
   alias cat='bat --style=plain'
-elif which batcat > /dev/null; then
+elif command -v batcat > /dev/null; then
   alias cat='batcat --style=plain'
 fi
 
@@ -144,7 +144,7 @@ fi
 alias sudo='nocorrect sudo -E '
 
 # Change apt command to nala
-if which nala > /dev/null; then
+if command -v nala > /dev/null; then
   alias apt='nala'
 fi
 
@@ -163,7 +163,7 @@ fi
 ### AUTOJUMP
 if [ -f "/usr/share/autojump/autojump.zsh" ]; then
   . /usr/share/autojump/autojump.bash
-elif which zoxide > /dev/null; then
+elif command -v zoxide > /dev/null; then
   eval "$(zoxide init bash)"
 fi
 
@@ -222,7 +222,7 @@ function allup {
 }
 
 ### SETTING THE STARSHIP PROMPT ###
-if which starship > /dev/null; then
+if command -v starship > /dev/null; then
   eval "$(starship init bash)"
 fi
 
