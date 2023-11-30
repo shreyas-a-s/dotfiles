@@ -65,6 +65,7 @@ printf "Do you want to declutter your home folder by removing some files? (yes/n
 case $declutter_choice in
   y|yes|Yes|YES)
     rm -f ~/.bash_logout
+    rm -f ~/.bash_profile
     rm -f ~/.profile
     rm -f ~/.sudo_as_admin_successful
     rm -f ~/.wget-hsts
