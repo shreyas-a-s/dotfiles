@@ -202,11 +202,6 @@ function allup
   return 0
 end
 
-### FIND-THE-COMMAND (Arch Linux specific) ###
-if [ -f /usr/share/doc/find-the-command/ftc.fish ]
-  . /usr/share/doc/find-the-command/ftc.fish
-end
-
 ### OH MY FISH PLUGINS ###
 
 # plugin-band-bang

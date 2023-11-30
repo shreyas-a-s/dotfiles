@@ -248,11 +248,6 @@ if [ -f /etc/zsh_command_not_found ]; then
   . /etc/zsh_command_not_found
 fi
 
-### FIND-THE-COMMAND (Arch Linux specific) ###
-if [ -f /usr/share/doc/find-the-command/ftc.zsh ]; then
-  . /usr/share/doc/find-the-command/ftc.zsh
-fi
-
 ### OH MY ZSH PLUGINS
 
 # History search using UP and DOWN
