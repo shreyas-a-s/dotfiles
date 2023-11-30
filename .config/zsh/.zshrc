@@ -100,9 +100,6 @@ fi
 # To set XDG Base Directory for wget
 [ -f $XDG_CONFIG_HOME/wgetrc ] || touch $XDG_CONFIG_HOME/wgetrc && alias wget='wget --hsts-file=$XDG_CACHE_HOME/wget-hsts'
 
-# Update all packages on system
-alias allup='sudo apt update && sudo apt upgrade -y; sudo snap refresh'
-
 # Tree command - Show all files including hidden ones
 alias tree='tree -a'
 
@@ -210,6 +207,26 @@ function ping {
 # Function to use ix.io (the command-line pastebin)
 function ix {
   curl -F "f:1=@$1" ix.io
+}
+
+# Update all packages on system
+function allup {
+  if [ "$(command -v yay)" ]; then
+    yay
+  elif [ "$(command -v pacman)" ]; then
+    sudo pacman -Syu
+  fi
+
+  if [ "$(command -v nala)" ]; then
+    sudo nala upgrade
+  elif [ "$(command -v apt)" ]; then
+    sudo apt update && sudo apt upgrade
+  fi
+
+  [ "$(command -v snap)" ] && snap refresh
+  [ "$(command -v flatpak)" ] && flatpak update
+
+  return 0
 }
 
 ### AUTOSUGGESTIONS ###

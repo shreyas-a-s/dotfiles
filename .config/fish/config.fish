@@ -64,9 +64,6 @@ end
 # To set XDG Base Directory for wget
 [ -f $XDG_CONFIG_HOME/wgetrc ] || touch $XDG_CONFIG_HOME/wgetrc && alias wget='wget --hsts-file=$XDG_CACHE_HOME/wget-hsts'
 
-# Update all packages on system
-alias allup='sudo apt update && sudo apt upgrade -y; sudo snap refresh'
-
 # Tree command - Show all files including hidden ones
 alias tree='tree -a'
 
@@ -183,6 +180,26 @@ end
 # Function to use ix.io (the command-line pastebin)
 function ix
   curl -F "f:1=@$argv[1]" ix.io
+end
+
+# Update all packages on system
+function allup
+  if [ (command -v yay; echo $status) -eq 0 ]
+    yay
+  else if [ (command -v pacman; echo $status) -eq 0 ]
+    sudo pacman -Syu
+  end
+
+  if [ (command -v pacman; echo $status) -eq 0 ]
+    sudo nala upgrade
+  else if [ (command -v pacman; echo $status) -eq 0 ]
+    sudo apt update && sudo apt upgrade
+  end
+
+  [ (command -v snap; echo $status) -eq 0 ] && snap refresh
+  [ (command -v flatpak; echo $status) -eq 0 ] && flatpak update
+
+  return 0
 end
 
 ### OH MY FISH PLUGINS ###
