@@ -221,6 +221,11 @@ function allup {
   return 0
 }
 
+### FIND-THE-COMMAND (Arch Linux specific) ###
+if [ -f /usr/share/doc/find-the-command/ftc.bash ]; then
+  . /usr/share/doc/find-the-command/ftc.bash
+fi
+
 ### SETTING THE STARSHIP PROMPT ###
 if which starship > /dev/null; then
   eval "$(starship init bash)"
