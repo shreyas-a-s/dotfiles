@@ -26,7 +26,9 @@ if [ -f "$HOME/.config/lscolors/lscolors.sh" ]; then
 fi
 
 ### SET MANPAGER ###
-if which batcat > /dev/null; then
+if which bat > /dev/null; then
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+elif which batcat > /dev/null; then
   export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 fi
 
@@ -135,7 +137,9 @@ if which trash > /dev/null; then
 fi
 
 # Colorize cat command
-if which batcat > /dev/null; then
+if which bat > /dev/null; then
+  alias cat='bat --style=plain'
+elif which batcat > /dev/null; then
   alias cat='batcat --style=plain'
 fi
 
@@ -159,9 +163,11 @@ if [ -f /usr/local/bin/colorscript ]; then
   colorscript random
 fi
 
-### AUTOJUMP ###
-if [ -f "/usr/share/autojump/autojump.sh" ]; then
+### AUTOJUMP
+if [ -f "/usr/share/autojump/autojump.zsh" ]; then
   . /usr/share/autojump/autojump.bash
+elif which zoxide > /dev/null; then
+  eval "$(zoxide init bash)"
 fi
 
 ### FUNCTIONS ###

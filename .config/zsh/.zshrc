@@ -45,7 +45,9 @@ function _fix_cursor {
 precmd_functions+=(_fix_cursor)
 
 ### SET MANPAGER
-if which batcat > /dev/null; then
+if which bat > /dev/null; then
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+elif which batcat > /dev/null; then
   export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 fi
 
@@ -143,7 +145,9 @@ if which trash > /dev/null; then
 fi
 
 # Colorize cat command
-if which batcat > /dev/null; then
+if which bat > /dev/null; then
+  alias cat='bat --style=plain'
+elif which batcat > /dev/null; then
   alias cat='batcat --style=plain'
 fi
 
@@ -170,6 +174,8 @@ fi
 ### AUTOJUMP
 if [ -f "/usr/share/autojump/autojump.zsh" ]; then
   . /usr/share/autojump/autojump.zsh
+elif which zoxide > /dev/null; then
+  eval "$(zoxide init zsh)"
 fi
 
 ### FUNCTIONS ###
@@ -209,11 +215,15 @@ function ix {
 ### AUTOSUGGESTIONS ###
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
   . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  . /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 ### SYNTAX-HIGHLIGHTING ###
 if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
   . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 ### COMMAND-NOT-FOUND ###
@@ -224,13 +234,20 @@ fi
 ### OH MY ZSH PLUGINS
 
 # History search using UP and DOWN
+if grep -q arch /etc/os-release > /dev/null; then
+  uparrow='^[[A'
+  downarrow='^[[B'
+else
+  uparrow="$terminfo[kcuu1]"
+  downarrow="$terminfo[kcud1]"
+fi
 if [ -f $XDG_CONFIG_HOME/zsh/zsh-history-substring-search.zsh ]; then
   . $XDG_CONFIG_HOME/zsh/zsh-history-substring-search.zsh
-  bindkey "$key[Up]" history-substring-search-up
-  bindkey "$key[Down]" history-substring-search-down
+  bindkey "$uparrow" history-substring-search-up
+  bindkey "$downarrow" history-substring-search-down
 else
-  bindkey "$key[Up]" history-beginning-search-backward
-  bindkey "$key[Down]" history-beginning-search-forward
+  bindkey "$uparrow" history-beginning-search-backward
+  bindkey "$downarrow" history-beginning-search-forward
 fi
 
 ### SETTING THE STARSHIP PROMPT ###

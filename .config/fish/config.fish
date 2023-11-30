@@ -23,7 +23,9 @@ if [ -f "$HOME/.config/lscolors/lscolors.csh" ]
 end
 
 #### SET MANPAGER ###
-if which batcat > /dev/null
+if which bat > /dev/null
+  set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+else if which batcat > /dev/null
   set -x MANPAGER "sh -c 'col -bx | batcat -l man -p'"
 end
 
@@ -107,7 +109,9 @@ if [ -f "/usr/bin/trash" ]
 end
 
 # Colorize cat command
-if which batcat > /dev/null
+if which bat > /dev/null
+  alias cat='bat --style=plain'
+else if which batcat > /dev/null
   alias cat='batcat --style=plain'
 end
 
@@ -129,6 +133,8 @@ end
 ### AUTOJUMP ###
 if [ -f /usr/share/autojump/autojump.fish ]
   . /usr/share/autojump/autojump.fish
+else if which zoxide > /dev/null
+  zoxide init fish | source
 end
 
 ### FUNCTIONS ###
