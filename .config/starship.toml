@@ -19,9 +19,9 @@ trim_at = "."
 disabled = false
 
 [character]
-success_symbol = "[➜](bold green)" 
-error_symbol = "[✗](bold red)"
-vicmd_symbol = "[➜](bold orange)"
+success_symbol = "[➜](green)" 
+error_symbol = "[✗](red)"
+vicmd_symbol = "[➜](orange)"
 
 # configure directory
 [directory]
