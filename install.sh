@@ -29,6 +29,7 @@ mkdir -p ~/.config/nvim
 mkdir -p ~/.config/picom
 mkdir -p ~/.config/zsh
 mkdir -p ~/.local/share/fonts/custom
+mkdir -p ~/.config/vifm
 
 # Symlink the files
 rm -f ~/.bashrc; ln -s $(pwd)/.bashrc ~/
@@ -45,6 +46,7 @@ rm -f ~/.config/picom/picom.conf; ln -s $(pwd)/.config/picom/picom.conf ~/.confi
 rm -f ~/.config/zsh/.zshrc; ln -s $(pwd)/.config/zsh/.zshrc ~/.config/zsh/
 rm -f ~/.config/zsh/zsh-history-substring-search.zsh; ln -s $(pwd)/.config/zsh/zsh-history-substring-search.zsh ~/.config/zsh/
 ln -s $(pwd)/.fonts/* ~/.local/share/fonts/custom/
+rm -f ~/.config/vifm/vifmrc; ln -s $(pwd)/.config/vifm/vifmrc ~/.config/vifm
 
 # Post-installation things
 fc-cache -f
