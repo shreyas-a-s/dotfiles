@@ -141,7 +141,7 @@ elif command -v batcat > /dev/null; then
 fi
 
 # Make aliases work even if preceded by sudo
-alias sudo='nocorrect sudo -E '
+alias sudo='sudo -E '
 
 # Change apt command to nala
 if command -v nala > /dev/null; then
