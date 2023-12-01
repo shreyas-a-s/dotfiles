@@ -34,11 +34,6 @@ zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:
 zstyle ':completion:*:*:*:*:descriptions' format '%F{green}-- %d --%f'
 
 ### USE BEAM SHAPE CURSOR ###
-
-# use beam shape cursor on startup.
-echo -ne '\e[5 q'
-
-# use beam shape cursor for each new prompt.
 function _fix_cursor {
   echo -ne '\e[5 q'
 }
