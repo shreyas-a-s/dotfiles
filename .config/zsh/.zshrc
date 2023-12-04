@@ -14,6 +14,9 @@ if command -v nvim > /dev/null; then
   export SUDO_EDITOR="nvim"
 fi
 
+### SET ZLE TO EMACS MODE ###
+bindkey -e
+
 ### HISTORY SETTINGS ###
 HISTSIZE=10000
 SAVEHIST=10000
