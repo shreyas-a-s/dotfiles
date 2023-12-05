@@ -215,7 +215,7 @@ function ping {
   if [ -z "$1" ]; then
     command ping -c 1 example.org
   else
-    command ping "$@"
+    command ping -c 1 "$@"
   fi
 }
 

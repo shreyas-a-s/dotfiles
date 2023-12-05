@@ -173,7 +173,7 @@ function ping
   if [ -z "$argv[1]" ]
     command ping -c 1 example.org
   else
-    command ping $argv
+    command ping -c 1 $argv
   end
 end
 
