@@ -123,6 +123,9 @@ alias btop='btop --utf-force'
 # Making history show numbers like other shells
 alias history='history -R | command cat -n'
 
+# Colorise ip command
+alias ip='ip -color=auto'
+
 ### RANDOM COLOR SCRIPT ###
 # Get this script from my Github: github.com/shreyas-a-s/shell-color-scripts
 if command -v colorscript > /dev/null

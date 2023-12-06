@@ -156,6 +156,9 @@ alias shellcheck='shellcheck -x'
 # Force start btop even if no UTF-8 locale was detected
 alias btop='btop --utf-force'
 
+# Colorise ip command
+alias ip='ip -color=auto'
+
 ### RANDOM COLOR SCRIPT ###
 # Get this script from my Github: github.com/shreyas-a-s/shell-color-scripts
 if [ -f /usr/local/bin/colorscript ]; then
