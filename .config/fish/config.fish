@@ -25,8 +25,10 @@ end
 #### SET MANPAGER ###
 if command -v bat > /dev/null
   set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+  set -x MANROFFOPT "-c"
 else if command -v batcat > /dev/null
   set -x MANPAGER "sh -c 'col -bx | batcat -l man -p'"
+  set -x MANROFFOPT "-c"
 end
 
 ### PATH ###

@@ -28,8 +28,10 @@ fi
 ### SET MANPAGER ###
 if command -v bat > /dev/null; then
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+  export MANROFFOPT="-c"
 elif command -v batcat > /dev/null; then
   export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+  export MANROFFOPT="-c"
 fi
 
 ### BASH COMPLETION ###
