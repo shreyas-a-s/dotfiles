@@ -224,6 +224,17 @@ function allup {
   return 0
 }
 
+# Colorise diff
+function diff {
+  if command -v bat > /dev/null; then
+    command diff "$@" | bat --style=plain
+  elif command -v batcat > /dev/null; then
+    command diff "$@" | batcat --style=plain
+  else
+    command diff --color=auto "$@"
+  fi
+}
+
 ### SETTING THE STARSHIP PROMPT ###
 if command -v starship > /dev/null; then
   eval "$(starship init bash)"

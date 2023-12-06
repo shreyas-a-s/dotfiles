@@ -205,6 +205,17 @@ function allup
   return 0
 end
 
+# Colorise diff
+function diff
+  if command -v bat > /dev/null
+    command diff "$argv" | bat --style=plain
+  else if command -v batcat > /dev/null
+    command diff "$argv" | batcat --style=plain
+  else
+    command diff --color=auto "$argv"
+  end
+end
+
 ### OH MY FISH PLUGINS ###
 
 # plugin-band-bang

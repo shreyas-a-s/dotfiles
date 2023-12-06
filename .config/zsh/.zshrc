@@ -247,6 +247,17 @@ function allup {
   return 0
 }
 
+# Colorise diff
+function diff {
+  if command -v bat > /dev/null; then
+    command diff "$@" | bat --style=plain
+  elif command -v batcat > /dev/null; then
+    command diff "$@" | batcat --style=plain
+  else
+    command diff --color=auto "$@"
+  fi
+}
+
 ### AUTOSUGGESTIONS ###
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
   . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
