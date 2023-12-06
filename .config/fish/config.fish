@@ -32,6 +32,7 @@ else if command -v batcat > /dev/null
 else
   set -xU MANPAGER 'less'
   set -xU LESS '-R --use-color -Dd+r$Du+b$'
+  set -xU MANROFFOPT '-P -c'
 end
 
 ### PATH ###

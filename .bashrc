@@ -35,6 +35,7 @@ elif command -v batcat > /dev/null; then
 else
   export MANPAGER='less'
   export LESS='-R --use-color -Dd+r$Du+b$'
+  export MANROFFOPT='-P -c'
 fi
 
 ### BASH COMPLETION ###
