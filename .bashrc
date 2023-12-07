@@ -21,7 +21,7 @@ SAVEHIST=10000
 HISTFILE=$XDG_CONFIG_HOME/bash/bash_history
 
 # Set colors for ls command
-if [ -f "$HOME/.config/lscolors/lscolors.sh" ]; then
+if [ -f "$XDG_CONFIG_HOME/lscolors/lscolors.sh" ]; then
   . $XDG_CONFIG_HOME/lscolors/lscolors.sh
 fi
 

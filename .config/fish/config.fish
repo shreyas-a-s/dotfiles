@@ -18,7 +18,7 @@ if command -v nvim > /dev/null
 end
 
 # Set colors for ls command
-if [ -f "$HOME/.config/lscolors/lscolors.csh" ]
+if [ -f "$XDG_CONFIG_HOME/lscolors/lscolors.csh" ]
   . $XDG_CONFIG_HOME/lscolors/lscolors.csh
 end
 
