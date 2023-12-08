@@ -46,7 +46,7 @@
 : ${HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS='i'}
 : ${HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=''}
 : ${HISTORY_SUBSTRING_SEARCH_FUZZY=''}
-: ${HISTORY_SUBSTRING_SEARCH_PREFIXED=''}
+: ${HISTORY_SUBSTRING_SEARCH_PREFIXED='true'}
 
 #-----------------------------------------------------------------------------
 # declare internal global variables
