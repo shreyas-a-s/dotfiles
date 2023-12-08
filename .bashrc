@@ -121,7 +121,7 @@ fi
 
 # Colorize grep output (good for log files)
 alias grep='grep -i --color=auto'
-alias egrep='grep -e'
+alias egrep='grep -E'
 alias fgrep='grep -f'
 alias rgrep='grep -r'
 
