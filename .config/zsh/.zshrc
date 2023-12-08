@@ -295,7 +295,13 @@ else
   uparrow="$terminfo[kcuu1]"
   downarrow="$terminfo[kcud1]"
 fi
-if [ -f $XDG_CONFIG_HOME/zsh/zsh-history-substring-search.zsh ]; then
+if [ -f /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
+  . /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+  unset HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND
+  unset HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND
+  bindkey "$uparrow" history-substring-search-up
+  bindkey "$downarrow" history-substring-search-down
+elif [ -f $XDG_CONFIG_HOME/zsh/zsh-history-substring-search.zsh ]; then
   . $XDG_CONFIG_HOME/zsh/zsh-history-substring-search.zsh
   bindkey "$uparrow" history-substring-search-up
   bindkey "$downarrow" history-substring-search-down
