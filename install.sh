@@ -19,7 +19,6 @@ esac
 
 # Create necessary directories
 mkdir -p ~/.config
-mkdir -p ~/.config/bash
 mkdir -p ~/.config/fish
 mkdir -p ~/.config/i3
 mkdir -p ~/.config/i3status
@@ -28,8 +27,10 @@ mkdir -p ~/.config/micro
 mkdir -p ~/.config/nvim
 mkdir -p ~/.config/picom
 mkdir -p ~/.config/zsh
-mkdir -p ~/.local/share/fonts/custom
 mkdir -p ~/.config/vifm
+mkdir -p ~/.local/share/fonts/custom
+mkdir -p ~/.local/share/bash
+mkdir -p ~/.local/share/zsh
 
 # Symlink the files
 rm -f ~/.bashrc; ln -s $(pwd)/.bashrc ~/
@@ -50,7 +51,7 @@ rm -f ~/.config/vifm/vifmrc; ln -s $(pwd)/.config/vifm/vifmrc ~/.config/vifm
 
 # Post-installation things
 fc-cache -f
-mv ~/.bash_history ~/.config/bash/bash_history
+mv ~/.bash_history ~/.local/share/bash/bash_history
 case "$(sh -c 'ps -p $$ -o ppid=' | xargs ps -o comm= -p)" in
   bash)
     source ~/.bashrc ;;
