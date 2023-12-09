@@ -16,7 +16,7 @@ show_always = false
 ssh_only = true
 format = 'on [$hostname](bold purple) '
 trim_at = "."
-disabled = false
+disabled = true
 
 [character]
 success_symbol = "[➜](green)" 
