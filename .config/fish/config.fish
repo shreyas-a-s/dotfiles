@@ -207,7 +207,7 @@ function allup
 
   [ (command -v snap; echo $status) -eq 0 ] && snap refresh
   [ (command -v flatpak; echo $status) -eq 0 ] && flatpak update
-  [ (command -v auto-cpufreq; echo $status) -eq 0 ] && sudo auto-cpufreq --update
+  [ (command -v auto-cpufreq; echo $status) -eq 0 ] && echo && sudo auto-cpufreq --update
 
   return 0
 end

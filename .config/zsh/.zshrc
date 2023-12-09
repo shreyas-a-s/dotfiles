@@ -250,7 +250,7 @@ function allup {
 
   [ "$(command -v snap)" ] && snap refresh
   [ "$(command -v flatpak)" ] && flatpak update
-  [ "$(command -v auto-cpufreq)" ] && sudo auto-cpufreq --update
+  [ "$(command -v auto-cpufreq)" ] && echo && sudo auto-cpufreq --update
 
   return 0
 }
