@@ -20,6 +20,7 @@ bindkey -e
 ### HISTORY SETTINGS ###
 HISTSIZE=10000
 SAVEHIST=10000
+alias history='history 1'
 HISTFILE=$XDG_DATA_HOME/zsh/zsh_history
 
 # Set colors for ls command
