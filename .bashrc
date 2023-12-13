@@ -206,9 +206,11 @@ function ping {
   fi
 }
 
-# Function to use ix.io (the command-line pastebin)
+### COMMAND-LINE PASTEBINS ###
+
+# Function to use ix.io
 function ix {
-  curl -F "f:1=@$1" ix.io
+  curl -F "f:1=@$1" https://ix.io
 }
 
 # Update all packages on system

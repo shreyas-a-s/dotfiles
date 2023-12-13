@@ -186,9 +186,11 @@ function ping
   end
 end
 
-# Function to use ix.io (the command-line pastebin)
+### COMMAND-LINE PASTEBINS ###
+
+# Function to use ix.io
 function ix
-  curl -F "f:1=@$argv[1]" ix.io
+  curl -F "f:1=@$argv[1]" https://ix.io
 end
 
 # Update all packages on system
