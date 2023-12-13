@@ -237,6 +237,16 @@ function ix {
   curl -F "f:1=@$1" https://ix.io
 }
 
+# Function to use paste.rs
+function paste {
+  curl --data-binary "@$1" https://paste.rs
+}
+
+# Function to use 0x0.st
+function 0x0 {
+  curl -F "file=@$1" https://0x0.st
+}
+
 # Update all packages on system
 function allup {
   if [ "$(command -v yay)" ]; then

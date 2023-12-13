@@ -193,6 +193,16 @@ function ix
   curl -F "f:1=@$argv[1]" https://ix.io
 end
 
+# Function to use paste.rs
+function paste
+  curl --data-binary "@$argv[1]" https://paste.rs
+end
+
+# Function to use 0x0.st
+function 0x0
+  curl -F "file=@$argv[1]" https://0x0.st
+end
+
 # Update all packages on system
 function allup
   if [ (command -v yay; echo $status) -eq 0 ]
