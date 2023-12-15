@@ -17,6 +17,15 @@ if command -v nvim > /dev/null
   set SUDO_EDITOR "nvim"
 end
 
+### COLORISE LESS ###
+set -xU LESS_TERMCAP_mb $'\e[1;32m'
+set -xU LESS_TERMCAP_md $'\e[1;32m'
+set -xU LESS_TERMCAP_me $'\e[0m'
+set -xU LESS_TERMCAP_se $'\e[0m'
+set -xU LESS_TERMCAP_so $'\e[01;33m'
+set -xU LESS_TERMCAP_ue $'\e[0m'
+set -xU LESS_TERMCAP_us $'\e[1;4;31m'
+
 # Set colors for ls command
 if [ -f "$XDG_CONFIG_HOME/lscolors/lscolors.csh" ]
   . $XDG_CONFIG_HOME/lscolors/lscolors.csh
