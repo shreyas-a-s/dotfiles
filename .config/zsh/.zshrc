@@ -327,5 +327,7 @@ fi
 ### SETTING THE STARSHIP PROMPT ###
 if command -v starship > /dev/null; then
   eval "$(starship init zsh)"
+else
+  PS1='%F{blue}%~%f $ '
 fi
 

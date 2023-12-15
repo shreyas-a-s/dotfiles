@@ -258,5 +258,7 @@ function diff {
 ### SETTING THE STARSHIP PROMPT ###
 if command -v starship > /dev/null; then
   eval "$(starship init bash)"
+else
+  PS1='\[\033[0;34m\]\w\[\033[0m\] $ '
 fi
 
