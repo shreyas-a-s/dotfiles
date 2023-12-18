@@ -264,6 +264,13 @@ function diff {
   fi
 }
 
+### COMMAND-NOT-FOUND ###
+
+# pkgfile "command not found" handler for bash
+if [ -f /usr/share/doc/pkgfile/command-not-found.bash ]; then
+  . /usr/share/doc/pkgfile/command-not-found.bash
+fi
+
 ### SETTING THE STARSHIP PROMPT ###
 if command -v starship > /dev/null; then
   eval "$(starship init bash)"

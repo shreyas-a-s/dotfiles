@@ -303,8 +303,15 @@ elif [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting
 fi
 
 ### COMMAND-NOT-FOUND ###
+
+# zsh command-not-found handler
 if [ -f /etc/zsh_command_not_found ]; then
   . /etc/zsh_command_not_found
+fi
+
+# pkgfile "command not found" handler for zsh
+if [ -f /usr/share/doc/pkgfile/command-not-found.zsh ]; then
+  . /usr/share/doc/pkgfile/command-not-found.zsh
 fi
 
 ### OH MY ZSH PLUGINS
