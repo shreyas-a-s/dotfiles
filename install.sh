@@ -61,6 +61,11 @@ case "$(sh -c 'ps -p $$ -o ppid=' | xargs ps -o comm= -p)" in
     source ~/.config/zsh/.zshrc ;;
 esac
 
+# Set gnome monospace font to my custom Nerd Font Noto Sans
+if fc-list | grep -q 'NotoSansM Nerd Font'; then
+  dconf write /org/gnome/desktop/interface/monospace-font-name "'NotoSansM Nerd Font 11'"
+fi
+
 # Declutter HOME directory
 printf "Do you want to declutter your home folder by removing some files? (yes/no): " && read -r declutter_choice
 case $declutter_choice in
