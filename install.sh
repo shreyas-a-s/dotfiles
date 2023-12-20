@@ -50,7 +50,6 @@ ln -s $(pwd)/.fonts/* ~/.local/share/fonts/custom/
 rm -f ~/.config/vifm/vifmrc; ln -s $(pwd)/.config/vifm/vifmrc ~/.config/vifm
 
 # Post-installation things
-fc-cache -f
 mv ~/.bash_history ~/.local/share/bash/bash_history
 case "$(sh -c 'ps -p $$ -o ppid=' | xargs ps -o comm= -p)" in
   bash)
@@ -60,11 +59,6 @@ case "$(sh -c 'ps -p $$ -o ppid=' | xargs ps -o comm= -p)" in
   zsh)
     source ~/.config/zsh/.zshrc ;;
 esac
-
-# Set gnome monospace font to my custom Nerd Font Noto Sans
-if fc-list | grep -q 'NotoSansM Nerd Font'; then
-  dconf write /org/gnome/desktop/interface/monospace-font-name "'NotoSansM Nerd Font 11'"
-fi
 
 # Declutter HOME directory
 printf "Do you want to declutter your home folder by removing some files? (yes/no): " && read -r declutter_choice
@@ -76,4 +70,10 @@ case $declutter_choice in
     rm -f ~/.sudo_as_admin_successful
     rm -f ~/.wget-hsts
 esac
+
+# Set gnome monospace font to my custom Nerd Font Noto Sans
+fc-cache -f
+if fc-list | grep -q 'NotoSansM Nerd Font'; then
+  dconf write /org/gnome/desktop/interface/monospace-font-name "'NotoSansM Nerd Font 11'"
+fi
 
