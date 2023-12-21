@@ -259,15 +259,15 @@ function 0x0 {
 # Update all packages on system
 function allup {
   if [ "$(command -v yay)" ]; then
-    yay
+    yay --noconfirm
   elif [ "$(command -v pacman)" ]; then
-    sudo pacman -Syu
+    sudo pacman -Syu --noconfirm
   fi
 
   if [ "$(command -v nala)" ]; then
-    sudo nala upgrade
+    sudo nala upgrade -y
   elif [ "$(command -v apt)" ]; then
-    sudo apt update && sudo apt upgrade
+    sudo apt update && sudo apt upgrade -y
   fi
 
   [ "$(command -v snap)" ] && snap refresh

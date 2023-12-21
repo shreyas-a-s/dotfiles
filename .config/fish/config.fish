@@ -215,15 +215,15 @@ end
 # Update all packages on system
 function allup
   if [ (command -v yay; echo $status) -eq 0 ]
-    yay
+    yay --noconfirm
   else if [ (command -v pacman; echo $status) -eq 0 ]
-    sudo pacman -Syu
+    sudo pacman -Syu --noconfirm
   end
 
   if [ (command -v pacman; echo $status) -eq 0 ]
-    sudo nala upgrade
+    sudo nala upgrade -y
   else if [ (command -v pacman; echo $status) -eq 0 ]
-    sudo apt update && sudo apt upgrade
+    sudo apt update && sudo apt upgrade -y
   end
 
   [ (command -v snap; echo $status) -eq 0 ] && snap refresh
