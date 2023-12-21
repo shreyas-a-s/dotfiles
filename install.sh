@@ -73,7 +73,7 @@ esac
 
 # Set gnome monospace font to my custom Nerd Font Noto Sans
 fc-cache -f
-if fc-list | grep -q 'NotoSansM Nerd Font'; then
+if fc-list | grep -q 'NotoSansM Nerd Font' && command -v dconf > /dev/null; then
   dconf write /org/gnome/desktop/interface/monospace-font-name "'NotoSansM Nerd Font 11'"
 fi
 
