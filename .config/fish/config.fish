@@ -200,16 +200,19 @@ end
 # Function to use ix.io
 function ix
   curl -F "f:1=@$argv[1]" https://ix.io
+  printf "\n"
 end
 
 # Function to use paste.rs
 function paste
   curl --data-binary "@$argv[1]" https://paste.rs
+  printf "\n"
 end
 
 # Function to use 0x0.st
 function 0x0
   curl -F "file=@$argv[1]" https://0x0.st
+  printf "\n"
 end
 
 # Update all packages on system
