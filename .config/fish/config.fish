@@ -226,7 +226,7 @@ function allup
     sudo apt update && sudo apt upgrade -y
   end
 
-  [ (command -v snap; echo $status) -eq 0 ] && snap refresh
+  [ (command -v snap; echo $status) -eq 0 ] && echo && snap refresh
   [ (command -v flatpak; echo $status) -eq 0 ] && flatpak update
   [ (command -v auto-cpufreq; echo $status) -eq 0 ] && echo && sudo auto-cpufreq --update
 

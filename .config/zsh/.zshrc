@@ -270,7 +270,7 @@ function allup {
     sudo apt update && sudo apt upgrade -y
   fi
 
-  [ "$(command -v snap)" ] && snap refresh
+  [ "$(command -v snap)" ] && echo && snap refresh
   [ "$(command -v flatpak)" ] && flatpak update
   [ "$(command -v auto-cpufreq)" ] && echo && sudo auto-cpufreq --update
 
