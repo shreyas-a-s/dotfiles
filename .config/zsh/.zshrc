@@ -69,6 +69,10 @@ function _fix_cursor {
 }
 precmd_functions+=(_fix_cursor)
 
+### Use Ctrl+Right/Left to move between words ###
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
 ### SET MANPAGER
 if command -v bat > /dev/null; then
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
