@@ -82,8 +82,6 @@ elif command -v batcat > /dev/null; then
   export MANROFFOPT='-c'
 else
   export MANPAGER='less'
-  export LESS='-R --use-color -Dd+r$Du+b$'
-  export MANROFFOPT='-P -c'
 fi
 
 # If not running interactively, don't do anything
