@@ -46,8 +46,9 @@ rm -f ~/.config/nvim/init.lua; ln -s $(pwd)/.config/nvim/init.lua ~/.config/nvim
 rm -f ~/.config/picom/picom.conf; ln -s $(pwd)/.config/picom/picom.conf ~/.config/picom/
 rm -f ~/.config/zsh/.zshrc; ln -s $(pwd)/.config/zsh/.zshrc ~/.config/zsh/
 rm -f ~/.config/zsh/zsh-history-substring-search.zsh; ln -s $(pwd)/.config/zsh/zsh-history-substring-search.zsh ~/.config/zsh/
-ln -s $(pwd)/.fonts/* ~/.local/share/fonts/custom/
 rm -f ~/.config/vifm/vifmrc; ln -s $(pwd)/.config/vifm/vifmrc ~/.config/vifm
+rm -rf ~/.icewm/*; ln -s $(pwd)/.icewm/* ~/.icewm/
+ln -s $(pwd)/.fonts/* ~/.local/share/fonts/custom/
 
 # Post-installation things
 mv ~/.bash_history ~/.local/share/bash/bash_history
