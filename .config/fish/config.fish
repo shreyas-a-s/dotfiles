@@ -11,7 +11,7 @@ set -gx XDG_STATE_HOME $HOME/.local/state
 set TERM "xterm-256color"                                 # For getting proper colors
 set -gx WGETRC $XDG_CONFIG_HOME/wgetrc                    # Set xdg base directory for wget
 set LESSHISTFILE -                                        # Prevent creation of ~/.lesshst file
-set -gx PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"  # Change python history file location
+set -gx PYTHONSTARTUP "$XDG_CONFIG_HOME/python/pythonrc"  # Change python history file location
 if command -v nvim > /dev/null
   set EDITOR "nvim"
   set VISUAL "nvim"
