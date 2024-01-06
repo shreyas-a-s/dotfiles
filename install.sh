@@ -76,6 +76,21 @@ case $declutter_choice in
     rm -f ~/.wget-hsts
 esac
 
+# Disable creation of ~/.Xauthority file
+if [ -f ~/.Xauthority ]; then
+  if command -v bash > /dev/null; then # Disable using bash
+    printf "\n# Prevent creation of .Xauthority\
+    \nexport XAUTHORITY=\$XDG_RUNTIME_DIR/Xauthority\
+    \n" | sudo tee -a /etc/bash.bashrc
+  fi
+  if command -v zsh > /dev/null; then # Disable using zsh
+    printf "\n# Prevent creation of .Xauthority\
+    \nexport XAUTHORITY=\$XDG_RUNTIME_DIR/Xauthority\
+    \n" | sudo tee -a /etc/zsh/zshenv
+  fi
+  mv ~/.Xauthority "$XDG_RUNTIME_DIR"/Xauthority
+fi
+
 # Set gnome monospace font to my custom Nerd Font Noto Sans
 fc-cache -f
 if fc-list | grep -q 'NotoSansM Nerd Font' && command -v dconf > /dev/null; then
