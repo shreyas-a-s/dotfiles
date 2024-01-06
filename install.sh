@@ -28,9 +28,12 @@ mkdir -p ~/.config/nvim
 mkdir -p ~/.config/picom
 mkdir -p ~/.config/zsh
 mkdir -p ~/.config/vifm
+mkdir -p ~/.config/python
 mkdir -p ~/.local/share/fonts/custom
 mkdir -p ~/.local/share/bash
 mkdir -p ~/.local/share/zsh
+mkdir -p ~/.local/share/python
+
 
 # Symlink the files
 rm -f ~/.bashrc; ln -s $(pwd)/.bashrc ~/
@@ -48,6 +51,7 @@ rm -f ~/.config/zsh/.zshrc; ln -s $(pwd)/.config/zsh/.zshrc ~/.config/zsh/
 rm -f ~/.config/zsh/zsh-history-substring-search.zsh; ln -s $(pwd)/.config/zsh/zsh-history-substring-search.zsh ~/.config/zsh/
 rm -f ~/.config/vifm/vifmrc; ln -s $(pwd)/.config/vifm/vifmrc ~/.config/vifm
 rm -rf ~/.icewm/*; ln -s $(pwd)/.icewm/* ~/.icewm/
+rm -f ~/.config/python/pythonrc; ln -s $(pwd)/.config/python/pythonrc ~/.config/python/
 ln -s $(pwd)/.fonts/* ~/.local/share/fonts/custom/
 
 # Post-installation things
