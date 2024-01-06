@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Set screen resolution
-xrandr -s 1366x768 &
-sleep 1 &&
+# xrandr -s 1366x768 &
+# sleep 1 &&
 
 # Daemon for syncing clipboard between host and guest VM &
 # for providing display drivers to set proper resolution
