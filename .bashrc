@@ -5,10 +5,11 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 
 ### EXPORT ###
-export TERM="xterm-256color"                                  # getting proper colors
-export WGETRC=$XDG_CONFIG_HOME/wgetrc                         # to set xdg base directory for wget
-export HISTCONTROL=ignoredups:erasedups:ignorespace           # no duplicate entries and no lines that start with a space
-export LESSHISTFILE=-                                         # prevent creation of ~/.lesshst file
+export TERM="xterm-256color"                                  # For getting proper colors
+export WGETRC=$XDG_CONFIG_HOME/wgetrc                         # To set xdg base directory for wget
+export HISTCONTROL=ignoredups:erasedups:ignorespace           # No duplicate entries and no lines that start with a space
+export LESSHISTFILE=-                                         # Prevent creation of ~/.lesshst file
+export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"       # Change python history file location
 if command -v nvim > /dev/null; then
   export EDITOR="nvim"
   export VISUAL="nvim"

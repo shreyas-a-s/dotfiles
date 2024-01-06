@@ -2,15 +2,16 @@
 set -U fish_greeting
 
 ### SET XDG USER DIRECTORES ###
- set -gx XDG_CONFIG_HOME $HOME/.config
- set -gx XDG_CACHE_HOME $HOME/.cache
- set -gx XDG_DATA_HOME $HOME/.local/share
- set -gx XDG_STATE_HOME $HOME/.local/state
+set -gx XDG_CONFIG_HOME $HOME/.config
+set -gx XDG_CACHE_HOME $HOME/.cache
+set -gx XDG_DATA_HOME $HOME/.local/share
+set -gx XDG_STATE_HOME $HOME/.local/state
 
 ### EXPORT ###
- set TERM "xterm-256color"                         # getting proper colors
- set -gx WGETRC $XDG_CONFIG_HOME/wgetrc            # set xdg base directory for wget
- set LESSHISTFILE -                                # prevent creation of ~/.lesshst file
+set TERM "xterm-256color"                                 # For getting proper colors
+set -gx WGETRC $XDG_CONFIG_HOME/wgetrc                    # Set xdg base directory for wget
+set LESSHISTFILE -                                        # Prevent creation of ~/.lesshst file
+set -gx PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"  # Change python history file location
 if command -v nvim > /dev/null
   set EDITOR "nvim"
   set VISUAL "nvim"
