@@ -19,13 +19,13 @@ if command -v nvim > /dev/null
 end
 
 ### COLORISE LESS ###
-set -xU LESS_TERMCAP_mb $'\e[1;32m'
-set -xU LESS_TERMCAP_md $'\e[1;32m'
-set -xU LESS_TERMCAP_me $'\e[0m'
-set -xU LESS_TERMCAP_se $'\e[0m'
-set -xU LESS_TERMCAP_so $'\e[01;33m'
-set -xU LESS_TERMCAP_ue $'\e[0m'
-set -xU LESS_TERMCAP_us $'\e[1;4;31m'
+set -gx LESS_TERMCAP_mb (printf "\e[1;32m")
+set -gx LESS_TERMCAP_md (printf "\e[1;32m")
+set -gx LESS_TERMCAP_me (printf "\e[0m")
+set -gx LESS_TERMCAP_se (printf "\e[0m")
+set -gx LESS_TERMCAP_so (printf "\e[01;33m")
+set -gx LESS_TERMCAP_ue (printf "\e[0m")
+set -gx LESS_TERMCAP_us (printf "\e[1;4;31m")
 
 # Set colors for ls command
 if [ -f "$XDG_CONFIG_HOME/lscolors/lscolors.csh" ]
