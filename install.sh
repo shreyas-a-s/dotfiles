@@ -29,6 +29,7 @@ mkdir -p ~/.config/picom
 mkdir -p ~/.config/zsh
 mkdir -p ~/.config/vifm
 mkdir -p ~/.config/python
+mkdir -p ~/.icewm
 mkdir -p ~/.local/share/fonts/custom
 mkdir -p ~/.local/share/bash
 mkdir -p ~/.local/share/zsh
