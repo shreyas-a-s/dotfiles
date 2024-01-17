@@ -144,6 +144,9 @@ if command -v lsd > /dev/null; then
     if [ "$1" = "-g" ]; then
       shift
       lsd -Al --blocks permission,user,group,size,date,name --date +%d\ %b\ %H:%M --size short --group-directories-first "$@"
+    elif [ "$1" = "-y" ]; then
+      shift
+      lsd -Al --blocks permission,user,group,size,date,name --date +%d\ %b\ %Y\ %H:%M --size short --group-directories-first "$@"
     else
       lsd -Al --blocks permission,user,size,date,name --date +%d\ %b\ %H:%M --size short --group-directories-first "$@"
     fi

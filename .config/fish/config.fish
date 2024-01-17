@@ -90,6 +90,9 @@ if command -v lsd > /dev/null
     if [ -z "$argv" ] && [ "$argv[1]" = "-g" ]
       set -e argv[1]
       lsd -Al --blocks permission,user,group,size,date,name --date +%d\ %b\ %H:%M --size short --group-directories-first $argv
+    else if [ -z "$argv" ] && [ "$argv[1]" = "-y" ]
+      set -e argv[1]
+      lsd -Al --blocks permission,user,group,size,date,name --date +%d\ %b\ %Y\ %H:%M --size short --group-directories-first $argv
     else
       lsd -Al --blocks permission,user,size,date,name --date +%d\ %b\ %H:%M --size short --group-directories-first $argv
     end
