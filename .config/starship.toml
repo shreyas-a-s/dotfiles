@@ -8,6 +8,8 @@ $git_status\
 $battery\
 $character"""
 
+command_timeout = 1000
+
 ### MODULES ##
 
 [username]
