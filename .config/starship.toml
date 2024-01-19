@@ -1,5 +1,6 @@
 ### GLOBAL SETTINGS ###
 
+# Set prompt format
 format = """
 $directory\
 $git_branch\
@@ -8,6 +9,8 @@ $git_status\
 $battery\
 $character"""
 
+# Set command timeout to a higher value so that starship
+# won't prevent me closing a terminal window soon
 command_timeout = 1000
 
 ### MODULES ##
