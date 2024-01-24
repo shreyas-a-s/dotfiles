@@ -18,41 +18,18 @@ case $deletion_choice in
 esac
 
 # Create necessary directories
-mkdir -p ~/.config
-mkdir -p ~/.config/fish
-mkdir -p ~/.config/i3
-mkdir -p ~/.config/i3status
-mkdir -p ~/.config/lscolors
-mkdir -p ~/.config/micro
-mkdir -p ~/.config/nvim
-mkdir -p ~/.config/picom
-mkdir -p ~/.config/zsh
-mkdir -p ~/.config/vifm
-mkdir -p ~/.config/python
 mkdir -p ~/.icewm
 mkdir -p ~/.local/share/fonts/custom
 mkdir -p ~/.local/share/bash
 mkdir -p ~/.local/share/zsh
 mkdir -p ~/.local/share/python
 
+# Symlink files and folders in .config
+./symlink-config-dir.sh
 
-# Symlink the files
+# Symlink other files
 rm -f ~/.bashrc; ln -s $(pwd)/.bashrc ~/
-rm -f ~/.config/starship.toml; ln -s $(pwd)/.config/starship.toml ~/.config/
-rm -f ~/.config/user-dirs.dirs; ln -s $(pwd)/.config/user-dirs.dirs ~/.config/
-rm -f ~/.config/fish/config.fish; ln -s $(pwd)/.config/fish/config.fish ~/.config/fish/
-rm -f ~/.config/i3/config; ln -s $(pwd)/.config/i3/config ~/.config/i3/
-rm -f ~/.config/i3status/config; ln -s $(pwd)/.config/i3status/config ~/.config/i3status/
-rm -f ~/.config/lscolors/lscolors.sh; ln -s $(pwd)/.config/lscolors/lscolors.sh ~/.config/lscolors/
-rm -f ~/.config/lscolors/lscolors.csh; ln -s $(pwd)/.config/lscolors/lscolors.csh ~/.config/lscolors/
-rm -f ~/.config/micro/settings.json; ln -s $(pwd)/.config/micro/settings.json ~/.config/micro/
-rm -f ~/.config/nvim/init.lua; ln -s $(pwd)/.config/nvim/init.lua ~/.config/nvim/
-rm -f ~/.config/picom/picom.conf; ln -s $(pwd)/.config/picom/picom.conf ~/.config/picom/
-rm -f ~/.config/zsh/.zshrc; ln -s $(pwd)/.config/zsh/.zshrc ~/.config/zsh/
-rm -f ~/.config/zsh/zsh-history-substring-search.zsh; ln -s $(pwd)/.config/zsh/zsh-history-substring-search.zsh ~/.config/zsh/
-rm -f ~/.config/vifm/vifmrc; ln -s $(pwd)/.config/vifm/vifmrc ~/.config/vifm
 rm -rf ~/.icewm/*; ln -s $(pwd)/.icewm/* ~/.icewm/
-rm -f ~/.config/python/pythonrc; ln -s $(pwd)/.config/python/pythonrc ~/.config/python/
 ln -s $(pwd)/.fonts/* ~/.local/share/fonts/custom/
 
 # Post-installation things
