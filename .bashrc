@@ -114,7 +114,7 @@ alias tree='tree -a'
 # Better ls commands
 if command -v lsd > /dev/null; then
   alias ls='lsd -A'
-  unalias ll
+  alias ll && unalias ll # Delete alias ll if it exists
   function ll {
     if [ "$1" = "-g" ]; then
       shift
