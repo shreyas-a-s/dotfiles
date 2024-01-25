@@ -206,7 +206,7 @@ alias ip='ip -color=auto'
 
 ### RANDOM COLOR SCRIPT ###
 # Get this script from my Github: github.com/shreyas-a-s/shell-color-scripts
-if [ -f /usr/local/bin/colorscript ]; then
+if command -v colorscript > /dev/null; then
   colorscript random
 fi
 
