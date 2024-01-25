@@ -86,6 +86,7 @@ alias tree='tree -a'
 # Better ls commands
 if command -v lsd > /dev/null
   alias ls='lsd -A'
+  function --erase ll
   function ll
     if [ -z "$argv" ] && [ "$argv[1]" = "-g" ]
       set -e argv[1]
