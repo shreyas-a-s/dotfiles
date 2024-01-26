@@ -161,8 +161,7 @@ elif command -v batcat > /dev/null; then
 fi
 
 # Reason for space at the end: To make aliases work even if preceded by sudo
-# Reason for -E flag: To preserve environment variable (here: to use user configs for neovim even when used along with sudo)
-alias sudo='sudo -E '
+alias sudo='sudo '
 
 # Change apt command to nala
 if command -v nala > /dev/null; then
