@@ -282,6 +282,7 @@ function allup {
   [ "$(command -v snap)" ] && echo && snap refresh
   [ "$(command -v flatpak)" ] && flatpak update
   [ "$(command -v auto-cpufreq)" ] && echo && sudo auto-cpufreq --update
+  [ "$(command -v nix-channel)" ] && echo && sudo nix-channel --update && sudo nixos-rebuild switch --log-format bar-with-logs
 
   return 0
 }

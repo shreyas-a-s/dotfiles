@@ -237,6 +237,7 @@ function allup
   [ (command -v snap; echo $status) -eq 0 ] && echo && snap refresh
   [ (command -v flatpak; echo $status) -eq 0 ] && flatpak update
   [ (command -v auto-cpufreq; echo $status) -eq 0 ] && echo && sudo auto-cpufreq --update
+  [ (command -v nix-channel; echo $status) -eq 0 ] && echo && sudo nix-channel --update && sudo nixos-rebuild switch --log-format bar-with-logs
 
   return 0
 end
