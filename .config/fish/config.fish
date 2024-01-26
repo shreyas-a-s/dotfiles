@@ -234,7 +234,7 @@ function allup
     sudo apt update && sudo apt upgrade -y
   end
 
-  [ (command -v snap; echo $status) -eq 0 ] && printf "\nUpdating snap packages ...\n" && snap refresh
+  [ (command -v snap; echo $status) -eq 0 ] && printf "\nUpdating snap packages ...\n" && sudo snap refresh
   [ (command -v flatpak; echo $status) -eq 0 ] && flatpak update
   [ (command -v auto-cpufreq; echo $status) -eq 0 ] && printf "\nUpdating autocpu-freq ...\n" && sudo auto-cpufreq --update
   [ (command -v nix-channel; echo $status) -eq 0 ] && printf "\nUpdating NixOS Packages ...\n" && sudo nix-channel --update && sudo nixos-rebuild switch --log-format bar-with-logs
