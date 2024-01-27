@@ -334,7 +334,7 @@ fi
 ### OH MY ZSH PLUGINS
 
 # History search using UP and DOWN
-if grep -q arch /etc/os-release > /dev/null; then
+if command -v pacman > /dev/null || command -v dnf > /dev/null; then
   uparrow='^[[A'
   downarrow='^[[B'
 else
