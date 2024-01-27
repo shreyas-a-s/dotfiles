@@ -267,6 +267,9 @@ function 0x0 {
 
 # Update all packages on system
 function allup {
+  # Function to draw a header with an input string
+  function pt {;c=$(tput cols);t=$1;lt=${#t};l=$(((c-lt)/2));function dl {;echo;printf '%*s' "$c"|tr ' ' '-';};function al {;echo;printf '%*s' "$l";};dl;al;printf '%s' "$t";dl;}
+
   if [ "$(command -v yay)" ]; then
     yay --noconfirm
   elif [ "$(command -v pacman)" ]; then
@@ -283,7 +286,7 @@ function allup {
   [ "$(command -v flatpak)" ] && flatpak update
   [ "$(command -v auto-cpufreq)" ] && printf "\nUpdating autocpu-freq ...\n" && sudo auto-cpufreq --update
   [ "$(command -v nix-channel)" ] && printf "\nUpdating NixOS Packages ...\n" && sudo nix-channel --update && sudo nixos-rebuild switch --log-format bar-with-logs
-  [ "$(command -v dnf)" ] && printf "\nUpdating dnf packages ...\n" && sudo dnf upgrade -y
+  [ "$(command -v dnf)" ] && pt "Updating dnf packages ..." && sudo dnf upgrade -y
   [ -f $HOME/.joplin/Joplin.AppImage ] && wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 
   return 0
