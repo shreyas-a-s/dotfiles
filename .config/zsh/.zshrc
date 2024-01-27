@@ -283,6 +283,7 @@ function allup {
   [ "$(command -v flatpak)" ] && flatpak update
   [ "$(command -v auto-cpufreq)" ] && printf "\nUpdating autocpu-freq ...\n" && sudo auto-cpufreq --update
   [ "$(command -v nix-channel)" ] && printf "\nUpdating NixOS Packages ...\n" && sudo nix-channel --update && sudo nixos-rebuild switch --log-format bar-with-logs
+  [ "$(command -v dnf)" ] && printf "\nUpdating dnf packages ...\n" && sudo dnf upgrade -y
 
   return 0
 }
