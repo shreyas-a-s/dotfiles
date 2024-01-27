@@ -222,24 +222,29 @@ end
 
 # Update all packages on system
 function allup
+  # Function to draw a header with an input string
+  function pt;c=$(tput cols);t=$1;lt=${#t};l=$(((c-lt)/2));function dl ;echo;printf '%*s' "$c"|tr ' ' '-';end;function al ;echo;printf '%*s' "$l";end;dl;al;printf '%s' "$t";dl;end
+
+  [ (command -v pacman; echo $status) -eq 0 ] && pt "UPDATING - ARCHLINUX APPS"
   if [ (command -v yay; echo $status) -eq 0 ]
     yay --noconfirm
   else if [ (command -v pacman; echo $status) -eq 0 ]
     sudo pacman -Syu --noconfirm
   end
 
+  [ (command -v apt; echo $status) -eq 0 ] && pt "UPDATING - DEBIAN APPS"
   if [ (command -v pacman; echo $status) -eq 0 ]
     sudo nala upgrade -y
   else if [ (command -v pacman; echo $status) -eq 0 ]
     sudo apt update && sudo apt upgrade -y
   end
 
-  [ (command -v snap; echo $status) -eq 0 ] && printf "\nUpdating snap packages ...\n" && sudo snap refresh
-  [ (command -v flatpak; echo $status) -eq 0 ] && flatpak update
-  [ (command -v auto-cpufreq; echo $status) -eq 0 ] && printf "\nUpdating autocpu-freq ...\n" && sudo auto-cpufreq --update
-  [ (command -v nix-channel; echo $status) -eq 0 ] && printf "\nUpdating NixOS Packages ...\n" && sudo nix-channel --update && sudo nixos-rebuild switch --log-format bar-with-logs
-  [ (command -v dnf; echo $status) -eq 0 ] && printf "\nUpdating dnf packages ...\n" && sudo dnf upgrade -y
-  [ -f $HOME/.joplin/Joplin.AppImage ] && wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
+  [ (command -v snap; echo $status) -eq 0 ] && pt "UPDATING - SNAP APPS" && sudo snap refresh
+  [ (command -v flatpak; echo $status) -eq 0 ] && pt "UPDATING - FLATPAK APPS" && flatpak update
+  [ (command -v auto-cpufreq; echo $status) -eq 0 ] && pt "UPDATING - AUTO-CPUFREQ" && sudo auto-cpufreq --update
+  [ (command -v nix-channel; echo $status) -eq 0 ] && pt "UPDATING - NIXOS" && sudo nix-channel --update && sudo nixos-rebuild switch --log-format bar-with-logs
+  [ (command -v dnf; echo $status) -eq 0 ] && printf pt "UPDATING - DNF PACKAGES" && sudo dnf upgrade -y
+  [ -f $HOME/.joplin/Joplin.AppImage ] && pt "UPDATING - JOPLIN" && wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 
   return 0
 end

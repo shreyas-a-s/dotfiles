@@ -270,12 +270,14 @@ function allup {
   # Function to draw a header with an input string
   function pt {;c=$(tput cols);t=$1;lt=${#t};l=$(((c-lt)/2));function dl {;echo;printf '%*s' "$c"|tr ' ' '-';};function al {;echo;printf '%*s' "$l";};dl;al;printf '%s' "$t";dl;}
 
+  [ "$(command -v pacman)" ] && pt "UPDATING - ARCHLINUX APPS"
   if [ "$(command -v yay)" ]; then
     yay --noconfirm
   elif [ "$(command -v pacman)" ]; then
     sudo pacman -Syu --noconfirm
   fi
 
+  [ "$(command -v apt)" ] && pt "UPDATING - DEBIAN APPS"
   if [ "$(command -v nala)" ]; then
     sudo nala upgrade -y
   elif [ "$(command -v apt)" ]; then
