@@ -43,6 +43,7 @@ set fish_cursor_visual      block
 
 # Set fish shell colors
 set fish_color_command green
+set -e fish_color_search_match
 
 #### SET MANPAGER ###
 if command -v bat > /dev/null
