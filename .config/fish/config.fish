@@ -239,6 +239,7 @@ function allup
   [ (command -v auto-cpufreq; echo $status) -eq 0 ] && printf "\nUpdating autocpu-freq ...\n" && sudo auto-cpufreq --update
   [ (command -v nix-channel; echo $status) -eq 0 ] && printf "\nUpdating NixOS Packages ...\n" && sudo nix-channel --update && sudo nixos-rebuild switch --log-format bar-with-logs
   [ (command -v dnf; echo $status) -eq 0 ] && printf "\nUpdating dnf packages ...\n" && sudo dnf upgrade -y
+  [ -f $HOME/.joplin/Joplin.AppImage ] && wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 
   return 0
 end
