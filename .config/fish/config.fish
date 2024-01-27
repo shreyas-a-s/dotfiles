@@ -186,15 +186,12 @@ function mkdircd
   cd "$argv"
 end
 
-# Replacing 'apt' with 'nala' and 'sudo vim' with 'sudoedit'
+# Replacing 'sudo apt' with 'sudo nala' and 'sudo vim' with 'sudo nvim'
 function sudo
   if [ "$argv[1]" = "apt" ] && [ (command -v nala > /dev/null; echo $status) -eq 0 ]
     set argv[1] nala && command sudo $argv
-  else if [ "$argv[1]" = "vim" -a (type vim > /dev/null; echo $status) -eq 0 ]
-    set -e argv[1]
-    set tempvar "$SUDO_EDITOR" && set SUDO_EDITOR vim
-    sudoedit $argv
-    set SUDO_EDITOR "$tempvar" && set -e tempvar
+  else if [ "$argv[1]" = "vim" ] && [ (command -v nvim > /dev/null; echo $status) -eq 0 ]
+    set argv[1] nvim && command sudo $argv
   else
     command sudo $argv
   end
