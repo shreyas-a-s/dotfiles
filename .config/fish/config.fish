@@ -223,7 +223,7 @@ end
 # Update all packages on system
 function allup
   # Function to draw a header with an input string
-  function pt;c=$(tput cols);t=$1;lt=${#t};l=$(((c-lt)/2));function dl ;echo;printf '%*s' "$c"|tr ' ' '-';end;function al ;echo;printf '%*s' "$l";end;dl;al;printf '%s' "$t";dl;end
+  function pt;set -x c (tput cols);set t $argv[1];set lt (string length $t);set -x lp (math "($c-$lt)/2");function dl;echo;printf '%*s' "$c"|tr ' ' '-';end;function al;echo;printf '%*s' "$lp";end;dl;al;printf '%s' "$t";dl;end
 
   [ (command -v pacman; echo $status) -eq 0 ] && pt "UPDATING - ARCHLINUX APPS"
   if [ (command -v yay; echo $status) -eq 0 ]

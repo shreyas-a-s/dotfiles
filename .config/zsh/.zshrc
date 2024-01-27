@@ -268,7 +268,7 @@ function 0x0 {
 # Update all packages on system
 function allup {
   # Function to draw a header with an input string
-  function pt { c=$(tput cols);t=$1;lt=${#t};l=$(((c-lt)/2));function dl { echo;printf '%*s' "$c"|tr ' ' '-';};function al { echo;printf '%*s' "$l";};dl;al;printf '%s' "$t";dl;}
+  function pt { c=$(tput cols);t=$1;lt=${#t};lp=$(((c-lt)/2));function dl { echo;printf '%*s' "$c"|tr ' ' '-';};function al { echo;printf '%*s' "$lp";};dl;al;printf '%s' "$t";dl;}
 
   [ "$(command -v pacman)" ] && pt "UPDATING - ARCHLINUX APPS"
   if [ "$(command -v yay)" ]; then
