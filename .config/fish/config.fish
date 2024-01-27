@@ -32,6 +32,15 @@ if [ -f "$XDG_CONFIG_HOME/lscolors/lscolors.csh" ]
   . $XDG_CONFIG_HOME/lscolors/lscolors.csh
 end
 
+### CHANGE CURSOR SHAPE BASED ON MODE ###
+
+# Change cursor shape for different vi modes.
+fish_vi_cursor
+set fish_cursor_default     line       blink
+set fish_cursor_insert      block      blink
+set fish_cursor_replace_one underscore blink
+set fish_cursor_visual      block
+
 #### SET MANPAGER ###
 if command -v bat > /dev/null
   set -xU MANPAGER "sh -c 'col -bx | bat -l man -p'"
