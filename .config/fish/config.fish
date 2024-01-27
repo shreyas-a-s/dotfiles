@@ -41,6 +41,9 @@ set fish_cursor_insert      block      blink
 set fish_cursor_replace_one underscore blink
 set fish_cursor_visual      block
 
+# Set fish shell colors
+set fish_color_command green
+
 #### SET MANPAGER ###
 if command -v bat > /dev/null
   set -xU MANPAGER "sh -c 'col -bx | bat -l man -p'"
