@@ -282,12 +282,12 @@ function allup {
     sudo apt update && sudo apt upgrade -y
   fi
 
-  [ "$(command -v snap)" ] && printf "\nUpdating snap packages ...\n" && sudo snap refresh
-  [ "$(command -v flatpak)" ] && flatpak update
-  [ "$(command -v auto-cpufreq)" ] && printf "\nUpdating autocpu-freq ...\n" && sudo auto-cpufreq --update
-  [ "$(command -v nix-channel)" ] && printf "\nUpdating NixOS Packages ...\n" && sudo nix-channel --update && sudo nixos-rebuild switch --log-format bar-with-logs
-  [ "$(command -v dnf)" ] && pt "Updating dnf packages ..." && sudo dnf upgrade -y
-  [ -f $HOME/.joplin/Joplin.AppImage ] && wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
+  [ "$(command -v snap)" ] && pt "UPDATING - SNAP APPS" && sudo snap refresh
+  [ "$(command -v flatpak)" ] && pt "UPDATING - FLATPAK APPS" && flatpak update
+  [ "$(command -v auto-cpufreq)" ] && pt "UPDATING - AUTO-CPUFREQ" && sudo auto-cpufreq --update
+  [ "$(command -v nix-channel)" ] && pt "UPDATING - NIXOS" && sudo nix-channel --update && sudo nixos-rebuild switch --log-format bar-with-logs
+  [ "$(command -v dnf)" ] && pt "UPDATING - DNF PACKAGES" && sudo dnf upgrade -y
+  [ -f $HOME/.joplin/Joplin.AppImage ] && pt "UPDATING - JOPLIN" && wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 
   return 0
 }
