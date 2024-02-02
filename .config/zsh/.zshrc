@@ -114,7 +114,6 @@ if [ -d "/snap/bin/" ] ;
 fi
 
 ### SETOPT ###
-setopt histignorealldups # do not put duplicated command into history list
 setopt histsavenodups # do not save duplicated command
 setopt histfindnodups # when searching for history entries, do not display duplicates
 setopt histignorespace # don't store command lines in history when the first character is a space 
@@ -311,6 +310,9 @@ if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
 elif [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
   . /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
+
+# Fish-like intelligent autosuggestions
+export ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd)
 
 ### SYNTAX-HIGHLIGHTING ###
 if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
