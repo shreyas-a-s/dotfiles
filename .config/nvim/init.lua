@@ -173,6 +173,9 @@ require('lazy').setup({
     end,
   },
 
+  -- Colorizer for hex colors
+  'NvChad/nvim-colorizer.lua',
+
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -567,6 +570,9 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
+
+-- Colorizer setup
+require('colorizer').setup()
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
