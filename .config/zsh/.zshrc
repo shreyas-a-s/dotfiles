@@ -287,7 +287,7 @@ function allup {
   [ "$(command -v snap)" ] && pt "UPDATING - SNAP APPS" && sudo snap refresh
   [ "$(command -v flatpak)" ] && pt "UPDATING - FLATPAK APPS" && flatpak update
   [ "$(command -v auto-cpufreq)" ] && pt "UPDATING - AUTO-CPUFREQ" && sudo auto-cpufreq --update
-  [ "$(command -v nix-channel)" ] && pt "UPDATING - NIXOS" && sudo nix-channel --update && sudo nixos-rebuild switch --log-format bar-with-logs
+  [ "$(command -v nix-channel)" ] && pt "UPDATING - NIXOS" && sudo nixos-rebuild switch --upgrade --log-format bar-with-logs
   [ "$(command -v dnf)" ] && pt "UPDATING - DNF PACKAGES" && sudo dnf upgrade -y
   [ -f $HOME/.joplin/Joplin.AppImage ] && pt "UPDATING - JOPLIN" && wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 
