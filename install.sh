@@ -30,7 +30,7 @@ mkdir -p ~/.local/share/python
 # Symlink other files
 rm -f ~/.bashrc; ln -s $(pwd)/.bashrc ~/
 rm -rf ~/.icewm/*; ln -s $(pwd)/.icewm/* ~/.icewm/
-ln -s $(pwd)/.fonts/* ~/.local/share/fonts/custom/
+ln -s $(pwd)/.local/share/fonts/* ~/.local/share/fonts/custom/
 
 # Post-installation things
 mv ~/.bash_history ~/.local/share/bash/bash_history
