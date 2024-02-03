@@ -20,7 +20,7 @@ for file in "$config_backup_dir"/*; do
   # Check if the file exists in config_orig_dir
   if [ -e "$config_orig_dir/$filename" ]; then
     # File exists in config_orig_dir, delete it and create a symlink
-    rm "$config_orig_dir/$filename"
+    rm -rf "$config_orig_dir/$filename"
     ln -s "$config_backup_dir/$filename" "$config_orig_dir/$filename"
     echo "Replaced existing file: $filename"
   else
