@@ -1,2 +1,3 @@
 # Ignore completion file created by zsh
 **/.zcompdump
+**/fish_variables
