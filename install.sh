@@ -17,8 +17,15 @@ case $deletion_choice in
     exit 1 ;;
 esac
 
-# Install stow
-./scripts/install-stow.sh
+# Install stow if not already present in system
+command -v stow > dev/null || ./scripts/install-stow.sh
+
+# Remove already existing files & folders
+rm -rf ~/.local/bin/allup ~/.local/share/fonts/NotoSansMNerdFont-Regular.ttf ~/.bashrc ~/.icewm ~/.config/fish ~/.config/i3 ~/.config/i3status ~/.config/lscolors ~/.config/micro ~/.config/nvim ~/.config/picom ~/.config/python ~/.config/vifm ~/.config/zsh ~/.config/starship.toml ~/.config/user-dirs.dirs
+
+# Actual setup of dotfiles
+cd .. || exit
+stow --adopt -vt ~ $(basename $SCRIPT_DIR) --dotfiles --ignore='install.sh|scripts'
 
 # Post-installation things
 mv ~/.bash_history ~/.local/share/bash/bash_history
