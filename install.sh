@@ -25,7 +25,7 @@ mkdir -p ~/.local/share/zsh
 mkdir -p ~/.local/share/python
 
 # Symlink files and folders in .config
-./symlink-config-dir.sh
+./scripts/symlink-config-dir.sh
 
 # Symlink other files
 rm -f ~/.bashrc; ln -s $(pwd)/.bashrc ~/

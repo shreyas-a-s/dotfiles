@@ -4,7 +4,7 @@
 SCRIPT_DIR=$(dirname -- "$( readlink -f -- "$0"; )") && cd "$SCRIPT_DIR" || exit
 
 # Your copied configuration directory
-config_backup_dir=$(pwd)/.config
+config_backup_dir=$(pwd)/../.config
 
 # Your target directory (where you want to create symlinks)
 config_orig_dir=~/.config
