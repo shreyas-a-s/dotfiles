@@ -17,22 +17,8 @@ case $deletion_choice in
     exit 1 ;;
 esac
 
-# Create necessary directories
-mkdir -p ~/.icewm
-mkdir -p ~/.local/bin
-mkdir -p ~/.local/share/fonts/custom
-mkdir -p ~/.local/share/bash
-mkdir -p ~/.local/share/zsh
-mkdir -p ~/.local/share/python
-
-# Symlink files and folders in .config
-./scripts/symlink-config-dir.sh
-
-# Symlink other files
-rm -f ~/.bashrc; ln -s $(pwd)/.bashrc ~/
-rm -rf ~/.icewm/*; ln -s $(pwd)/.icewm/* ~/.icewm/
-rm -rf ~/.local/bin/allup; ln -s $(pwd)/.local/bin/allup.sh ~/.local/bin/allup
-ln -s $(pwd)/.local/share/fonts/* ~/.local/share/fonts/custom/
+# Install stow
+./scripts/install-stow.sh
 
 # Post-installation things
 mv ~/.bash_history ~/.local/share/bash/bash_history
