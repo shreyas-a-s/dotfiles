@@ -19,6 +19,7 @@ esac
 
 # Create necessary directories
 mkdir -p ~/.icewm
+mkdir -p ~/.local/bin
 mkdir -p ~/.local/share/fonts/custom
 mkdir -p ~/.local/share/bash
 mkdir -p ~/.local/share/zsh
@@ -30,6 +31,7 @@ mkdir -p ~/.local/share/python
 # Symlink other files
 rm -f ~/.bashrc; ln -s $(pwd)/.bashrc ~/
 rm -rf ~/.icewm/*; ln -s $(pwd)/.icewm/* ~/.icewm/
+rm -rf ~/.local/bin/allup; ln -s $(pwd)/.local/bin/allup.sh ~/.local/bin/allup
 ln -s $(pwd)/.local/share/fonts/* ~/.local/share/fonts/custom/
 
 # Post-installation things
