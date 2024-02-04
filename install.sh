@@ -30,8 +30,7 @@ cd .. || exit
 stow --adopt -vt ~ $(basename $SCRIPT_DIR) --dotfiles --ignore='install.sh|scripts|components'
 
 # Restore files if they were moved
-cd "$SCRIPT_DIR"
-git restore .
+git --git-dir="$SCRIPT_DIR/.git/" --work-tree="$SCRIPT_DIR" restore .
 
 # Move shell history files if they are present
 if [ -f ~/.bash_history ]; then
@@ -65,7 +64,7 @@ esac
 printf "Do you want to declutter your home folder by removing some files? (yes/no): " && read -r declutter_choice
 case $declutter_choice in
   y|yes|Yes|YES)
-    xargs -a "./components/declutter.txt" rm -f
+    xargs -a "$SCRIPT_DIR/components/declutter.txt" rm -f
 esac
 
 # Disable creation of ~/.Xauthority file
