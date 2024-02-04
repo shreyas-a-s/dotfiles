@@ -23,11 +23,11 @@ if ! command -v stow > dev/null; then
 fi
 
 # Remove already existing files & folders
-rm -rf ~/.local/bin/allup ~/.local/share/fonts/NotoSansMNerdFont-Regular.ttf ~/.bashrc ~/.icewm ~/.config/fish ~/.config/i3 ~/.config/i3status ~/.config/lscolors ~/.config/micro ~/.config/nvim ~/.config/picom ~/.config/python ~/.config/vifm ~/.config/zsh ~/.config/starship.toml ~/.config/user-dirs.dirs
+xargs -a "./components/files-and-folders-to-remove.txt" rm -rf
 
 # Actual setup of dotfiles
 cd .. || exit
-stow --adopt -vt ~ $(basename $SCRIPT_DIR) --dotfiles --ignore='install.sh|scripts'
+stow --adopt -vt ~ $(basename $SCRIPT_DIR) --dotfiles --ignore='install.sh|scripts|components'
 
 # Post-installation things
 mv ~/.bash_history ~/.local/share/bash/bash_history
@@ -44,11 +44,7 @@ esac
 printf "Do you want to declutter your home folder by removing some files? (yes/no): " && read -r declutter_choice
 case $declutter_choice in
   y|yes|Yes|YES)
-    rm -f ~/.bash_logout
-    rm -f ~/.bash_profile
-    rm -f ~/.profile
-    rm -f ~/.sudo_as_admin_successful
-    rm -f ~/.wget-hsts
+    xargs -a "./components/declutter.txt" rm -f
 esac
 
 # Disable creation of ~/.Xauthority file
@@ -59,9 +55,10 @@ if [ -f ~/.Xauthority ]; then
     \n" | sudo tee -a /etc/bash.bashrc
   fi
   if command -v zsh > /dev/null; then # Disable using zsh
+    zshenv_path=$(sudo find /etc -maxdepth 2 -type f -name "zshenv")
     printf "\n# Prevent creation of .Xauthority\
     \nexport XAUTHORITY=\$XDG_RUNTIME_DIR/Xauthority\
-    \n" | sudo tee -a /etc/zsh/zshenv
+    \n" | sudo tee -a "$zshenv_path"
   fi
   mv ~/.Xauthority "$XDG_RUNTIME_DIR"/Xauthority
 fi

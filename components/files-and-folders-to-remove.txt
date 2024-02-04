@@ -1,0 +1,16 @@
+~/.bashrc
+~/.config/fish
+~/.config/i3
+~/.config/i3status
+~/.config/lscolors
+~/.config/micro
+~/.config/nvim
+~/.config/picom
+~/.config/python
+~/.config/starship.toml
+~/.config/user-dirs.dirs
+~/.config/vifm
+~/.config/zsh
+~/.icewm
+~/.local/bin/allup
+~/.local/share/fonts/NotoSansMNerdFont-Regular.ttf
