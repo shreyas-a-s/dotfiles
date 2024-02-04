@@ -18,7 +18,9 @@ case $deletion_choice in
 esac
 
 # Install stow if not already present in system
-command -v stow > dev/null || ./scripts/install-stow.sh
+if ! command -v stow > dev/null; then
+  ./scripts/install-stow.sh
+fi
 
 # Remove already existing files & folders
 rm -rf ~/.local/bin/allup ~/.local/share/fonts/NotoSansMNerdFont-Regular.ttf ~/.bashrc ~/.icewm ~/.config/fish ~/.config/i3 ~/.config/i3status ~/.config/lscolors ~/.config/micro ~/.config/nvim ~/.config/picom ~/.config/python ~/.config/vifm ~/.config/zsh ~/.config/starship.toml ~/.config/user-dirs.dirs
