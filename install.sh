@@ -18,7 +18,7 @@ case $deletion_choice in
 esac
 
 # Install stow if not already present in system
-if ! command -v stow > dev/null; then
+if ! command -v stow > /dev/null; then
   ./scripts/install-stow.sh
 fi
 
