@@ -28,7 +28,10 @@ xargs -a "./components/files-and-folders-to-remove.txt" rm -rf
 # Actual setup of dotfiles
 cd .. || exit
 stow --adopt -vt ~ $(basename $SCRIPT_DIR) --dotfiles --ignore='install.sh|scripts|components'
+
+# Restore files if they were moved
 cd "$SCRIPT_DIR"
+git restore .
 
 # Move shell history files if they are present
 if [ -f ~/.bash_history ]; then
