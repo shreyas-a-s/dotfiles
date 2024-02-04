@@ -30,8 +30,25 @@ cd .. || exit
 stow --adopt -vt ~ $(basename $SCRIPT_DIR) --dotfiles --ignore='install.sh|scripts|components'
 cd "$SCRIPT_DIR"
 
+# Move shell history files if they are present
+if [ -f ~/.bash_history ]; then
+  if [ -f ~/.local/share/bash/bash_history ]; then
+    cat ~/.bash_history >> ~/.local/share/bash/bash_history
+    rm ~/.bash_history
+  else
+    mv ~/.bash_history ~/.local/share/bash/bash_history
+  fi
+fi
+if [ -f ~/.zsh_history ]; then
+  if [ -f ~/.local/share/zsh/zsh_history ]; then
+    cat ~/.zsh_history >> ~/.local/share/zsh/zsh_history
+    rm ~/.zsh_history
+  else
+    mv ~/.zsh_history ~/.local/share/zsh/zsh_history
+  fi
+fi
+
 # Post-installation things
-mv ~/.bash_history ~/.local/share/bash/bash_history
 case "$(sh -c 'ps -p $$ -o ppid=' | xargs ps -o comm= -p)" in
   bash)
     source ~/.bashrc ;;
@@ -50,12 +67,12 @@ esac
 
 # Disable creation of ~/.Xauthority file
 if [ -f ~/.Xauthority ]; then
-  if command -v bash > /dev/null; then # Disable using bash
+  if command -v bash > /dev/null && ! grep -q 'XDG_RUNTIME' /etc/bash.bashrc; then # Disable using bash
     printf "\n# Prevent creation of .Xauthority\
     \nexport XAUTHORITY=\$XDG_RUNTIME_DIR/Xauthority\
     \n" | sudo tee -a /etc/bash.bashrc
   fi
-  if command -v zsh > /dev/null; then # Disable using zsh
+  if command -v zsh > /dev/null && ! grep -q 'XDG_RUNTIME' "$zshenv_path"; then # Disable using zsh
     zshenv_path=$(sudo find /etc -maxdepth 2 -type f -name "zshenv")
     printf "\n# Prevent creation of .Xauthority\
     \nexport XAUTHORITY=\$XDG_RUNTIME_DIR/Xauthority\
