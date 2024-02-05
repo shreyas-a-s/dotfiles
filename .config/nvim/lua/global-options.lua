@@ -8,7 +8,7 @@ vim.cmd("set shiftwidth=2")
 vim.wo.number = true
 
 -- Sync clipboard between OS and Neovim.
-vim.o.clipboard = "unnamedplus"
+vim.o.clipboard = 'unnamedplus'
 
 -- Save undo history
 vim.o.undofile = true
@@ -18,4 +18,4 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- Keep signcolumn on by default
-vim.wo.signcolumn = "yes"
+vim.wo.signcolumn = 'yes'
