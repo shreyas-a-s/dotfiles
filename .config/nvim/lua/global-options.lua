@@ -4,8 +4,8 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 
--- Enable line numbers
-vim.wo.number = true
+-- Enable relative line numbers
+vim.wo.relativenumber = true
 
 -- Sync clipboard between OS and Neovim.
 vim.o.clipboard = "unnamedplus"
