@@ -38,4 +38,5 @@ vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 -- Telescope
 vim.keymap.set("n", "<leader>fr", ":Telescope oldfiles<CR>", {})
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", {})
-vim.keymap.set("n", "<leader>fw", ":Telescope live_grep<CR>", {})
+vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", {})
+vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>", {})
