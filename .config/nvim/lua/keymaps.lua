@@ -2,13 +2,13 @@
 vim.g.mapleader = " "
 
 -- Navigate vim panes better
-vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
-vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
-vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
-vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
 -- Set keymap to hide search highlight
-vim.keymap.set('n', '<leader>nh', ':nohlsearch<CR>')
+vim.keymap.set("n", "<leader>nh", ":nohlsearch<CR>")
 
 -- Gitsigns
 vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
@@ -28,7 +28,6 @@ vim.keymap.set("n", "<leader>fb", ":Neotree buffers reveal float<CR>", {})
 vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 
 -- Telescope
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>.", builtin.find_files, {})
-vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {})
-vim.keymap.set("n", "<leader>rg", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>fr", ":Telescope oldfiles<CR>", {})
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", {})
+vim.keymap.set("n", "<leader>fw", ":Telescope live_grep<CR>", {})
