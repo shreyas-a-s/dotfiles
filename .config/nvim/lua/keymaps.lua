@@ -10,3 +10,25 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 -- Set keymap to hide search highlight
 vim.keymap.set('n', '<leader>nh', ':nohlsearch<CR>')
 
+-- Gitsigns
+vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
+vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
+
+-- lsp-config
+vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+
+-- Neo-tree
+vim.keymap.set("n", "<leader>tt", ":Neotree filesystem toggle left<CR>", {})
+vim.keymap.set("n", "<leader>fb", ":Neotree buffers reveal float<CR>", {})
+
+-- None-ls
+vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+
+-- Telescope
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>.", builtin.find_files, {})
+vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {})
+vim.keymap.set("n", "<leader>rg", builtin.live_grep, {})
