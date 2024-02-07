@@ -10,11 +10,17 @@ vim.keymap.set("n", "<leader>wc", ":q<CR>")
 vim.keymap.set("i", "<C-a>", "<ESC>I")
 vim.keymap.set("i", "<C-e>", "<ESC>A")
 
--- Navigate vim panes better
+-- Navigate panes using vim motion keys
 vim.keymap.set("n", "<C-k>", ":wincmd k<CR>")
 vim.keymap.set("n", "<C-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<C-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
+
+-- Navigate panes using arrow keys
+vim.keymap.set("n", "<C-Up>", ":wincmd k<CR>")
+vim.keymap.set("n", "<C-Down>", ":wincmd j<CR>")
+vim.keymap.set("n", "<C-Left>", ":wincmd h<CR>")
+vim.keymap.set("n", "<C-Right>", ":wincmd l<CR>")
 
 -- Set keymap to hide search highlight
 vim.keymap.set("n", "<leader>nh", ":nohlsearch<CR>")
