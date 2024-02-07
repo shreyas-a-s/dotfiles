@@ -31,7 +31,7 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 
 -- Neo-tree
 vim.keymap.set("n", "<leader>tt", ":Neotree filesystem toggle left<CR>", {})
-vim.keymap.set("n", "<leader>fb", ":Neotree buffers reveal float<CR>", {})
+vim.keymap.set("n", "<leader>tb", ":Neotree buffers reveal float<CR>", {})
 
 -- None-ls
 vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
