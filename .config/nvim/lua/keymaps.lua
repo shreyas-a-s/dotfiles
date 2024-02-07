@@ -1,6 +1,11 @@
 -- Setting the leader key to a space character
 vim.g.mapleader = " "
 
+-- Window manipulation
+vim.keymap.set("n", "<leader>wv", ":vsplit<CR>")
+vim.keymap.set("n", "<leader>wh", ":split<CR>")
+vim.keymap.set("n", "<leader>wc", ":q<CR>")
+
 -- Mimic shell movements
 vim.keymap.set("i", "<C-a>", "<ESC>I")
 vim.keymap.set("i", "<C-e>", "<ESC>A")
