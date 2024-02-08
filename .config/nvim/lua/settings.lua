@@ -13,18 +13,18 @@ vim.wo.number = true
 -- Enable relative line numbers
 vim.wo.relativenumber = true
 
--- Sync clipboard between OS and Neovim.
-vim.o.clipboard = "unnamedplus"
-
--- Save undo history
-vim.o.undofile = true
-
--- Case-insensitive searching UNLESS \C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
 -- Keep signcolumn on by default
 vim.wo.signcolumn = "yes"
+
+-- Sync clipboard between OS and Neovim.
+vim.opt.clipboard = "unnamedplus"
+
+-- Save undo history
+vim.opt.undofile = true
+
+-- Case-insensitive searching UNLESS \C or capital in search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Highlight on yank
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
