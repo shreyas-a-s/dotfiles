@@ -14,8 +14,8 @@ return {
             "filename",
             path = 1,
           },
-        }
-      }
+        },
+      },
     })
   end,
 }
