@@ -7,26 +7,6 @@ return {
   },
   config = function()
     require("telescope").setup({
-      defaults = {
-        file_ignore_patterns = {
-          ".git",
-        },
-        vimgrep_arguments = {
-          "rg",
-          "--color=never",
-          "--no-heading",
-          "--with-filename",
-          "--line-number",
-          "--column",
-          "--smart-case",
-          "--no-ignore",
-          "--hidden",
-        },
-      },
-      pickers = {
-        find_files = { hidden = true },
-        oldfiles = { hidden = true },
-      },
       extensions = {
         ["ui-select"] = {
           require("telescope.themes").get_dropdown({}),
