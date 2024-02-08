@@ -22,9 +22,6 @@ vim.keymap.set("n", "<C-Down>", ":wincmd j<CR>")
 vim.keymap.set("n", "<C-Left>", ":wincmd h<CR>")
 vim.keymap.set("n", "<C-Right>", ":wincmd l<CR>")
 
--- Set keymap to hide search highlight
-vim.keymap.set("n", "<leader>nh", ":nohlsearch<CR>")
-
 -- Gitsigns
 vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
 vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
