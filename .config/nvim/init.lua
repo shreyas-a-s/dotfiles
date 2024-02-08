@@ -15,5 +15,4 @@ vim.opt.rtp:prepend(lazypath)
 -- Source modules
 require("settings")
 require("keymaps")
-require("better-highlighting")
 require("lazy").setup("plugins")
