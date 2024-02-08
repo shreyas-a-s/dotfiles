@@ -23,8 +23,8 @@ vim.keymap.set("n", "<C-Left>", ":wincmd h<CR>")
 vim.keymap.set("n", "<C-Right>", ":wincmd l<CR>")
 
 -- Gitsigns
-vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
-vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
+vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { silent = true })
+vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", { silent = true })
 
 -- lsp-config
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
@@ -33,7 +33,7 @@ vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 
 -- Neo-tree
-vim.keymap.set("n", "<leader>.", ":Neotree filesystem toggle left<CR>", {})
+vim.keymap.set("n", "<leader>.", ":Neotree filesystem toggle left<CR>", { silent = true })
 
 -- None-ls
 vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
