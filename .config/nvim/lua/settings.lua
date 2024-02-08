@@ -16,6 +16,13 @@ vim.wo.relativenumber = true
 -- Keep signcolumn on by default
 vim.wo.signcolumn = "yes"
 
+-- Enable break indent
+vim.opt.breakindent = true
+
+-- Decrease update time
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
+
 -- Sync clipboard between OS and Neovim.
 vim.opt.clipboard = "unnamedplus"
 
