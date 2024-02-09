@@ -42,7 +42,7 @@ map("n", "<leader>cr", vim.lsp.buf.references, "[r]eferences")
 map("n", "<leader>ca", vim.lsp.buf.code_action, "[a]ctions")
 
 -- Neo-tree
-map("n", "<leader><leader>", ":Neotree filesystem toggle left<CR>", "toggle neo-tree")
+map("n", "<leader><leader>", ":NvimTreeToggle<CR>", "toggle neo-tree")
 
 -- None-ls
 map("n", "<leader>cf", vim.lsp.buf.format, "[f]ormat")
