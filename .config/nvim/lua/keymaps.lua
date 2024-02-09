@@ -47,6 +47,10 @@ map("n", "<leader><leader>", ":Neotree filesystem toggle left<CR>")
 -- None-ls
 map("n", "<leader>gf", vim.lsp.buf.format)
 
+-- Navigate buffers
+map("n", "<leader>bn", ":bn<CR>")
+map("n", "<leader>bp", ":bp<CR>")
+
 -- Telescope
 map("n", "<leader>fr", ":Telescope oldfiles<CR>")
 map("n", "<leader>ff", ":Telescope find_files<CR>")
