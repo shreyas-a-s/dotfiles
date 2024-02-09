@@ -3,14 +3,14 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Make syntax simpler
-local function map(m, k, v)
-  vim.keymap.set(m, k, v, { silent = true })
+local function map(mode, key, cmd, desc)
+  vim.keymap.set(mode, key, cmd, { desc = desc, silent = true })
 end
 
 -- Window manipulation
-map("n", "<leader>wv", ":vsplit<CR>")
-map("n", "<leader>wh", ":split<CR>")
-map("n", "<leader>wc", ":q<CR>")
+map("n", "<leader>wv", ":vsplit<CR>", "[v]ertical split")
+map("n", "<leader>wh", ":split<CR>", "[h]orizontal split")
+map("n", "<leader>wc", ":q<CR>", "[c]lose window")
 
 -- Remap Redo
 map("n", "U", ":redo<CR>")
@@ -32,27 +32,27 @@ map("n", "<C-Left>", ":wincmd h<CR>")
 map("n", "<C-Right>", ":wincmd l<CR>")
 
 -- Gitsigns
-map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>")
-map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>")
+map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", "[p]review hunk")
+map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", "[t]oggle line blame")
 
 -- lsp-config
 map("n", "K", vim.lsp.buf.hover)
-map("n", "<leader>gd", vim.lsp.buf.definition)
-map("n", "<leader>gr", vim.lsp.buf.references)
-map("n", "<leader>ca", vim.lsp.buf.code_action)
+map("n", "<leader>cd", vim.lsp.buf.definition, "[d]efinition")
+map("n", "<leader>cr", vim.lsp.buf.references, "[r]eferences")
+map("n", "<leader>ca", vim.lsp.buf.code_action, "[a]ctions")
 
 -- Neo-tree
-map("n", "<leader><leader>", ":Neotree filesystem toggle left<CR>")
+map("n", "<leader><leader>", ":Neotree filesystem toggle left<CR>", "toggle neo-tree")
 
 -- None-ls
-map("n", "<leader>gf", vim.lsp.buf.format)
+map("n", "<leader>bf", vim.lsp.buf.format, "[f]ormat buffer")
 
 -- Navigate buffers
-map("n", "<leader>bn", ":bn<CR>")
-map("n", "<leader>bp", ":bp<CR>")
+map("n", "<leader>bn", ":bn<CR>", "[n]ext buffer")
+map("n", "<leader>bp", ":bp<CR>", "[p]revious buffer")
 
 -- Telescope
-map("n", "<leader>fr", ":Telescope oldfiles<CR>")
-map("n", "<leader>ff", ":Telescope find_files<CR>")
-map("n", "<leader>fg", ":Telescope live_grep<CR>")
-map("n", "<leader>fb", ":Telescope buffers<CR>")
+map("n", "<leader>fr", ":Telescope oldfiles<CR>", "[r]ecent files")
+map("n", "<leader>ff", ":Telescope find_files<CR>", "[f]ind files")
+map("n", "<leader>fg", ":Telescope live_grep<CR>", "[g]rep files")
+map("n", "<leader>fb", ":Telescope buffers<CR>", "[b]uffers")
