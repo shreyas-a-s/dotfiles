@@ -15,5 +15,8 @@ return {
       },
       hijack_netrw_behavior = "disabled",
     },
+    window = {
+      width = 25,
+    },
   },
 }
