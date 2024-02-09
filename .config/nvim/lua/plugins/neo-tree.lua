@@ -13,6 +13,7 @@ return {
         hide_gitignored = true,
         never_show = { ".git" }
       },
+      hijack_netrw_behavior = "disabled",
     },
   },
 }
