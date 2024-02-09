@@ -6,6 +6,9 @@ vim.keymap.set("n", "<leader>wv", ":vsplit<CR>")
 vim.keymap.set("n", "<leader>wh", ":split<CR>")
 vim.keymap.set("n", "<leader>wc", ":q<CR>")
 
+-- Remap Redo
+vim.keymap.set("n", "U", ":redo<CR>", { silent = true })
+
 -- Mimic shell movements
 vim.keymap.set("i", "<C-a>", "<ESC>I")
 vim.keymap.set("i", "<C-e>", "<ESC>A")
