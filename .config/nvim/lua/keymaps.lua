@@ -10,7 +10,7 @@ end
 -- Window manipulation
 map("n", "<leader>wv", ":vsplit<CR>", "[v]ertical split")
 map("n", "<leader>wh", ":split<CR>", "[h]orizontal split")
-map("n", "<leader>wc", ":q<CR>", "[c]lose window")
+map("n", "<leader>wc", ":q<CR>", "[c]lose")
 
 -- Remap Redo
 map("n", "U", ":redo<CR>")
@@ -45,7 +45,7 @@ map("n", "<leader>ca", vim.lsp.buf.code_action, "[a]ctions")
 map("n", "<leader><leader>", ":Neotree filesystem toggle left<CR>", "toggle neo-tree")
 
 -- None-ls
-map("n", "<leader>bf", vim.lsp.buf.format, "[f]ormat buffer")
+map("n", "<leader>cf", vim.lsp.buf.format, "[f]ormat")
 
 -- Navigate buffers
 map("n", "<leader>bn", ":bn<CR>", "[n]ext buffer")
@@ -55,4 +55,4 @@ map("n", "<leader>bp", ":bp<CR>", "[p]revious buffer")
 map("n", "<leader>fr", ":Telescope oldfiles<CR>", "[r]ecent files")
 map("n", "<leader>ff", ":Telescope find_files<CR>", "[f]ind files")
 map("n", "<leader>fg", ":Telescope live_grep<CR>", "[g]rep files")
-map("n", "<leader>fb", ":Telescope buffers<CR>", "[b]uffers")
+map("n", "<leader>bs", ":Telescope buffers<CR>", "[s]how buffers")
