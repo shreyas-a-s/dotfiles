@@ -18,5 +18,6 @@ return {
     window = {
       width = 25,
     },
+    hide_root_node = true,
   },
 }
