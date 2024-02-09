@@ -35,6 +35,9 @@ opt.clipboard = "unnamedplus"
 -- Save undo history
 opt.undofile = true
 
+-- Limit command history size
+opt.history = 50
+
 -- Case-insensitive searching UNLESS \C or capital in search
 opt.ignorecase = true
 opt.smartcase = true
