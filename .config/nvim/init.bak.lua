@@ -1,6 +1,3 @@
--- Enable mouse mode
-vim.o.mouse = 'a'
-
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noinsert,noselect'
 
