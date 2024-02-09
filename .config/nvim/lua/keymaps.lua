@@ -1,5 +1,6 @@
 -- Setting the leader key to a space character
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Make syntax simpler
 local function map(m, k, v)
