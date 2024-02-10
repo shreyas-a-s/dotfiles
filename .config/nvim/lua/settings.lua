@@ -1,6 +1,10 @@
 -- Local variable to simplify code
 local opt = vim.opt
 
+-- Disable netrw so that nvim-tree can take over
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Use 2 spaces instead of tabs for indentation
 opt.expandtab = true
 opt.tabstop = 2
