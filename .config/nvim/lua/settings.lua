@@ -11,6 +11,10 @@ opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
 
+-- Better buffer splitting
+opt.splitright = true
+opt.splitbelow = true
+
 -- Enable 24-bit colors
 opt.termguicolors = true
 
