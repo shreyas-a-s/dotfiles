@@ -5,10 +5,13 @@ return {
   },
   config = function()
     require("nvim-tree").setup({
-      view ={
+      view = {
         side = "left",
-        signcolumn = "no",
-        width = 25,
+        signcolumn = "auto",
+        width = 26,
+      },
+      renderer = {
+        root_folder_label = false,
       },
     })
   end,
