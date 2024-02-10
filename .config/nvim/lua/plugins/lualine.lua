@@ -7,12 +7,43 @@ return {
         theme = "onedark",
         component_separators = "│",
         section_separators = "",
+        disabled_filetypes = { "alpha" },
       },
       sections = {
+        lualine_b = { "branch" },
         lualine_c = {
           {
             "filename",
             path = 1,
+            symbols = {
+              modified = "●",
+              readonly = "",
+              unnamed = "",
+              newfile = "",
+            },
+          },
+        },
+        lualine_x = {
+          {
+            "encoding", fmt = function(str) return str:gsub("%l", string.upper) end
+          },
+        },
+        lualine_y = {
+          {
+            "progress", fmt = function(str) return str:gsub("%l", string.upper) end
+          },
+        },
+      },
+      inactive_sections = {
+        lualine_c = {
+          {
+            "filename",
+            symbols = {
+              modified = "●",
+              readonly = "",
+              unnamed = "",
+              newfile = "",
+            },
           },
         },
       },
