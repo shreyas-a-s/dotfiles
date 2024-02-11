@@ -9,8 +9,8 @@ end
 
 -- Window manipulation
 map("n", "<leader>wv", ":vsplit<CR>", "[v]ertical split")
-map("n", "<leader>wh", ":split<CR>", "[h]orizontal split")
-map("n", "<leader>wc", ":q<CR>", "[c]lose")
+map("n", "<leader>ws", ":split<CR>", "[s]plit")
+map("n", "<leader>wq", ":q<CR>", "[q]uit")
 
 -- Remap Redo
 map("n", "U", ":redo<CR>")
