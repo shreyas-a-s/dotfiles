@@ -3,9 +3,8 @@ return {
   event = "VeryLazy",
   init = function()
     vim.o.timeout = true
-    vim.o.timeoutlen = 300
+    vim.o.timeoutlen = 200
   end,
-  opts = {},
   config = function()
     local wk = require("which-key")
     wk.register({

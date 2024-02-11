@@ -38,7 +38,7 @@ opt.mouse = 'a'
 
 -- Decrease update time
 opt.updatetime = 250
-opt.timeoutlen = 300
+opt.timeoutlen = 200
 
 -- Sync clipboard between OS and Neovim.
 opt.clipboard = "unnamedplus"
