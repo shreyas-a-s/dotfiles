@@ -36,24 +36,16 @@ map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", "[p]review hunk")
 map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", "[t]oggle line blame")
 
 -- lsp-config
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-  callback = function(ev)
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-    local opts = { buffer = ev.buf }
-    vim.keymap.set('n', 'cD', vim.lsp.buf.declaration, opts, { desc = "[D]eclaration", silent = true })
-    vim.keymap.set('n', 'cd', vim.lsp.buf.definition, opts, { desc = "[D]efinition", silent = true })
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts, { desc = "[a]ction", silent = true })
-    vim.keymap.set('n', 'cr', vim.lsp.buf.references, opts, { desc = "[r]eferences", silent = true })
-    vim.keymap.set('n', 'cf', function()
-      vim.lsp.buf.format { async = true }
-    end, opts, { desc = "[f]ormat", silent = true })
-  end,
-})
+map("n", "K", vim.lsp.buf.hover)
+map("n", "<leader>cd", vim.lsp.buf.definition, "[d]efinition")
+map("n", "<leader>cr", vim.lsp.buf.references, "[r]eferences")
+map("n", "<leader>ca", vim.lsp.buf.code_action, "[a]ctions")
 
 -- Nvim-tree
 map("n", "<leader><leader>", ":NvimTreeToggle<CR>", "Toggle nvim-tree")
+
+-- None-ls
+map("n", "<leader>cf", vim.lsp.buf.format, "[f]ormat")
 
 -- Navigate buffers
 map("n", "<leader>bn", ":bn<CR>", "[n]ext buffer")
