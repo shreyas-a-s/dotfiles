@@ -1,8 +1,9 @@
 return {
-  "tiagovla/tokyodark.nvim",
+  "rebelot/kanagawa.nvim",
   lazy = false,
+  name = "kanagawa",
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme("tokyodark")
+    vim.cmd.colorscheme("kanagawa")
   end,
 }
