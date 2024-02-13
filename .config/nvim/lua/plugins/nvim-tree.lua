@@ -13,6 +13,10 @@ return {
       renderer = {
         root_folder_label = false,
       },
+      update_focused_file = {
+        enable = true,
+        update_cwd = true,
+      },
     })
   end,
 }
