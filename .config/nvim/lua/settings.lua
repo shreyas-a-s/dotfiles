@@ -53,6 +53,9 @@ opt.history = 50
 opt.ignorecase = true
 opt.smartcase = true
 
+-- Delete words containing '-' with fewer keystrokes
+vim.cmd("set iskeyword+=-")
+
 -- Highlight on yank
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
