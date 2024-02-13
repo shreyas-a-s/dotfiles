@@ -2,7 +2,7 @@ return {
   {
     "folke/neodev.nvim",
     opts = {},
-    config = function ()
+    config = function()
       require("neodev").setup()
     end,
   },
@@ -27,7 +27,16 @@ return {
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({ capabilities = capabilities })
+      lspconfig.lua_ls.setup({
+        capabilities = capabilities,
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" },
+            },
+          },
+        },
+      })
       lspconfig.html.setup({ capabilities = capabilities })
       lspconfig.eslint.setup({ capabilities = capabilities })
     end,
