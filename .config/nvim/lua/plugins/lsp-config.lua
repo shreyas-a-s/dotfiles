@@ -1,5 +1,12 @@
 return {
   {
+    "folke/neodev.nvim",
+    opts = {},
+    config = function ()
+      require("neodev").setup()
+    end,
+  },
+  {
     "williamboman/mason.nvim",
     lazy = false,
     config = function()
@@ -11,7 +18,7 @@ return {
     lazy = false,
     opts = {
       auto_install = true,
-      ensure_installed = {"lua_ls", "html", "eslint"},
+      ensure_installed = { "lua_ls", "html", "eslint" },
     },
   },
   {
