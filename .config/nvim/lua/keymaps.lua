@@ -39,7 +39,7 @@ map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", "[t]oggle line
 map("n", "K", vim.lsp.buf.hover)
 map("n", "<leader>cd", vim.lsp.buf.definition, "[d]efinition")
 map("n", "<leader>cr", vim.lsp.buf.references, "[r]eferences")
-map({"n","v"}, "<leader>ca", vim.lsp.buf.code_action, "[a]ctions")
+map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "[a]ctions")
 
 -- Nvim-tree
 map("n", "<leader><leader>", ":NvimTreeToggle<CR>", "Toggle nvim-tree")
@@ -60,3 +60,6 @@ map("n", "<leader>bs", ":Telescope buffers<CR>", "[s]how buffers")
 -- Stay in indent mode
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+
+-- Disable buffer content change when pasting in Visual mode
+map("v", "p", '"_dP"')
