@@ -4,7 +4,7 @@ vim.g.maplocalleader = " "
 
 -- Make syntax simpler
 local function map(mode, key, cmd, desc)
-  vim.keymap.set(mode, key, cmd, { desc = desc, silent = true })
+  vim.keymap.set(mode, key, cmd, { desc = desc, silent = true, noremap = true })
 end
 
 -- Window manipulation
@@ -56,3 +56,7 @@ map("n", "<leader>fr", ":Telescope oldfiles<CR>", "[r]ecent files")
 map("n", "<leader>ff", ":Telescope find_files<CR>", "[f]ind files")
 map("n", "<leader>fg", ":Telescope live_grep<CR>", "[g]rep files")
 map("n", "<leader>bs", ":Telescope buffers<CR>", "[s]how buffers")
+
+-- Stay in indent mode
+map("v", "<", "<gv")
+map("v", ">", ">gv")
