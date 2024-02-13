@@ -34,7 +34,7 @@ opt.signcolumn = "yes"
 opt.breakindent = true
 
 -- Enable mouse mode
-opt.mouse = 'a'
+opt.mouse = "a"
 
 -- Decrease update time
 opt.updatetime = 250
