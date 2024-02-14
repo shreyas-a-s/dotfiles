@@ -62,4 +62,4 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- Disable buffer content change when pasting in Visual mode
-map("v", "p", '"_dP"')
+map("v", "p", "P")
