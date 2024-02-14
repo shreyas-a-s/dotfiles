@@ -10,7 +10,6 @@ return {
         disabled_filetypes = { "alpha" },
       },
       sections = {
-        lualine_b = { "branch" },
         lualine_c = {
           {
             "filename",
@@ -37,7 +36,6 @@ return {
       inactive_sections = {
         lualine_c = {
           {
-            "filename",
             symbols = {
               modified = "●",
               readonly = "",
