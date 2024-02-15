@@ -53,6 +53,10 @@ opt.history = 50
 opt.ignorecase = true
 opt.smartcase = true
 
+-- Scrolloff
+opt.scrolloff = 4
+opt.sidescrolloff = 8
+
 -- Delete words containing '-' with fewer keystrokes
 vim.cmd("set iskeyword+=-")
 
