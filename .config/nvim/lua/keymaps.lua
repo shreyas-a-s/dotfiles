@@ -1,65 +1,71 @@
 -- Setting the leader key to a space character
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 -- Make syntax simpler
-local function map(mode, key, cmd, desc)
-  vim.keymap.set(mode, key, cmd, { desc = desc, silent = true, noremap = true })
-end
+local map = vim.keymap.set
 
 -- Window manipulation
-map("n", "<leader>wv", ":vsplit<CR>", "[v]ertical split")
-map("n", "<leader>ws", ":split<CR>", "[s]plit")
-map("n", "<leader>wq", ":q<CR>", "[q]uit")
+map("n", "<leader>wd", "<CMD>winCMD c<CR>", { desc = "Delete window", remap = true })
+map("n", "<leader>w-", "<CMD>winCMD s<CR>", { desc = "Split window below", remap = true })
+map("n", "<leader>w|", "<CMD>winCMD v<CR>", { desc = "Split window right", remap = true })
 
--- Remap Redo
-map("n", "U", ":redo<CR>")
+-- Redo
+map("n", "U", "<CMD>redo<CR>", { desc = "Redo" })
 
 -- Mimic shell movements
-map("i", "<C-a>", "<ESC>I")
-map("i", "<C-e>", "<ESC>A")
+map("i", "<C-a>", "<ESC>I", { desc = "Go to beginning of line" })
+map("i", "<C-e>", "<ESC>A", { desc = "Go to end of line" })
 
--- Navigate panes using vim motion keys
-map("n", "<C-k>", ":wincmd k<CR>")
-map("n", "<C-j>", ":wincmd j<CR>")
-map("n", "<C-h>", ":wincmd h<CR>")
-map("n", "<C-l>", ":wincmd l<CR>")
+-- Move to window using <ctrl> hjkl keys
+map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
+map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
+map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
+map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 
--- Navigate panes using arrow keys
-map("n", "<C-Up>", ":wincmd k<CR>")
-map("n", "<C-Down>", ":wincmd j<CR>")
-map("n", "<C-Left>", ":wincmd h<CR>")
-map("n", "<C-Right>", ":wincmd l<CR>")
+-- Move to window using the <ctrl> arrow keys
+map("n", "<C-Left>", "<C-w>h", { desc = "Go to left window", remap = true })
+map("n", "<C-Right>", "<C-w>j", { desc = "Go to lower window", remap = true })
+map("n", "<C-Up>", "<C-w>k", { desc = "Go to upper window", remap = true })
+map("n", "<C-Down>", "<C-w>l", { desc = "Go to right window", remap = true })
 
 -- Gitsigns
-map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", "[p]review hunk")
-map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", "[t]oggle line blame")
+map("n", "<leader>hp", "<CMD>Gitsigns preview_hunk<CR>", { desc = "Preview hunk" })
+map("n", "<leader>tb", "<CMD>Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle current line blame" })
 
--- lsp-config
-map("n", "K", vim.lsp.buf.hover)
-map("n", "<leader>cd", vim.lsp.buf.definition, "[d]efinition")
-map("n", "<leader>cr", vim.lsp.buf.references, "[r]eferences")
-map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "[a]ctions")
+-- lsp
+map("n", "<space>gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
+map("n", "<space>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+map("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
+map("n", "<space>gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
+map("n", "<space>gtd", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
+map("n", "<space>rn", vim.lsp.buf.rename, { desc = "Rename" })
+map({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
+map("n", "<space>gr", vim.lsp.buf.references, { desc = "Go to references" })
+map("n", "<space>cf", function() vim.lsp.buf.format { async = true } end, { desc = "Format code" })
 
--- Nvim-tree
-map("n", "<leader><leader>", ":NvimTreeToggle<CR>", "Toggle nvim-tree")
+-- File tree
+map("n", "<leader>e", "<CMD>NvimTreeToggle<CR>", { desc = "Toggle file tree" })
 
--- None-ls
-map("n", "<leader>cf", vim.lsp.buf.format, "[f]ormat")
+-- Navigate buffers using <ctrl> hl keys
+map("n", "<S-h>", "<CMD>bprevious<CR>", { desc = "Prev buffer" })
+map("n", "<S-l>", "<CMD>bnext<CR>", { desc = "Next buffer" })
 
--- Navigate buffers
-map("n", "<leader>bn", ":bn<CR>", "[n]ext buffer")
-map("n", "<leader>bp", ":bp<CR>", "[p]revious buffer")
+-- Navigate buffers using <ctrl> arrow keys
+map("n", "<S-Left>", "<CMD>bprevious<CR>", { desc = "Previous buffer" })
+map("n", "<S-Right>", "<CMD>bnext<CR>", { desc = "Next buffer" })
 
 -- Telescope
-map("n", "<leader>fr", ":Telescope oldfiles<CR>", "[r]ecent files")
-map("n", "<leader>ff", ":Telescope find_files<CR>", "[f]ind files")
-map("n", "<leader>fg", ":Telescope live_grep<CR>", "[g]rep files")
-map("n", "<leader>bs", ":Telescope buffers<CR>", "[s]how buffers")
+map("n", "<leader>fr", "<CMD>Telescope oldfiles<CR>", { desc = "Recent files" })
+map("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Find files" })
+map("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", { desc = "Live grep" })
+map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Find buffers" })
 
 -- Stay in indent mode
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- Disable buffer content change when pasting in Visual mode
-map("v", "p", "P")
+map("v", "p", "P", { desc = "Paste in visual mode" })
+
+-- Save file
+map({ "i", "x", "n", "s" }, "<C-s>", "<CMD>w<CR><ESC>", { desc = "Save file" })
