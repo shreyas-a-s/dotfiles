@@ -57,6 +57,9 @@ opt.smartcase = true
 opt.scrolloff = 4
 opt.sidescrolloff = 8
 
+-- Disable line wrap
+opt.wrap = false
+
 -- Delete words containing '-' with fewer keystrokes
 vim.cmd("set iskeyword+=-")
 
