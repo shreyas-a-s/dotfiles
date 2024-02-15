@@ -5,9 +5,9 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 -- Window manipulation
-map("n", "<leader>wd", "<CMD>winCMD c<CR>", { desc = "Delete window", remap = true })
-map("n", "<leader>w-", "<CMD>winCMD s<CR>", { desc = "Split window below", remap = true })
-map("n", "<leader>w|", "<CMD>winCMD v<CR>", { desc = "Split window right", remap = true })
+map("n", "<leader>wd", "<CMD>wincmd c<CR>", { desc = "Delete window", remap = true })
+map("n", "<leader>w-", "<CMD>wincmd s<CR>", { desc = "Split window below", remap = true })
+map("n", "<leader>w|", "<CMD>wincmd v<CR>", { desc = "Split window right", remap = true })
 
 -- Redo
 map("n", "U", "<CMD>redo<CR>", { desc = "Redo" })
@@ -33,15 +33,15 @@ map("n", "<leader>hp", "<CMD>Gitsigns preview_hunk<CR>", { desc = "Preview hunk"
 map("n", "<leader>tb", "<CMD>Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle current line blame" })
 
 -- lsp
+map("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
 map("n", "<space>gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
 map("n", "<space>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-map("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
 map("n", "<space>gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
 map("n", "<space>gtd", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
 map("n", "<space>rn", vim.lsp.buf.rename, { desc = "Rename" })
-map({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
 map("n", "<space>gr", vim.lsp.buf.references, { desc = "Go to references" })
 map("n", "<space>cf", function() vim.lsp.buf.format { async = true } end, { desc = "Format code" })
+map({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
 
 -- File tree
 map("n", "<leader>e", "<CMD>NvimTreeToggle<CR>", { desc = "Toggle file tree" })
