@@ -42,7 +42,7 @@ map("n", "<leader>cr", vim.lsp.buf.references, "[r]eferences")
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "[a]ctions")
 
 -- Nvim-tree
-map("n", "<leader><leader>", ":NvimTreeToggle<CR>", "Toggle nvim-tree")
+map("n", "<leader>e", ":NvimTreeToggle<CR>", "Toggle nvim-tree")
 
 -- None-ls
 map("n", "<leader>cf", vim.lsp.buf.format, "[f]ormat")
