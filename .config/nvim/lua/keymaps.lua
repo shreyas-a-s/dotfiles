@@ -24,9 +24,9 @@ map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 
 -- Move to window using the <ctrl> arrow keys
 map("n", "<C-Left>", "<C-w>h", { desc = "Go to left window", remap = true })
-map("n", "<C-Right>", "<C-w>j", { desc = "Go to lower window", remap = true })
+map("n", "<C-Down>", "<C-w>j", { desc = "Go to lower window", remap = true })
 map("n", "<C-Up>", "<C-w>k", { desc = "Go to upper window", remap = true })
-map("n", "<C-Down>", "<C-w>l", { desc = "Go to right window", remap = true })
+map("n", "<C-Right>", "<C-w>l", { desc = "Go to right window", remap = true })
 
 -- Gitsigns
 map("n", "<leader>hp", "<CMD>Gitsigns preview_hunk<CR>", { desc = "Preview hunk" })
