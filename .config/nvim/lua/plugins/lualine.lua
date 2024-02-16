@@ -2,6 +2,7 @@ return {
   "nvim-lualine/lualine.nvim",
   config = function()
     -- Function to show macro recording in lualine
+    -- Source: https://www.reddit.com/r/neovim/comments/xy0tu1/cmdheight0_recording_macros_message/
     local function show_macro_recording()
       local recording_register = vim.fn.reg_recording()
       if recording_register == "" then
