@@ -24,7 +24,12 @@ return {
         },
         lualine_x = {
           {
-            "encoding", fmt = function(str) return str:gsub("%l", string.upper) end
+            require("noice").api.statusline.mode.get,
+            cond = require("noice").api.statusline.mode.has,
+            color = { fg = "#ff9e64" },
+          },
+          {
+            "encoding", fmt = function(str) return str:gsub("%l", string.upper) end,
           },
         },
         lualine_y = {
