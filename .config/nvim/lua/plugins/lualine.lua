@@ -13,7 +13,7 @@ return {
     require("lualine").setup({
       options = {
         icons_enabled = false,
-        theme = "auto",
+        theme = "onedark",
         component_separators = "┊",
         section_separators = "",
         disabled_filetypes = { "alpha" },
