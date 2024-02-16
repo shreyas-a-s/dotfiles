@@ -8,6 +8,9 @@ vim.g.loaded_netrwPlugin = 1
 -- Speed up context commentstring loading
 vim.g.skip_ts_context_commentstring_module = true
 
+-- Disable cmdline
+opt.cmdheight = 0
+
 -- Use 2 spaces instead of tabs for indentation
 opt.expandtab = true
 opt.tabstop = 2
