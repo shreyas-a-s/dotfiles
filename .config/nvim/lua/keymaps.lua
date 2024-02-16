@@ -5,9 +5,9 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 -- Window manipulation
-map("n", "<leader>wq", "<CMD>quit<CR>", { desc = "Delete window", remap = true })
-map("n", "<leader>ws", "<CMD>split<CR>", { desc = "Split window below", remap = true })
-map("n", "<leader>wv", "<CMD>vsplit<CR>", { desc = "Split window right", remap = true })
+map("n", "<leader>wq", "<CMD>quit<CR>", { desc = "Quit", remap = true })
+map("n", "<leader>ws", "<CMD>split<CR>", { desc = "Split window horizontal", remap = true })
+map("n", "<leader>wv", "<CMD>vsplit<CR>", { desc = "Split window vertical", remap = true })
 
 -- Redo
 map("n", "U", "<CMD>redo<CR>", { desc = "Redo" })
