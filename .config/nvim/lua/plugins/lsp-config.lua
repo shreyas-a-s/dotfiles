@@ -18,7 +18,7 @@ return {
     lazy = false,
     opts = {
       auto_install = true,
-      ensure_installed = { "lua_ls", "html", "eslint", "bashls" },
+      ensure_installed = { "lua_ls", "html", "eslint" },
     },
   },
   {
@@ -39,7 +39,6 @@ return {
       })
       lspconfig.html.setup({ capabilities = capabilities })
       lspconfig.eslint.setup({ capabilities = capabilities })
-      lspconfig.bashls.setup({ capabilities = capabilities })
     end,
   },
 }
