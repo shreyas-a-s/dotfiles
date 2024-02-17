@@ -1,5 +1,8 @@
 return {
   "nvim-lualine/lualine.nvim",
+  dependencies = {
+    "arkav/lualine-lsp-progress",
+  },
   config = function()
     -- Function to show macro recording in lualine
     -- Source: https://www.reddit.com/r/neovim/comments/xy0tu1/cmdheight0_recording_macros_message/
@@ -33,6 +36,9 @@ return {
           },
         },
         lualine_x = {
+          {
+            "lsp_progress",
+          },
           {
             "macro-recording",
             fmt = show_macro_recording,
