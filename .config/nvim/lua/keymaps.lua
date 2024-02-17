@@ -30,11 +30,11 @@ map("n", "<leader>tb", "<CMD>Gitsigns toggle_current_line_blame<CR>", { desc = "
 -- lsp
 map("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
 map("n", "<space>gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
-map("n", "<space>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-map("n", "<space>gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
-map("n", "<space>gtd", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
+map("n", "<space>gd", "<CMD>Telescope lsp_definitions<CR>", { desc = "Go to definitions" })
+map("n", "<space>gi", "<CMD>Telescope lsp_implementations<CR>", { desc = "Go to implementations" })
+map("n", "<space>gtd", "<CMD>Telescope lsp_type_definitions<CR>", { desc = "Go to type definitions" })
 map("n", "<space>rn", vim.lsp.buf.rename, { desc = "Rename" })
-map("n", "<space>gr", vim.lsp.buf.references, { desc = "Go to references" })
+map("n", "<space>gr", "<CMD>Telescope lsp_references<CR>", { desc = "Go to references" })
 map("n", "<space>cf", function() vim.lsp.buf.format { async = true } end, { desc = "Format code" })
 map({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
 
