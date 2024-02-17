@@ -51,7 +51,7 @@ map("n", "<S-Right>", "<CMD>bnext<CR>", { desc = "Next buffer" })
 
 -- Telescope
 map("n", "<leader>fr", "<CMD>Telescope oldfiles<CR>", { desc = "Recent files" })
-map("n", "<leader><space>", "<CMD>Telescope find_files<CR>", { desc = "Find files" })
+map("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Find files" })
 map("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", { desc = "Live grep" })
 map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Find buffers" })
 
