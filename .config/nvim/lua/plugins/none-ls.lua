@@ -10,7 +10,9 @@ return {
     null_ls.setup({
       sources = {
         -- Lua
-        formatting.stylua,
+        formatting.stylua.with({
+          extra_args = { "--indent-type", "Spaces", "--indent-width", "2" },
+        }),
 
         -- Shell scripts
         diagnostics.shellcheck,
