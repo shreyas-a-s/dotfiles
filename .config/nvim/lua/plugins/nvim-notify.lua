@@ -3,7 +3,7 @@ return {
   config = function ()
     require("notify").setup({
       render = "minimal",
-      timeout = 100,
+      timeout = 500,
     })
     vim.notify = require("notify")
   end,
