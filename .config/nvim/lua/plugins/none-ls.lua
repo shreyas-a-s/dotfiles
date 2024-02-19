@@ -27,6 +27,9 @@ return {
         -- Web dev (html, js, css. etc.)
         diagnostics.eslint,
         formatting.prettier,
+
+        -- c, c# c++, json
+        formatting.clang_format,
       },
     })
   end,
