@@ -1,4 +1,4 @@
 return {
-  "j-hiu/fidget.nvim",
+  "j-hui/fidget.nvim",
   opts = {},
 }
