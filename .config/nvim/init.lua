@@ -1,3 +1,6 @@
+-- Make plugins loading faster
+vim.loader.enable()
+
 -- Initialise lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
