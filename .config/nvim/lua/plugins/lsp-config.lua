@@ -13,7 +13,7 @@ return {
     lazy = false,
     opts = {
       auto_install = true,
-      ensure_installed = { "lua_ls", "html", "eslint", "bashls" },
+      ensure_installed = { "lua_ls", "html", "eslint", "bashls", "jedi_language_server" },
     },
   },
   {
@@ -35,6 +35,7 @@ return {
       lspconfig.html.setup({ capabilities = capabilities })
       lspconfig.eslint.setup({ capabilities = capabilities })
       lspconfig.bashls.setup({ capabilities = capabilities })
+      lspconfig.jedi_language_server.setup({ capabilities = capabilities })
     end,
   },
 }
