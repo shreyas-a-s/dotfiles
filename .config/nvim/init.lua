@@ -1,4 +1,4 @@
--- Make plugins loading faster
+-- Make plugin loading faster
 vim.loader.enable()
 
 -- Initialise lazy.nvim
