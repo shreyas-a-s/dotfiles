@@ -4,6 +4,9 @@ vim.g.mapleader = " "
 -- Make syntax simpler
 local map = vim.keymap.set
 
+-- Disable space in normal mode and visual mode
+map({"n", "v"}, "<space>", "<Nop>", { silent = true })
+
 -- Redo
 map("n", "U", "<CMD>redo<CR>", { desc = "Redo" })
 
