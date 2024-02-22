@@ -63,6 +63,12 @@ opt.sidescrolloff = 8
 -- Disable line wrap
 opt.wrap = false
 
+-- Enable cursor line
+opt.cursorline = true
+
+-- Highlight line number of current line
+opt.cursorlineopt = "number"
+
 -- Delete words containing '-' with fewer keystrokes
 vim.cmd("set iskeyword+=-")
 
