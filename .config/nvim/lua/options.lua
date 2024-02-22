@@ -69,6 +69,9 @@ opt.cursorline = true
 -- Highlight line number of current line
 opt.cursorlineopt = "number"
 
+-- We don't need to see things like -- INSERT -- anymore
+opt.showmode = false
+
 -- Delete words containing '-' with fewer keystrokes
 vim.cmd("set iskeyword+=-")
 
