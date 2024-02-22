@@ -19,6 +19,8 @@ return {
         cmdline = false,
         search_down = false,
         search_up = false,
+        lua = false,
+        help = false,
       },
     },
     lsp = {
