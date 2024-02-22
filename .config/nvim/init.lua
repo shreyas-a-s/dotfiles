@@ -16,10 +16,11 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+
+-- Configure lazy.nvim
 local opts = {
-  change_detection = {
-    enabled = false,
-  },
+  ui = { border = "rounded" },
+  change_detection = { enabled = false },
 }
 
 -- Source modules
