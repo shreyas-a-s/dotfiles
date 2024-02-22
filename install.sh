@@ -27,7 +27,7 @@ xargs -a "./components/files-and-folders-to-remove.txt" rm -rf
 
 # Actual setup of dotfiles
 cd .. || exit
-stow --adopt -vt ~ $(basename $SCRIPT_DIR) --dotfiles --ignore='install.sh|scripts|components'
+stow --adopt -vt ~ "$(basename "$SCRIPT_DIR")" --dotfiles --ignore='install.sh|scripts|components'
 
 # Restore files if they were moved
 git --git-dir="$SCRIPT_DIR/.git/" --work-tree="$SCRIPT_DIR" restore .
