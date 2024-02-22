@@ -2,8 +2,22 @@ return {
   "nvimtools/none-ls.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    "williamboman/mason.nvim",
   },
   config = function()
+    require("mason-tool-installer").setup({
+      ensure_installed = {
+        "stylua",
+        "shellcheck",
+        "beautysh",
+        "black",
+        "isort",
+        "eslint",
+        "prettier",
+        "clang-format"
+      },
+    })
     local null_ls = require("null-ls")
     local diagnostics = null_ls.builtins.diagnostics
     local formatting = null_ls.builtins.formatting
