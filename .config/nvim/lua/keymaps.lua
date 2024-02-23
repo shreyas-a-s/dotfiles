@@ -42,7 +42,7 @@ map("n", "<leader>cf", function() vim.lsp.buf.format { async = true } end, { des
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
 
 -- File tree
-map("n", "<leader><space>", "<CMD>NvimTreeToggle<CR>", { desc = "Toggle file tree" })
+map("n", "<leader>e", "<CMD>NvimTreeToggle<CR>", { desc = "Toggle file tree" })
 
 -- Navigate buffers using <ctrl> hl keys
 map("n", "<S-h>", "<CMD>bprevious<CR>", { desc = "Prev buffer" })
