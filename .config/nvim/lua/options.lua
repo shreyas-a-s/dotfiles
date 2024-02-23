@@ -63,12 +63,6 @@ opt.sidescrolloff = 8
 -- Disable line wrap
 opt.wrap = false
 
--- Enable cursor line
-opt.cursorline = true
-
--- Highlight line number of current line
-opt.cursorlineopt = "number"
-
 -- We don't need to see things like -- INSERT -- anymore
 opt.showmode = false
 
