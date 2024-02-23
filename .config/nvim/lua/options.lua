@@ -40,7 +40,7 @@ opt.breakindent = true
 opt.mouse = "a"
 
 -- Decrease update time
-opt.updatetime = 250
+opt.updatetime = 100
 opt.timeoutlen = 1000
 
 -- Sync clipboard between OS and Neovim.
