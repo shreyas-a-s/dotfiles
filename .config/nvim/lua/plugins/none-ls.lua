@@ -13,7 +13,7 @@ return {
         "beautysh",
         "black",
         "isort",
-        "eslint",
+        "eslint_d",
         "prettier",
         "clang-format"
       },
@@ -39,7 +39,7 @@ return {
         formatting.isort,
 
         -- Web dev (html, js, css. etc.)
-        diagnostics.eslint,
+        diagnostics.eslint_d,
         formatting.prettier,
 
         -- c, c# c++, json
