@@ -59,6 +59,7 @@ return {
             },
           },
         },
+        lualine_x = {},
       },
     })
   end,
