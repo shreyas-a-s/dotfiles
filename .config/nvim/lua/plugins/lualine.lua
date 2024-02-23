@@ -11,15 +11,24 @@ return {
       },
       sections = {
         lualine_a = {
-          "branch"
+          {
+            "mode",
+            fmt = function(str)
+              return str:sub(1,1)
+            end,
+          },
         },
         lualine_b = {
-          "diagnostics",
-        },
-        lualine_c = {
+          {
+            "branch"
+          },
+          {
+            "diagnostics",
+          },
           {
             "filename",
             path = 1,
+            color = { fg = "#99B3FF" },
             symbols = {
               modified = "●",
               readonly = "",
@@ -28,11 +37,12 @@ return {
             },
           },
         },
+        lualine_c = {},
         lualine_x = {
           {
             require("noice").api.statusline.mode.get,
             cond = require("noice").api.statusline.mode.has,
-            color = { fg = "#ff9e64" },
+            color = { fg = "#99B3FF" },
           },
         },
         lualine_y = {
