@@ -10,6 +10,12 @@ return {
         disabled_filetypes = { "alpha" },
       },
       sections = {
+        lualine_a = {
+          "branch"
+        },
+        lualine_b = {
+          "diagnostics",
+        },
         lualine_c = {
           {
             "filename",
