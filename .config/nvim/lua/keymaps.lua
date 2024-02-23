@@ -26,10 +26,6 @@ map("n", "<C-Down>", "<C-w>j", { desc = "Go to lower window", remap = true })
 map("n", "<C-Up>", "<C-w>k", { desc = "Go to upper window", remap = true })
 map("n", "<C-Right>", "<C-w>l", { desc = "Go to right window", remap = true })
 
--- Gitsigns
-map("n", "<leader>hp", "<CMD>Gitsigns preview_hunk<CR>", { desc = "Preview hunk" })
-map("n", "<leader>tb", "<CMD>Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle current line blame" })
-
 -- File tree
 map("n", "<leader>e", "<CMD>NvimTreeToggle<CR>", { desc = "Toggle file tree" })
 
