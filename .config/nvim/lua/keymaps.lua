@@ -30,17 +30,6 @@ map("n", "<C-Right>", "<C-w>l", { desc = "Go to right window", remap = true })
 map("n", "<leader>hp", "<CMD>Gitsigns preview_hunk<CR>", { desc = "Preview hunk" })
 map("n", "<leader>tb", "<CMD>Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle current line blame" })
 
--- lsp
-map("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
-map("n", "<leader>gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
-map("n", "<leader>gd", "<CMD>Telescope lsp_definitions<CR>", { desc = "Go to definitions" })
-map("n", "<leader>gi", "<CMD>Telescope lsp_implementations<CR>", { desc = "Go to implementations" })
-map("n", "<leader>gtd", "<CMD>Telescope lsp_type_definitions<CR>", { desc = "Go to type definitions" })
-map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
-map("n", "<leader>gr", "<CMD>Telescope lsp_references<CR>", { desc = "Go to references" })
-map("n", "<leader>cf", function() vim.lsp.buf.format { async = true } end, { desc = "Format code" })
-map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
-
 -- File tree
 map("n", "<leader>e", "<CMD>NvimTreeToggle<CR>", { desc = "Toggle file tree" })
 
@@ -53,9 +42,9 @@ map("n", "<S-Left>", "<CMD>bprevious<CR>", { desc = "Previous buffer" })
 map("n", "<S-Right>", "<CMD>bnext<CR>", { desc = "Next buffer" })
 
 -- Telescope
-map("n", "<leader>fr", "<CMD>Telescope oldfiles<CR>", { desc = "Recent files" })
+map("n", "<leader>fr", "<CMD>Telescope oldfiles<CR>", { desc = "Find recent files" })
 map("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Find files" })
-map("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", { desc = "Live grep" })
+map("n", "<leader>ft", "<CMD>Telescope live_grep<CR>", { desc = "Find text" })
 map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Find buffers" })
 
 -- Stay in indent mode
