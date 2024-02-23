@@ -3,8 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
-      local config = require("nvim-treesitter.configs")
-      config.setup({
+      require("nvim-treesitter.configs").setup({
         auto_install = true,
         ensure_installed = {
           "bash",
@@ -29,12 +28,8 @@ return {
           "ssh_config",
           "toml",
         },
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = true,
-        },
+        highlight = { enable = true },
         indent = { enable = true },
-        autopairs = { enable = true },
       })
     end,
   },
