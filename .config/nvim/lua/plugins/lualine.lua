@@ -28,11 +28,13 @@ return {
             cond = require("noice").api.statusline.mode.has,
             color = { fg = "#ff9e64" },
           },
+        },
+        lualine_y = {
           {
             "encoding", fmt = function(str) return str:gsub("%l", string.upper) end,
           },
         },
-        lualine_y = {
+        lualine_z = {
           {
             "progress", fmt = function(str) return str:gsub("%l", string.upper) end
           },
