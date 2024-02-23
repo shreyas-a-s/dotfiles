@@ -23,6 +23,9 @@ return {
         help = false,
       },
     },
+    messages = {
+      view_search = false,
+    },
     lsp = {
       progress = {
         enabled = false,
