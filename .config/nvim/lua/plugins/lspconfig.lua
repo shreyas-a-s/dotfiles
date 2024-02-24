@@ -50,11 +50,6 @@ return {
       map("gl", "<CMD>lua vim.diagnostic.open_float()<CR>", "Diagnostics open float")
     end
 
-    -- mason-lspconfig requires that these setup functions are called in this order
-    -- before setting up the servers.
-    require("mason").setup()
-    require("mason-lspconfig").setup()
-
     -- Enable the following language servers
     local servers = {
       pyright = {},
