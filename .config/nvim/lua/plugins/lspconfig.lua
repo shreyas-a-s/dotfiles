@@ -16,7 +16,10 @@ return {
       bashls = {},
       lua_ls = {
         Lua = {
-          diagnostics = { globals = { "vim" } },
+          diagnostics = {
+            globals = { "vim" },
+            disable = { "missing-fields" },
+          },
           workspace = { checkThirdParty = false },
         },
         jsonls = {
