@@ -5,5 +5,17 @@ return {
   opts = {
     indent = { char = "┊" },
     scope = { enabled = false },
+    exclude = {
+      filetypes = {
+        "help",
+        "startify",
+        "dashboard",
+        "lazy",
+        "neogitstatus",
+        "NvimTree",
+        "Trouble",
+        "text",
+      },
+    },
   },
 }
