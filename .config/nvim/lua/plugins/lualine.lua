@@ -24,6 +24,7 @@ return {
           },
           {
             "diagnostics",
+            icons_enabled = true,
           },
           {
             "filename",
