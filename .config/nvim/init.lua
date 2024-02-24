@@ -19,6 +19,9 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Configure lazy.nvim
 local opts = {
+  install = {
+    colorscheme = { "darkplus", "default" },
+  },
   ui = { border = "rounded" },
   change_detection = { enabled = false },
 }
