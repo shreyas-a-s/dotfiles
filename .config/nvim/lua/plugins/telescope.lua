@@ -19,5 +19,12 @@ return {
     })
     require("telescope").load_extension("ui-select")
     require("telescope").load_extension("fzf")
+    require("which-key").register({
+      ["<leader>bb"] = { "<CMD>Telescope buffers previewer=false<CR>", "Find buffers" },
+      ["<leader>ff"] = { "<CMD>Telescope find_files previewer=false<CR>", "Find files" },
+      ["<leader>ft"] = { "<CMD>Telescope live_grep<CR>", "Find Text" },
+      ["<leader>fh"] = { "<CMD>Telescope help_tags previewer=false<CR>", "Help" },
+      ["<leader>fr"] = { "<CMD>Telescope oldfiles previewer=false<CR>", "Find recent files" },
+    })
   end,
 }

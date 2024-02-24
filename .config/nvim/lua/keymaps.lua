@@ -26,6 +26,65 @@ map("n", "<C-Down>", "<C-w>j", { desc = "Go to lower window", remap = true })
 map("n", "<C-Up>", "<C-w>k", { desc = "Go to upper window", remap = true })
 map("n", "<C-Right>", "<C-w>l", { desc = "Go to right window", remap = true })
 
+-- Gitsigns navigation
+map({ 'n', 'v' }, ']c', "<CMD>Gitsigns next_hunk()<CR>", { expr = true, desc = 'Git: Jump to next hunk' })
+map({ 'n', 'v' }, '[c', "<CMD>Gitsigns prev_hunk()<CR>", { expr = true, desc = 'Git: Jump to previous hunk' })
+
+-- Gitsigns actions (visual mode)
+map('v', '<leader>hs', "<CMD>Gitsigns stage_hunk { vim.fn.line '.', vim.fn.line 'v' }<CR>", { desc = 'Git: Stage hunk' })
+map('v', '<leader>hr', "<CMD>Gitsigns reset_hunk { vim.fn.line '.', vim.fn.line 'v' }<CR>", { desc = 'Git: Reset hunk' })
+
+-- Gitsigns actions (normal mode)
+map('n', '<leader>hs', "<CMD>Gitsigns stage_hunk<CR>", { desc = 'Git: Stage hunk' })
+map('n', '<leader>hr', "<CMD>Gitsigns reset_hunk<CR>", { desc = 'Git: Reset hunk' })
+map('n', '<leader>hS', "<CMD>Gitsigns stage_buffer<CR>", { desc = 'Git: Stage buffer' })
+map('n', '<leader>hu', "<CMD>Gitsigns undo_stage_hunk<CR>", { desc = 'Git: Undo stage hunk' })
+map('n', '<leader>hR', "<CMD>Gitsigns reset_buffer<CR>", { desc = 'Git: Reset buffer' })
+map('n', '<leader>hp', "<CMD>Gitsigns preview_hunk<CR>", { desc = 'Git: Preview hunk' })
+map('n', '<leader>hb', "<CMD>Gitsigns blame_line { full = false }<CR>", { desc = 'Git: Blame line' })
+map('n', '<leader>hd', "<CMD>Gitsigns diffthis<CR>", { desc = 'Git: Diff against index' })
+map('n', '<leader>hD', "<CMD>Gitsigns diffthis '~'<CR>", { desc = 'Git: Diff against last commit' })
+
+-- Gitsigns toggles
+map('n', '<leader>tb', "<CMD>Gitsigns toggle_current_line_blame<CR>", { desc = 'Git: Toggle blame line' })
+map('n', '<leader>td', "<CMD>Gitsigns toggle_deleted<CR>", { desc = 'Git: Toggle show deleted' })
+
+-- Lsp
+map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
+map("n", "<leader>ca", function()
+  vim.lsp.buf.code_action({ context = { only = { "quickfix", "refactor", "source" } } })
+end, { desc = "Code actions" })
+
+-- Lsp Goto
+map("n", "gd", "<CMD>Telescope lsp_definitions", { desc = "Goto definition" })
+map("n", "gr", "<CMD>Telescope lsp_references", { desc = "Goto references" })
+map("n", "gI", "<CMD>Telescope lsp_implementations", { desc = "Goto implementation" })
+map("n", "gD", vim.lsp.buf.declaration, { desc = "Goto declaration" })
+map("n", "<leader>D", "<CMD>Telescope lsp_type_definitions", { desc = "Type definition" })
+
+-- Lsp symbols
+map("n", "<leader>ds", "<CMD>Telescope lsp_document_symbols", { desc = "Document symbols" })
+map("n", "<leader>ws", "<CMD>Telescope lsp_dynamic_workspace_symbols", { desc = "Workspace symbols" })
+
+-- Hover documentation
+map("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
+map("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature documentation" })
+
+-- Lesser used LSP functionality
+map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, { desc = "Workspace add folder" })
+map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, { desc = "Workspace remove folder" })
+map("n", "<leader>wl", function()
+  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+end, { desc = "Workspace list folders" })
+
+-- Format current buffer with LSP
+map({"n", "v"}, "<leader>cf", function()
+  vim.lsp.buf.format()
+end, { desc = "Format current buffer" })
+
+-- Open diagnostic menu in float
+map("n", "gl", "<CMD>lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostics open float" })
+
 -- File tree
 map("n", "<leader>e", "<CMD>NvimTreeToggle<CR>", { desc = "Explorer" })
 
