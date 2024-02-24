@@ -1,5 +1,8 @@
 ### GLOBAL SETTINGS ###
 
+# Set command timeout to a higher value to prevent error 'Executing command "x" timed out'
+command_timeout = 1000
+
 # Set prompt format
 format = """
 $directory\
