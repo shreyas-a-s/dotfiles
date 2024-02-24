@@ -70,11 +70,8 @@ opt.showmode = false
 vim.cmd("set iskeyword+=-")
 
 -- Highlight on yank
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
-vim.api.nvim_create_autocmd("TextYankPost", {
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   callback = function()
-    vim.highlight.on_yank()
+    vim.highlight.on_yank { higroup = "Visual" }
   end,
-  group = highlight_group,
-  pattern = "*",
 })
