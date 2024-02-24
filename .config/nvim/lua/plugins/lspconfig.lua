@@ -1,5 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     { "williamboman/mason.nvim", config = true },
     "williamboman/mason-lspconfig.nvim",
@@ -28,6 +29,7 @@ return {
       map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "Document symbols")
       map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Workspace symbols")
 
+      -- Hover documentation
       map("K", vim.lsp.buf.hover, "Hover documentation")
       map("<C-k>", vim.lsp.buf.signature_help, "Signature documentation")
 
@@ -43,6 +45,9 @@ return {
       map("<leader>cf", function()
         vim.lsp.buf.format()
       end, "Format current buffer")
+
+      -- Create keymap to open diagnostic menu in float
+      map("gl", "<CMD>lua vim.diagnostic.open_float()<CR>", "Diagnostics open float")
     end
 
     -- mason-lspconfig requires that these setup functions are called in this order

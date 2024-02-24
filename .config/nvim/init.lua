@@ -29,4 +29,5 @@ local opts = {
 -- Source modules
 require("options")
 require("keymaps")
+require("diagnostics")
 require("lazy").setup("plugins", opts)
