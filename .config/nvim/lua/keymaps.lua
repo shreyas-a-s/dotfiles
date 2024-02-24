@@ -56,15 +56,15 @@ map("n", "<leader>ca", function()
 end, { desc = "Code actions" })
 
 -- Lsp Goto
-map("n", "gd", "<CMD>Telescope lsp_definitions", { desc = "Goto definition" })
-map("n", "gr", "<CMD>Telescope lsp_references", { desc = "Goto references" })
-map("n", "gI", "<CMD>Telescope lsp_implementations", { desc = "Goto implementation" })
+map("n", "gd", "<CMD>Telescope lsp_definitions<CR>", { desc = "Goto definition" })
+map("n", "gr", "<CMD>Telescope lsp_references<CR>", { desc = "Goto references" })
+map("n", "gI", "<CMD>Telescope lsp_implementations<CR>", { desc = "Goto implementation" })
 map("n", "gD", vim.lsp.buf.declaration, { desc = "Goto declaration" })
-map("n", "<leader>D", "<CMD>Telescope lsp_type_definitions", { desc = "Type definition" })
+map("n", "<leader>D", "<CMD>Telescope lsp_type_definitions<CR>", { desc = "Type definition" })
 
 -- Lsp symbols
-map("n", "<leader>ds", "<CMD>Telescope lsp_document_symbols", { desc = "Document symbols" })
-map("n", "<leader>ws", "<CMD>Telescope lsp_dynamic_workspace_symbols", { desc = "Workspace symbols" })
+map("n", "<leader>ds", "<CMD>Telescope lsp_document_symbols<CR>", { desc = "Document symbols" })
+map("n", "<leader>ws", "<CMD>Telescope lsp_dynamic_workspace_symbols<CR>", { desc = "Workspace symbols" })
 
 -- Hover documentation
 map("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
