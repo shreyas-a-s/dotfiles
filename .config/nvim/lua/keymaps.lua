@@ -27,7 +27,7 @@ map("n", "<C-Up>", "<C-w>k", { desc = "Go to upper window", remap = true })
 map("n", "<C-Right>", "<C-w>l", { desc = "Go to right window", remap = true })
 
 -- File tree
-map("n", "<leader>e", "<CMD>NvimTreeToggle<CR>", { desc = "Toggle file tree" })
+map("n", "<leader>e", "<CMD>NvimTreeToggle<CR>", { desc = "Explorer" })
 
 -- Navigate buffers using <ctrl> hl keys
 map("n", "<S-h>", "<CMD>bprevious<CR>", { desc = "Prev buffer" })
