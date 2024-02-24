@@ -41,7 +41,7 @@ map("n", "<S-Right>", "<CMD>bnext<CR>", { desc = "Next buffer" })
 map("n", "<leader>fr", "<CMD>Telescope oldfiles<CR>", { desc = "Find recent files" })
 map("n", "<leader>ff", "<CMD>Telescope find_files<CR>", { desc = "Find files" })
 map("n", "<leader>ft", "<CMD>Telescope live_grep<CR>", { desc = "Find text" })
-map("n", "<leader>fb", "<CMD>Telescope buffers<CR>", { desc = "Find buffers" })
+map("n", "<leader>bb", "<CMD>Telescope buffers<CR>", { desc = "Find buffers" })
 
 -- Stay in indent mode
 map("v", "<", "<gv")
