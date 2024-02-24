@@ -4,7 +4,18 @@ return {
   dependencies = {
     { "williamboman/mason.nvim", config = true },
     "williamboman/mason-lspconfig.nvim",
-    { "j-hui/fidget.nvim", opts = {} },
+    {
+      "j-hui/fidget.nvim",
+      opts = {
+        notification = {
+          window = {
+            normal_hl = "CursorLineNr", -- Base highlight group in the notification window
+            border = "rounded", -- Border around the notification window
+            x_padding = 0, -- Padding from right edge of window boundary
+          },
+        },
+      },
+    },
     "folke/neodev.nvim",
   },
   config = function()
