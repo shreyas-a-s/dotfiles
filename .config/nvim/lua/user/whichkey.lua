@@ -8,6 +8,7 @@ function M.config()
     v = { "<CMD>vsplit<CR>", "Split" },
     b = { name = "Buffers" },
     c = { name = "Code" },
+    d = { name = "Diagnostics" },
     f = { name = "Find" },
     g = { name = "Git" },
     h = { name = "Git hunk" },
@@ -31,6 +32,9 @@ function M.config()
         z = false,
         g = false,
       },
+    },
+    key_labels = {
+      ["<space>"] = "space",
     },
     icons = {
       group = "",
