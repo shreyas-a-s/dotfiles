@@ -46,7 +46,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 
 -- When entering a window/buffer, ensure that buffer's content is up to date with any changes made outside of Neovim
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-  pattern = { "*" },
+  pattern = { "!vim" },
   callback = function()
     vim.cmd("checktime")
   end,
