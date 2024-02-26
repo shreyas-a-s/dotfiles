@@ -21,7 +21,9 @@ function M.config()
       formatting.shfmt.with({
         extra_args = { "-i", "2" },
       }),
-      formatting.black,
+      formatting.black.with({
+        extra_args = { "--fast" },
+      }),
       formatting.isort,
       null_ls.builtins.completion.spell,
     },
