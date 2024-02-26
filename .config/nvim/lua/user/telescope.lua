@@ -9,7 +9,7 @@ local M = {
 function M.config()
   require("which-key").register({
     ["<leader>fb"] = { "<CMD>Telescope buffers<CR>", "Buffers" },
-    ["<leader>fg"] = { "<CMD>Telescope git_branches<CR>", "Checkout branch" },
+    ["<leader>fg"] = { "<CMD>Telescope git_branches<CR>", "Git Checkout branch" },
     ["<leader>ff"] = { "<CMD>Telescope find_files<CR>", "Find files" },
     ["<leader>fp"] = { "<CMD>Telescope projects theme=dropdown<CR>", "Projects" },
     ["<leader>ft"] = { "<CMD>Telescope live_grep<CR>", "Find Text" },
