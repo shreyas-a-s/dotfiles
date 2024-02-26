@@ -33,6 +33,12 @@ function M.config()
         replace = true,
       },
     },
+    routes = {
+      {
+        filter = { event = "msg_show", find = "search hit" },
+        opts = { skip = true },
+      },
+    },
   })
 end
 
