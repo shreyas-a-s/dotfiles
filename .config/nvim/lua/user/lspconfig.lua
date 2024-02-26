@@ -45,7 +45,7 @@ function M.config()
     ["<leader>li"] = { "<CMD>LspInfo<CR>", "Info" },
     ["<leader>lh"] = { "<CMD>lua require('user.lspconfig').toggle_inlay_hints()<CR>", "Hints" },
     ["<leader>ll"] = { "<CMD>lua vim.lsp.codelens.run()<CR>", "CodeLens Actions" },
-    -- ["<leader>lr"] = { "<CMD>lua vim.lsp.buf.rename()<CR>", "Rename" },
+    ["<leader>lr"] = { "<CMD>lua vim.lsp.buf.rename()<CR>", "Rename" },
     ["<leader>df"] = { "<CMD>lua vim.diagnostic.open_float()<CR>", "Diagnostics Open Float" },
     ["<leader>dj"] = { "<CMD>lua vim.diagnostic.goto_next()<CR>", "Next Diagnostic" },
     ["<leader>dk"] = { "<CMD>lua vim.diagnostic.goto_prev()<CR>", "Prev Diagnostic" },
