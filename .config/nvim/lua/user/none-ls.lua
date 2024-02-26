@@ -10,18 +10,16 @@ function M.config()
   local diagnostics = null_ls.builtins.diagnostics
 
   null_ls.setup({
-    debug = false,
     sources = {
       formatting.stylua.with({
         extra_args = { "--indent-type", "Spaces", "--indent-width", "2" },
       }),
-      formatting.prettier,
-      formatting.black,
-      formatting.isort,
       formatting.prettier.with({
         extra_filetypes = { "toml" },
         extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
       }),
+      formatting.black,
+      formatting.isort,
       null_ls.builtins.completion.spell,
     },
   })
