@@ -80,7 +80,12 @@ function M.config()
 
       colorscheme = {
         theme = "dropdown",
-        enable_preview = true,
+        previewer = false,
+      },
+
+      help_tags = {
+        theme = "dropdown",
+        previewer = false,
       },
 
       lsp_references = {
