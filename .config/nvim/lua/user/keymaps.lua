@@ -41,7 +41,7 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Disable overwriting register content when pasting in visual mode
-keymap("x", "p", [["_dP]])
+keymap("x", "p", "P")
 
 -- Remap for dealing with word wrap
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
