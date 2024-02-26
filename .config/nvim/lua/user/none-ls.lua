@@ -20,6 +20,7 @@ function M.config()
       }),
       formatting.black,
       formatting.isort,
+      formatting.shfmt,
       null_ls.builtins.completion.spell,
     },
   })
