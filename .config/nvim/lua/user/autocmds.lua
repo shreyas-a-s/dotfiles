@@ -1,3 +1,4 @@
+-- Disable automatic continuation of comments when pressing enter
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   callback = function()
     vim.cmd("set formatoptions-=cro")
@@ -29,18 +30,21 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+-- Don't open command-window ever
 vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
   callback = function()
     vim.cmd("quit")
   end,
 })
 
+-- Balance sizes of all windows when a window is resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
   callback = function()
     vim.cmd("tabdo wincmd =")
   end,
 })
 
+-- When entering a window/buffer, ensure that buffer's content is up to date with any changes made outside of Neovim
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   pattern = { "*" },
   callback = function()
@@ -64,6 +68,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+-- Make luasnip better
 vim.api.nvim_create_autocmd({ "CursorHold" }, {
   callback = function()
     local status_ok, luasnip = pcall(require, "luasnip")
