@@ -51,7 +51,13 @@ function M.config()
       },
 
       live_grep = {
-        theme = "ivy",
+        theme = "dropdown",
+        previewer = false,
+      },
+
+      git_branches = {
+        theme = "dropdown",
+        previewer = false,
       },
 
       buffers = {
