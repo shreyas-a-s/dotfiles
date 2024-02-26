@@ -38,6 +38,10 @@ function M.config()
         filter = { event = "msg_show", find = "search hit" },
         opts = { skip = true },
       },
+      {
+        filter = { event = "msg_show", find = "No lines in buffer" },
+        opts = { skip = true },
+      },
     },
   })
 end
