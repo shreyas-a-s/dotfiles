@@ -21,12 +21,14 @@ function M.config()
         },
       },
       lualine_b = {
-        { "branch" },
+        { "branch", color = { bg = "#373737" } },
+      },
+      lualine_c = {
         { "diagnostics", icons_enabled = true },
         {
           "filename",
           path = 1,
-          color = { fg = "#CACFD2" },
+          color = { fg = "#A4A4A4" },
           symbols = {
             modified = "●",
             readonly = "",
@@ -35,19 +37,20 @@ function M.config()
           },
         },
       },
-      lualine_c = {},
-      lualine_x = {},
-      lualine_y = {
+      lualine_x = {
         {
           require("noice").api.status.mode.get,
           cond = require("noice").api.status.mode.has,
           color = { fg = "#FF9E64" },
         },
+      },
+      lualine_y = {
         {
           "encoding",
           fmt = function(str)
             return str:gsub("%l", string.upper)
           end,
+          color = { bg = "#393D3D" },
         },
       },
       lualine_z = {
