@@ -44,5 +44,8 @@ keymap("v", ">", ">gv", opts)
 keymap("x", "p", "P")
 
 -- Remap for dealing with word wrap
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- Toggle line wrap
+keymap("n", "<leader>w", "<CMD>lua vim.wo.wrap = not vim.wo.wrap<CR>")
