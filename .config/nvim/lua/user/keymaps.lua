@@ -5,6 +5,10 @@ keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Increment/decrement number under cursor
+keymap("n", "+", "<C-a>")
+keymap("n", "-", "<C-x>")
+
 -- Redo
 keymap("n", "U", "<CMD>redo<CR>", { desc = "Redo" })
 
