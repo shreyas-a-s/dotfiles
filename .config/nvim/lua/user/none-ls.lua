@@ -18,9 +18,11 @@ function M.config()
         extra_filetypes = { "toml" },
         extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
       }),
+      formatting.shfmt.with({
+        extra_args = { "-i", "2" },
+      }),
       formatting.black,
       formatting.isort,
-      formatting.shfmt,
       null_ls.builtins.completion.spell,
     },
   })
