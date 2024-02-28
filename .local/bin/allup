@@ -24,4 +24,3 @@ fi
 [ "$(command -v nix-channel)" ] && pt "UPDATING - NIXOS" && sudo nixos-rebuild switch --upgrade --log-format bar-with-logs
 [ "$(command -v dnf)" ] && pt "UPDATING - DNF PACKAGES" && sudo dnf upgrade -y
 [ -f "$HOME"/.joplin/Joplin.AppImage ] && pt "UPDATING - JOPLIN" && wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
-[ "$(command -v nix-env)" ] && [ "$(nix-env -q)" == "" ] && pt "UPDATING - NIX-ENV APPS" && sudo nix-env -u
