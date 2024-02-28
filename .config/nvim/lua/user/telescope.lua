@@ -54,6 +54,7 @@ function M.config()
           "--hidden",
           "--type=f",
           "--strip-cwd-prefix",
+          "--exclude=**/.cache/*",
           "--exclude=**/.git/*",
         },
       },
