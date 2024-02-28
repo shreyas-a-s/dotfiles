@@ -25,7 +25,6 @@ function M.config()
       prompt_prefix = " ➜ ",
       selection_caret = " ➜ ",
       entry_prefix = "   ",
-      selection_strategy = "reset",
       path_display = { "smart" },
       vimgrep_arguments = {
         "rg",
