@@ -28,6 +28,7 @@ function M.config()
       entry_prefix = "   ",
       selection_strategy = "reset",
       path_display = { "smart" },
+      file_ignore_patterns = { ".git/" },
       vimgrep_arguments = {
         "rg",
         "--color=never",
@@ -37,7 +38,6 @@ function M.config()
         "--column",
         "--smart-case",
         "--hidden",
-        "--glob=!.git/",
       },
     },
     pickers = {
@@ -45,10 +45,11 @@ function M.config()
         theme = "dropdown",
         previewer = false,
         find_command = {
-          "rg",
+          "fd",
+          "--color=never",
           "--hidden",
-          "--files",
-          "--glob=!.git/",
+          "--type=f",
+          "--strip-cwd-prefix",
         },
       },
 
