@@ -29,6 +29,8 @@ vim.opt.wrap = false              -- display lines as one long line
 vim.opt.scrolloff = 4             -- minimum number of lines to keep above and below cursor if 'nowrap' is set
 vim.opt.sidescrolloff = 8         -- minimum number of columns to keep to left and to right of cursor if 'nowrap' is set 
 vim.opt.shortmess:append("l")     -- use "999L, 888B" instead of "999 lines, 888 bytes"
+vim.opt.shortmess:append("m")     -- use [+] instead of "[Modified]"
+vim.opt.shortmess:append("r")     -- use [RO] instead of "[readonly]"
 vim.opt.shortmess:append("w")     -- use [w] instead of "written" for file write message
 vim.opt.shortmess:append("c")     -- don't give ins-completion-menu messages
 
