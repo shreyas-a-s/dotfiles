@@ -23,13 +23,11 @@ function M.config()
 
   require("telescope").setup({
     defaults = {
-      prompt_prefix = icons.ui.ChevronRight .. "  ",
-      selection_caret = icons.ui.ChevronRight .. "  ",
+      prompt_prefix = " ➜ ",
+      selection_caret = " ➜ ",
       entry_prefix = "   ",
-      initial_mode = "insert",
       selection_strategy = "reset",
       path_display = { "smart" },
-      color_devicons = true,
       vimgrep_arguments = {
         "rg",
         "--color=never",
