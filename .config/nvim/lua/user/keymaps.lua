@@ -36,10 +36,6 @@ keymap("n", "<S-l>", "<CMD>bnext<CR>", { desc = "Next buffer" })
 keymap("n", "<S-Left>", "<CMD>bprevious<CR>", { desc = "Previous buffer" })
 keymap("n", "<S-Right>", "<CMD>bnext<CR>", { desc = "Next buffer" })
 
--- Keep cursor centred while moving through search results
-keymap("n", "n", "nzz", opts)
-keymap("n", "N", "Nzz", opts)
-
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
