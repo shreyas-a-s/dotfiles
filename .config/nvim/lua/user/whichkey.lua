@@ -13,6 +13,7 @@ function M.config()
     g = { name = "Git" },
     h = { name = "Git hunk" },
     l = { name = "Lsp" },
+    s = { name = "Shebang" },
     t = { name = "Toggle" },
     w = { name = "Workspace" },
     a = {
