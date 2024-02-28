@@ -17,6 +17,7 @@ function M.config()
     ["<leader>fh"] = { "<CMD>Telescope help_tags<CR>", "Help" },
     ["<leader>fc"] = { "<CMD>Telescope colorscheme<CR>", "Colorscheme" },
     ["<leader>fr"] = { "<CMD>Telescope oldfiles<CR>", "Recent Files" },
+    ["<leader>fd"] = { "<CMD>Telescope diagnostics<CR>", "Diagnostics" },
   })
 
   require("telescope").setup({
@@ -74,6 +75,11 @@ function M.config()
             ["dd"] = require("telescope.actions").delete_buffer,
           },
         },
+      },
+
+      diagnostics = {
+        theme = "dropdown",
+        previewer = false,
       },
 
       colorscheme = {
