@@ -19,8 +19,6 @@ function M.config()
     ["<leader>fr"] = { "<CMD>Telescope oldfiles<CR>", "Recent Files" },
   })
 
-  local icons = require("user.icons")
-
   require("telescope").setup({
     defaults = {
       prompt_prefix = " ➜ ",
