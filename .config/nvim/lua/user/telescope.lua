@@ -27,7 +27,6 @@ function M.config()
       entry_prefix = "   ",
       selection_strategy = "reset",
       path_display = { "smart" },
-      file_ignore_patterns = { ".git/" },
       vimgrep_arguments = {
         "rg",
         "--color=never",
@@ -37,6 +36,7 @@ function M.config()
         "--column",
         "--smart-case",
         "--hidden",
+        "--glob=!**/.git/*",
       },
       mappings = {
         i = {
@@ -54,6 +54,7 @@ function M.config()
           "--hidden",
           "--type=f",
           "--strip-cwd-prefix",
+          "--exclude=**/.git/*",
         },
       },
 
