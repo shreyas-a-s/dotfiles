@@ -38,6 +38,11 @@ function M.config()
         "--smart-case",
         "--hidden",
       },
+      mappings = {
+        i = {
+          ["<ESC>"] = require("telescope.actions").close,
+        },
+      },
     },
     pickers = {
       find_files = {
