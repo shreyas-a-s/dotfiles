@@ -6,8 +6,8 @@ local M = {
 
 function M.config()
   require("which-key").register({
-    ["<leader>sb"] = { "<CMD>Bang bash<CR>", "Shebang: Bash" },
-    ["<leader>sp"] = { "<CMD>Bang python3<CR>", "Shebang: Python" },
+    ["<leader>sb"] = { "<CMD>Bang bash<CR>o", "Shebang: Bash" },
+    ["<leader>sp"] = { "<CMD>Bang python3<CR>o", "Shebang: Python" },
   })
 
   require("magic-bang").setup({})
