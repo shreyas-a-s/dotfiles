@@ -12,7 +12,7 @@ if command -v pacman > /dev/null; then
 fi
 
 # Install for NixOS
-if command -v nix-env > /dev/null; then
+if grep -iq nixos /etc/os-release; then
   nix-env -iA nixos.stow
 fi
 
