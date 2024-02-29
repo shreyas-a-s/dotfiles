@@ -42,6 +42,14 @@ function M.config()
         filter = { event = "msg_show", find = "No lines in buffer" },
         opts = { skip = true },
       },
+      {
+        filter = { event = "msg_show", find = "<ed" },
+        opts = { skip = true },
+      },
+      {
+        filter = { event = "msg_show", find = ">ed" },
+        opts = { skip = true },
+      },
     },
   })
 end
