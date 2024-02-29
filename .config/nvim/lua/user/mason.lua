@@ -14,6 +14,7 @@ function M.config()
     "bashls",
     "jsonls",
     "yamlls",
+    "intelephense",
   }
 
   require("mason").setup({
