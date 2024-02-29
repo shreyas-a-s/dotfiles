@@ -34,20 +34,20 @@ function M.config()
       },
     },
     routes = {
-      {
+      { -- Disable 'search hit BOTTOM' & 'search hit TOP' messages
         filter = { event = "msg_show", find = "search hit" },
         opts = { skip = true },
       },
-      {
+      { -- Disable '--No lines in buffer--' messages
         filter = { event = "msg_show", find = "No lines in buffer" },
         opts = { skip = true },
       },
-      {
-        filter = { event = "msg_show", find = "<ed" },
+      { -- Disable message when indenting blocks of code
+        filter = { event = "msg_show", find = ">ed" },
         opts = { skip = true },
       },
-      {
-        filter = { event = "msg_show", find = ">ed" },
+      { -- Disable message when unindenting blocks of code
+        filter = { event = "msg_show", find = "<ed" },
         opts = { skip = true },
       },
     },
