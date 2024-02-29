@@ -23,7 +23,7 @@ if ! command -v stow > /dev/null; then
 fi
 
 # Remove already existing files & folders
-xargs -a "./components/files-and-folders-to-remove.txt" rm -rf
+xargs -a "./components/files-and-folders-to-remove.txt" -I {} sh -c 'eval "rm -rf {}"'
 
 # Actual setup of dotfiles
 cd .. || exit
