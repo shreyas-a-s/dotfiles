@@ -64,7 +64,7 @@ esac
 printf "Do you want to declutter your home folder by removing some files? (yes/no): " && read -r declutter_choice
 case $declutter_choice in
   y|yes|Yes|YES)
-    xargs -a "$SCRIPT_DIR/components/declutter.txt" rm -f
+    xargs -a "$SCRIPT_DIR/components/declutter.txt" -I {} sh -c 'eval "rm -f {}"'
 esac
 
 # Disable creation of ~/.Xauthority file
