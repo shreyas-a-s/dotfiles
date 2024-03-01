@@ -63,6 +63,7 @@ function M.config()
     "jsonls",
     "yamlls",
     "intelephense",
+    "clangd",
   }
 
   local default_diagnostic_config = {

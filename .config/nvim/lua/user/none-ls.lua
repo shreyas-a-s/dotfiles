@@ -24,6 +24,7 @@ function M.config()
         extra_args = { "--fast" },
       }),
       formatting.isort,
+      formatting.clang_format,
       null_ls.builtins.completion.spell,
     },
   })

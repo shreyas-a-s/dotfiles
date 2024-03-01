@@ -15,6 +15,7 @@ function M.config()
     "jsonls",
     "yamlls",
     "intelephense",
+    "clangd",
   }
 
   require("mason").setup({

@@ -11,6 +11,7 @@ function M.config()
       "black",
       "isort",
       "shfmt",
+      "clang-format",
     },
   })
 end
