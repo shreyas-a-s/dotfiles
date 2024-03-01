@@ -68,7 +68,12 @@ function M.config()
         { name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
       },
     },
-    virtual_text = false,
+    virtual_text = {
+      enabled = true,
+      spacing = 2,
+      prefix = " ➜",
+      suffix = " ",
+    },
     float = {
       focusable = true,
       style = "minimal",
