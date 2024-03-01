@@ -17,13 +17,6 @@ end
 
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
-
-  -- Show diagnostics popup
-  vim.api.nvim_create_autocmd({ "CursorHold" }, {
-    callback = function()
-      vim.diagnostic.open_float(nil,{focusable=false})
-    end,
-  })
 end
 
 function M.common_capabilities()
