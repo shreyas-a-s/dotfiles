@@ -12,7 +12,7 @@ $git_status\
 $battery\
 $character"""
 
-### MODULES ##
+### MODULES ###
 
 [username]
 style_user = "green bold"
