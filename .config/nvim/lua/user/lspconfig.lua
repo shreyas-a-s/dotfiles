@@ -26,8 +26,8 @@ function M.common_capabilities()
 end
 
 function M.config()
-  local wk = require "which-key"
-  wk.register {
+  local wk = require("which-key")
+  wk.register({
     ["<leader>la"] = { "<CMD>lua vim.lsp.buf.code_action()<CR>", "Code Actions" },
     ["<leader>lf"] = {
       "<CMD>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
@@ -40,10 +40,10 @@ function M.config()
     ["<leader>dj"] = { "<CMD>lua vim.diagnostic.goto_next()<CR>", "Next Diagnostic" },
     ["<leader>dk"] = { "<CMD>lua vim.diagnostic.goto_prev()<CR>", "Prev Diagnostic" },
     ["<leader>dq"] = { "<CMD>lua vim.diagnostic.setloclist()<CR>", "Diagnostics to Quickfix" },
-  }
+  })
 
-  local lspconfig = require "lspconfig"
-  local icons = require "user.icons"
+  local lspconfig = require("lspconfig")
+  local icons = require("user.icons")
 
   local servers = {
     "lua_ls",
@@ -80,7 +80,9 @@ function M.config()
       border = "rounded",
       source = "always",
       header = "",
-      prefix = function(_, i) return " " .. i .. ". " end
+      prefix = function(_, i)
+        return " " .. i .. ". "
+      end,
     },
   }
 
@@ -106,7 +108,7 @@ function M.config()
     end
 
     if server == "lua_ls" then
-      require("neodev").setup {}
+      require("neodev").setup({})
     end
 
     -- Fix for "Multiple different client offset_encodings detected"
