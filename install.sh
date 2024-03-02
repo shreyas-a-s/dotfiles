@@ -74,8 +74,10 @@ if [ -f ~/.Xauthority ]; then
     \nexport XAUTHORITY=\$XDG_RUNTIME_DIR/Xauthority\
     \n" | sudo tee -a /etc/bash.bashrc
   fi
+
+  # Store zshenv path into a variable
+  zshenv_path=$(sudo find /etc -maxdepth 2 -type f -name "zshenv")
   if command -v zsh > /dev/null && ! grep -q 'XDG_RUNTIME' "$zshenv_path"; then # Disable using zsh
-    zshenv_path=$(sudo find /etc -maxdepth 2 -type f -name "zshenv")
     printf "\n# Prevent creation of .Xauthority\
     \nexport XAUTHORITY=\$XDG_RUNTIME_DIR/Xauthority\
     \n" | sudo tee -a "$zshenv_path"
