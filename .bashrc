@@ -32,7 +32,7 @@ HISTFILE=$XDG_DATA_HOME/bash/bash_history
 
 # Set colors for ls command
 if [ -f "$XDG_CONFIG_HOME/lscolors/lscolors.sh" ]; then
-  . $XDG_CONFIG_HOME/lscolors/lscolors.sh
+  . "$XDG_CONFIG_HOME"/lscolors/lscolors.sh
 fi
 
 ### SET MANPAGER ###
@@ -106,7 +106,7 @@ if command -v nvim > /dev/null; then
 fi
 
 # To set XDG Base Directory for wget
-[ -f $XDG_CONFIG_HOME/wgetrc ] || touch $XDG_CONFIG_HOME/wgetrc && alias wget='wget --hsts-file=$XDG_CACHE_HOME/wget-hsts'
+[ -f "$XDG_CONFIG_HOME"/wgetrc ] || touch "$XDG_CONFIG_HOME"/wgetrc && alias wget='wget --hsts-file=$XDG_CACHE_HOME/wget-hsts'
 
 # Tree command - Show all files including hidden ones
 alias tree='tree -a'
