@@ -15,7 +15,7 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "gr", "<CMD>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true , desc = "Goto references" })
 end
 
-M.on_attach = function(client, bufnr)
+M.on_attach = function(_, bufnr)
   lsp_keymaps(bufnr)
 end
 
