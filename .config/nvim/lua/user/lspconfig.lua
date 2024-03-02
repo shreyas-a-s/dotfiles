@@ -80,7 +80,7 @@ function M.config()
       border = "rounded",
       source = "always",
       header = "",
-      prefix = "",
+      prefix = function(_, i) return " " .. i .. ". " end
     },
   }
 
