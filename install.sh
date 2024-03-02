@@ -69,7 +69,7 @@ esac
 
 # Disable creation of ~/.Xauthority file
 if [ -f ~/.Xauthority ]; then
-  if command -v bash > /dev/null && ! grep -q 'XDG_RUNTIME' /etc/bash.bashrc; then # Disable using bash
+  if command -v bash > /dev/null && [ -f /etc/bash.bashrc ] && ! grep -q 'XDG_RUNTIME' /etc/bash.bashrc; then # Disable using bash
     printf "\n# Prevent creation of .Xauthority\
     \nexport XAUTHORITY=\$XDG_RUNTIME_DIR/Xauthority\
     \n" | sudo tee -a /etc/bash.bashrc
