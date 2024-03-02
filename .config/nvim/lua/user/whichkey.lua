@@ -6,16 +6,11 @@ function M.config()
   local mappings = {
     q = { "<CMD>confirm q<CR>", "Quit" },
     v = { "<CMD>vsplit<CR>", "Split" },
-    b = { name = "Buffers" },
-    c = { name = "Code" },
     d = { name = "Diagnostics" },
     f = { name = "Find" },
     g = { name = "Git" },
-    h = { name = "Git hunk" },
     l = { name = "Lsp" },
     s = { name = "Shebang" },
-    t = { name = "Toggle" },
-    w = { name = "Workspace" },
     a = {
       name = "Tab",
       n = { "<CMD>$tabnew<CR>", "New Empty Tab" },
