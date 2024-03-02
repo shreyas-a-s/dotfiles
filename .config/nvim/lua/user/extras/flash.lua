@@ -3,13 +3,19 @@ local M = {
 }
 
 function M.config()
-  require("flash").setup({
+  local flash = require("flash")
+
+  flash.setup({
     modes = {
       search = {
         enabled = false,
       },
     },
   })
+
+  vim.keymap.set("n", "<leader>/", function()
+    flash.jump()
+  end, { desc = "Flash" })
 end
 
 return M
