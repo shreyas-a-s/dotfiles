@@ -48,4 +48,4 @@ keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Toggle line wrap
-keymap("n", "<leader>w", "<CMD>lua vim.wo.wrap = not vim.wo.wrap<CR>")
+keymap("n", "<leader>w", "<CMD>lua vim.wo.wrap = not vim.wo.wrap<CR>", { desc = "Toggle wrap" })
