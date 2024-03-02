@@ -109,6 +109,11 @@ function M.config()
       require("neodev").setup {}
     end
 
+    -- Fix for "Multiple different client offset_encodings detected"
+    if server == "clangd" then
+      opts = vim.tbl_deep_extend("force", { cmd = { "clangd", "--offset-encoding=utf-16" } }, opts)
+    end
+
     lspconfig[server].setup(opts)
   end
 end
