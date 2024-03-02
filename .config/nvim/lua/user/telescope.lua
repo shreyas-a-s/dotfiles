@@ -90,7 +90,7 @@ function M.config()
 
       colorscheme = {
         theme = "dropdown",
-        previewer = false,
+        enable_preview = false,
       },
 
       help_tags = {
