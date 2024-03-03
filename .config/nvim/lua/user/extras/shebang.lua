@@ -1,6 +1,6 @@
 local M = {
   "Susensio/magic-bang.nvim",
-  event = "BufNewFile",
+  event = "BufNew",
   cmd = "Bang",
 }
 
