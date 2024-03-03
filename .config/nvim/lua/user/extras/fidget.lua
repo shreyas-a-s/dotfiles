@@ -4,6 +4,11 @@ local M = {
 
 function M.config()
   require("fidget").setup({
+    progress = {
+      display = {
+        done_icon = "",
+      },
+    },
     notification = {
       window = {
         normal_hl = "CursorLineNr", -- Base highlight group in the notification window
