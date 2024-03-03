@@ -51,6 +51,14 @@ function M.config()
         filter = { event = "msg_show", find = "<ed" },
         opts = { skip = true },
       },
+      { -- Disable message when pasting lines
+        filter = { event = "msg_show", find = "more lines" },
+        opts = { skip = true },
+      },
+      { -- Disable message when yanking multiple lines
+        filter = { event = "msg_show", find = "yanked" },
+        opts = { skip = true },
+      },
     },
   })
 end
