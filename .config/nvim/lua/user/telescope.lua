@@ -25,7 +25,7 @@ function M.config()
       prompt_prefix = " ",
       selection_caret = " ",
       entry_prefix = "  ",
-      path_display = { "smart" },
+      path_display = { "truncate" },
       vimgrep_arguments = {
         "rg",
         "--color=never",
