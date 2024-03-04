@@ -233,11 +233,11 @@ end
 # Colorise diff
 function diff
   if command -v bat > /dev/null
-    command diff "$argv" | bat --style=plain
+    command diff -r "$argv" | bat --style=plain -l diff
   else if command -v batcat > /dev/null
-    command diff "$argv" | batcat --style=plain
+    command diff -r "$argv" | batcat --style=plain -l diff
   else
-    command diff --color=auto "$argv"
+    command diff -r --color=auto "$argv"
   end
 end
 

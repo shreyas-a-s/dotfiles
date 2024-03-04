@@ -242,11 +242,11 @@ function 0x0 {
 # Colorise diff
 function diff {
   if command -v bat > /dev/null; then
-    command diff "$@" | bat --style=plain
+    command diff -r "$@" | bat --style=plain -l diff
   elif command -v batcat > /dev/null; then
-    command diff "$@" | batcat --style=plain
+    command diff -r "$@" | batcat --style=plain -l diff
   else
-    command diff --color=auto "$@"
+    command diff -r --color=auto "$@"
   fi
 }
 
