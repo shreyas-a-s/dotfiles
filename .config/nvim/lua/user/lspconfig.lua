@@ -69,8 +69,8 @@ function M.config()
     virtual_text = {
       enabled = true,
       spacing = 2,
-      prefix = " ➜",
-      suffix = " ",
+      prefix = "",
+      suffix = "",
     },
     float = {
       focusable = true,
