@@ -3,5 +3,6 @@ Dotfiles are the customization files that are used to personalize your Linux or 
 
 ## Acknowledgements
 - Derek Taylor (@dwt1) from DistroTube on [Youtube](https://youtube.com/@DistroTube) for inspiring me to create this repo.
+- TJ DeVries ([@tjdevries](https://github.com/tjdevries)) for [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) with which I started my neovim journey.
 - Chris Power (@cpow) from Typecraft on [YouTube](https://www.youtube.com/@typecraft_dev) for his modularised neovim config - [neovim-for-newbs](https://github.com/cpow/neovim-for-newbs) - that I built my neovim config upon.
 - Christian Chiarulli (@ChristianChiarulli) from chris@machine on [YouTube](https://www.youtube.com/@chrisatmachine) for his extensive tutorial on neovim configuration - [Neovim From Scratch](https://www.youtube.com/playlist?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ) - that helped me undestand a lot about neovim and revamp my neovim config with that.
