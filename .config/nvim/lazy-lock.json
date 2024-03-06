@@ -52,6 +52,6 @@
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
   "telescope.nvim": { "branch": "master", "commit": "dc1ea28cc2a02cd1cebb9d80e967807d668f78f8" },
   "toggleterm.nvim": { "branch": "main", "commit": "193786e0371e3286d3bc9aa0079da1cd41beaa62" },
-  "tokyodark.nvim": { "branch": "master", "commit": "0a8d3b57d877e816fee70f88fa9e711269a4a543" },
+  "tokyodark.nvim": { "branch": "master", "commit": "fe5847e379b3d1c52896fa69ff8faf20cde483cc" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }
