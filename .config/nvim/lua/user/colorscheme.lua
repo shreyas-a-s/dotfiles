@@ -14,6 +14,17 @@ function M.config()
     },
   })
   vim.cmd.colorscheme("tokyodark")
+
+  -- Set right color to lualine section_z
+  local custom_tokyodark = require("lualine.themes.tokyodark")
+  custom_tokyodark.normal.z.bg = custom_tokyodark.normal.a.bg
+  custom_tokyodark.normal.z.fg = custom_tokyodark.normal.a.fg
+  custom_tokyodark.normal.z.gui = custom_tokyodark.normal.a.gui
+  require("lualine").setup({
+    options = {
+      theme = custom_tokyodark,
+    },
+  })
 end
 
 return M
