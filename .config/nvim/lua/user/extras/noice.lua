@@ -59,12 +59,15 @@ function M.config()
         filter = { event = "msg_show", find = "yanked" },
         opts = { skip = true },
       },
-      { -- Disable x seconds ago messages
-        filter = { event = "msg_show", find = "ago" },
+      { -- Disable 'x change, before' messages
+        filter = { event = "msg_show", find = "before" },
+        opts = { skip = true },
+      },
+      { -- Disable 'x change, after' messages
+        filter = { event = "msg_show", find = "after" },
         opts = { skip = true },
       },
     },
   })
 end
-
 return M
