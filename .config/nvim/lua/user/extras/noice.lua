@@ -7,7 +7,7 @@ local M = {
 function M.config()
   require("noice").setup({
     messages = {
-      view_search = "virtualtext",
+      view_search = false,
     },
     lsp = {
       progress = {

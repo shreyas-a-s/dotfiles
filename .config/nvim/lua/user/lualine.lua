@@ -43,6 +43,12 @@ function M.config()
           cond = require("noice").api.status.mode.has,
           color = { fg = "#FF9E64" },
         },
+        {
+          "searchcount",
+          fmt = function(str)
+            return str:gsub("[%[%]]", "")
+          end,
+        },
       },
       lualine_y = {
         {
