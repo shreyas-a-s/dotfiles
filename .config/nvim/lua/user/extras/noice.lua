@@ -6,17 +6,6 @@ local M = {
 
 function M.config()
   require("noice").setup({
-    cmdline = {
-      view = "cmdline",
-      format = {
-        cmdline = false,
-        search_down = false,
-        search_up = false,
-        filter = false,
-        lua = false,
-        help = false,
-      },
-    },
     messages = {
       view_search = "virtualtext",
     },
