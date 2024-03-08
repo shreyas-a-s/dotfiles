@@ -8,9 +8,9 @@ local function lsp_keymaps(bufnr)
   local keymap = vim.api.nvim_buf_set_keymap
   keymap(bufnr, "n", "K", "<CMD>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
   keymap(bufnr, "n", "gD", "<CMD>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true , desc = "Goto declaration" })
-  keymap(bufnr, "n", "gd", "<CMD>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true , desc = "Goto definition" })
-  keymap(bufnr, "n", "gi", "<CMD>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true , desc = "Goto implementation" })
-  keymap(bufnr, "n", "gr", "<CMD>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true , desc = "Goto references" })
+  keymap(bufnr, "n", "gd", "<CMD>Telescope lsp_definitions<CR>", { noremap = true, silent = true , desc = "Goto definition" })
+  keymap(bufnr, "n", "gi", "<CMD>Telescope lsp_implementations<CR>", { noremap = true, silent = true , desc = "Goto implementation" })
+  keymap(bufnr, "n", "gr", "<CMD>Telescope lsp_references<CR>", { noremap = true, silent = true , desc = "Goto references" })
 end
 
 M.on_attach = function(_, bufnr)
