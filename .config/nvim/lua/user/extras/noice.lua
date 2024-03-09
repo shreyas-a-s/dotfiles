@@ -6,6 +6,11 @@ local M = {
 
 function M.config()
   require("noice").setup({
+    cmdline = {
+      format = {
+        cmdline = { icon = "󰄾" },
+      },
+    },
     messages = {
       view_search = false,
     },
