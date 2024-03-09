@@ -54,10 +54,6 @@ function M.config()
       },
     },
   })
-  vim.cmd([[
-    :hi NvimTreeExecFile guifg=#E28743
-    :hi NvimTreeSpecialFile guifg=#DADA2D
-  ]])
 end
 
 return M
