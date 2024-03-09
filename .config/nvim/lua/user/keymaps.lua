@@ -49,3 +49,7 @@ keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Toggle line wrap
 keymap("n", "<leader>w", "<CMD>lua vim.wo.wrap = not vim.wo.wrap<CR>", { desc = "Toggle wrap" })
+
+-- Move chunk of text up and down
+keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", { desc = "Move text up", silent = true })
+keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", { desc = "Move text down", silent = true })
