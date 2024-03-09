@@ -83,6 +83,15 @@ if [ -d "/snap/bin/" ]
   set -Ux PATH "/snap/bin/:$PATH"
 end
 
+if [ -d "/home/linuxbrew/.linuxbrew/sbin" ]
+  set -Ux PATH "/home/linuxbrew/.linuxbrew/sbin:$PATH"
+
+fi
+
+if [ -d "/home/linuxbrew/.linuxbrew/bin" ]
+  set -Ux PATH "/home/linuxbrew/.linuxbrew/bin:$PATH"
+fi
+
 ### ALIASES ###
 
 # To select correct neovim

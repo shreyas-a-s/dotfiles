@@ -113,6 +113,14 @@ if [ -d "/snap/bin/" ] ;
   then PATH="/snap/bin/:$PATH"
 fi
 
+if [ -d "/home/linuxbrew/.linuxbrew/sbin" ] ;
+  then PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"
+fi
+
+if [ -d "/home/linuxbrew/.linuxbrew/bin" ] ;
+  then PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+fi
+
 ### SETOPT ###
 setopt histsavenodups # do not save duplicated command
 setopt histfindnodups # when searching for history entries, do not display duplicates

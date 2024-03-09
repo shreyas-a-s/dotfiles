@@ -83,6 +83,14 @@ if [ -d "/snap/bin/" ] ;
   then PATH="/snap/bin/:$PATH"
 fi
 
+if [ -d "/home/linuxbrew/.linuxbrew/sbin" ] ;
+  then PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"
+fi
+
+if [ -d "/home/linuxbrew/.linuxbrew/bin" ] ;
+  then PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+fi
+
 ### SHOPT ###
 shopt -s autocd # change to named directory
 shopt -s cdspell # autocorrects cd misspellings
