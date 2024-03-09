@@ -283,7 +283,7 @@ elif [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; 
 fi
 
 # Fish-like intelligent autosuggestions
-export ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd)
+export ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 
 ### SYNTAX-HIGHLIGHTING ###
 if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
