@@ -25,6 +25,14 @@ function M.config()
       end,
     },
   })
+
+  vim.cmd([[
+    :hi DiagnosticUnderlineWarn gui=undercurl guisp=Orange
+    :hi DiagnosticUnderlineError gui=undercurl guisp=Red
+    :hi DiagnosticUnderlineHint gui=undercurl guisp=LightGrey
+    :hi DiagnosticUnderlineInfo gui=undercurl guisp=LightBlue
+  ]])
+
 end
 
 return M
