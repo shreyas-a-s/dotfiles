@@ -69,6 +69,9 @@ precmd_functions+=(_fix_cursor)
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
+### Use Ctrl + Backspace to delete word backwards ###
+bindkey "^H" backward-kill-word
+
 ### SET MANPAGER
 if command -v bat > /dev/null; then
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
