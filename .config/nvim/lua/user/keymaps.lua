@@ -56,3 +56,6 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", { desc = "Move text down", silent = 
 
 -- Select all
 keymap("n", "<C-a>", "ggVG", { desc = "Select all", silent = true })
+
+-- Delete word in insert mode using Ctrl + Backspace (<C-H> is interpreted by terminals as <C-BS>)
+keymap("i", "<C-H>", "<C-w>")
