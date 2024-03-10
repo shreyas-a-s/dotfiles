@@ -10,11 +10,6 @@ export WGETRC=$XDG_CONFIG_HOME/wgetrc                         # To set xdg base 
 export HISTCONTROL=ignoredups:erasedups:ignorespace           # No duplicate entries and no lines that start with a space
 export LESSHISTFILE=-                                         # Prevent creation of ~/.lesshst file
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"       # Change python history file location
-if command -v nvim > /dev/null; then
-  export EDITOR="nvim"
-  export VISUAL="nvim"
-  export SUDO_EDITOR="nvim"
-fi
 
 ### COLORISE LESS ###
 export LESS_TERMCAP_mb=$'\e[1;32m'
@@ -89,6 +84,13 @@ fi
 
 if [ -d "/home/linuxbrew/.linuxbrew/bin" ]; then
   PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+fi
+
+### SET EDITOR ###
+if command -v nvim > /dev/null; then
+  export EDITOR="nvim"
+  export VISUAL="nvim"
+  export SUDO_EDITOR="nvim"
 fi
 
 ### SHOPT ###

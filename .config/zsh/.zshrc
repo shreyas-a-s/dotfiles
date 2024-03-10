@@ -9,11 +9,6 @@ export TERM="xterm-256color"                                  # For getting prop
 export WGETRC=$XDG_CONFIG_HOME/wgetrc                         # To set xdg base directory for wget
 export LESSHISTFILE=-                                         # Prevent creation of ~/.lesshst file
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"       # Change python history file location
-if command -v nvim > /dev/null; then
-  export EDITOR="nvim"
-  export VISUAL="nvim"
-  export SUDO_EDITOR="nvim"
-fi
 
 ### COLORISE LESS ###
 export LESS_TERMCAP_mb=$'\e[1;32m'
@@ -126,10 +121,17 @@ setopt histsavenodups # do not save duplicated command
 setopt histfindnodups # when searching for history entries, do not display duplicates
 setopt histignorespace # don't store command lines in history when the first character is a space 
 setopt histreduceblanks # remove unnecessary blanks
-setopt incappendhistory # append typed commands to histfile immediately 
+setopt incappendhistory # append typed commands to histfile immediately
 setopt noautoremoveslash # don't remove slash for directories after auto tab completion
 setopt globdots # show hidden files in tab completion
 unsetopt listtypes # don't show trailing identifying marks for files while listing for completion
+
+### SET EDITOR ###
+if command -v nvim > /dev/null; then
+  export EDITOR="nvim"
+  export VISUAL="nvim"
+  export SUDO_EDITOR="nvim"
+fi
 
 ### ALIASES ###
 

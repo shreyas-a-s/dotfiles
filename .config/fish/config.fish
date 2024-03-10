@@ -12,11 +12,6 @@ set TERM "xterm-256color"                                 # For getting proper c
 set -gx WGETRC $XDG_CONFIG_HOME/wgetrc                    # Set xdg base directory for wget
 set LESSHISTFILE -                                        # Prevent creation of ~/.lesshst file
 set -gx PYTHONSTARTUP "$XDG_CONFIG_HOME/python/pythonrc"  # Change python history file location
-if command -v nvim > /dev/null
-  set EDITOR "nvim"
-  set VISUAL "nvim"
-  set SUDO_EDITOR "nvim"
-end
 
 ### COLORISE LESS ###
 set -gx LESS_TERMCAP_mb (printf "\e[1;32m")
@@ -91,6 +86,13 @@ fi
 if [ -d "/home/linuxbrew/.linuxbrew/bin" ]
   set -Ux PATH "/home/linuxbrew/.linuxbrew/bin:$PATH"
 fi
+
+### SET EDITOR ###
+if command -v nvim > /dev/null
+  set EDITOR "nvim"
+  set VISUAL "nvim"
+  set SUDO_EDITOR "nvim"
+end
 
 ### ALIASES ###
 
