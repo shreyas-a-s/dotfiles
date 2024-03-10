@@ -12,7 +12,7 @@ function M.config()
       },
     },
     messages = {
-      view_search = false,
+      view_search = "virtualtext",
     },
     lsp = {
       progress = {
