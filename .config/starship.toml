@@ -1,7 +1,7 @@
 ### GLOBAL SETTINGS ###
 
 # Set command timeout to a higher value to prevent error 'Executing command "x" timed out'
-command_timeout = 2000
+# command_timeout = 2000
 
 # Set prompt format
 format = """
@@ -9,23 +9,9 @@ $directory\
 $git_branch\
 $git_commit\
 $git_status\
-$battery\
 $character"""
 
 ### MODULES ###
-
-[username]
-style_user = "green bold"
-style_root = "red bold"
-format = "[$user]($style) "
-disabled = false
-show_always = false
-
-[hostname]
-ssh_only = true
-format = 'on [$hostname](bold purple) '
-trim_at = "."
-disabled = true
 
 [character]
 success_symbol = "[➜](green)" 
@@ -38,29 +24,8 @@ truncation_length = 10
 truncate_to_repo = false # truncates directory to root folder if in github repo
 style = "blue"
 
-[aws]
-symbol = "🅰  "
-
-[conda]
-symbol = "🅒 "
-
-[dart]
-format = '[🔰 ](bold red) '
-
-[docker_context]
-symbol = "🐳 "
-format = "[$symbol$context]($style) "
-style = "blue bold"
-only_with_files = true
-detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
-detect_folders = []
-disabled = false
-
-[elixir]
-symbol = "💧 "
-
-[elm]
-format = '[🌳 ](cyan bold) '
+[directory.substitutions]
+"~/github" = "~/g"
 
 [git_branch]
 symbol = "🌱 "
@@ -77,73 +42,3 @@ diverged = '⇕⇡${ahead_count}⇣${behind_count}'
 behind = "⇣${count}"
 untracked = "[${count}?](blue)" 
 staged = "[${count}+](green)"
-
-[git_state]
-style =	"bold red"
-format = "[$state( $progress_current/$progress_total) ]($style)"
-rebase = "rebase"
-merge = "merge"	
-revert = "revert"	
-cherry_pick = "cherry"
-bisect = "bisect"	
-am = "am"	
-am_or_rebase = "am/rebase"
-
-[golang]
-symbol = "🐹 "
-
-[hg_branch]
-symbol = " "
-
-[java]
-symbol = "☕ "
-
-[julia]
-symbol = "ஃ "
-
-[haskell]
-symbol = "λ "
-
-[nim]
-symbol = "🎣 "
-
-[nix_shell]
-symbol = " "
-
-[package]
-symbol = "📦 "
-
-[perl]
-symbol = "🐪 "
-
-[php]
-symbol = "🐘 "
-
-[python]
-symbol = "🐍 "
-format = '[${symbol}]($style)'
-style = "yellow"
-pyenv_prefix = "venv "
-python_binary = ["./venv/bin/python", "python", "python3", "python2"]
-detect_extensions = ["py"]
-version_format = "v${raw}"
-
-[ruby]
-symbol = "💎 "
-
-[rust]
-symbol = "🦀 "
-
-[scala]
-symbol = "🆂 "
-
-[shlvl]
-symbol = " "
-
-[swift]
-symbol = "🐦 "
-
-[nodejs]
-format = "[⬢ Node.js ](bold green) "
-detect_files = ["package.json", ".node-version"]
-detect_folders = ["node_modules"]
