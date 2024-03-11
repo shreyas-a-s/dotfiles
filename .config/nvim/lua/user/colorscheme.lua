@@ -5,19 +5,6 @@ local M = {
 }
 function M.config()
   vim.cmd.colorscheme("neodarker")
-
-  -- Change some colors
-  vim.cmd([[
-    " Underline -> undercurl
-    :hi DiagnosticUnderlineWarn gui=undercurl guisp=Orange
-    :hi DiagnosticUnderlineError gui=undercurl guisp=Red
-    :hi DiagnosticUnderlineHint gui=undercurl guisp=LightGrey
-    :hi DiagnosticUnderlineInfo gui=undercurl guisp=LightBlue
-    " NvimTree colors
-    :hi NvimTreeExecFile guifg=#E28743
-    :hi NvimTreeSpecialFile guifg=#DADA2D
-  ]])
-
 end
 
 return M
