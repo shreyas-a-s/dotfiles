@@ -31,6 +31,9 @@ function M.config()
           },
         },
       },
+      indent_markers = {
+        enable = true
+      },
     },
     update_focused_file = {
       enable = true,
