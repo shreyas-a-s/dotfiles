@@ -5,10 +5,6 @@ keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Increment/decrement number under cursor
-keymap("n", "+", "<C-a>")
-keymap("n", "-", "<C-x>")
-
 -- Redo
 keymap("n", "U", "<CMD>redo<CR>", { desc = "Redo" })
 
@@ -53,9 +49,6 @@ keymap("n", "<leader>w", "<CMD>lua vim.wo.wrap = not vim.wo.wrap<CR>", { desc = 
 -- Move chunk of text up and down
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", { desc = "Move text up", silent = true })
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", { desc = "Move text down", silent = true })
-
--- Select all
-keymap("n", "<C-a>", "ggVG", { desc = "Select all", silent = true })
 
 -- Delete word in insert mode using Ctrl + Backspace (<C-H> is interpreted by terminals as <C-BS>)
 keymap("i", "<C-H>", "<C-w>")

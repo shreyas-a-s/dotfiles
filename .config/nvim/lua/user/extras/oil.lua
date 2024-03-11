@@ -10,7 +10,7 @@ function M.config()
       show_hidden = true,
     },
   })
-  vim.keymap.set("n", "<leader>o", "<CMD>Oil<CR>", { desc = "Oil" })
+  vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 end
 
 return M
