@@ -12,7 +12,7 @@ function M.config()
     g = { name = "Git" },
     l = { name = "Lsp" },
     s = { name = "Shebang" },
-    a = {
+    t = {
       name = "Tab",
       n = { "<CMD>$tabnew<CR>", "New Empty Tab" },
       N = { "<CMD>tabnew %<CR>", "New Tab" },
