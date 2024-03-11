@@ -1,6 +1,5 @@
 local M = {
   "kevinhwang91/nvim-hlslens",
-  event = "BufRead",
 }
 
 function M.config()
