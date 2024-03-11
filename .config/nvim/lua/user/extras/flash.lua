@@ -14,9 +14,7 @@ function M.config()
     },
   })
 
-  vim.keymap.set("n", "<leader>/", function()
-    flash.jump()
-  end, { desc = "Flash" })
+  vim.keymap.set("n", "<leader>/", "<CMD>lua require('flash').jump()<CR>", { desc = "Flash" })
 end
 
 return M
