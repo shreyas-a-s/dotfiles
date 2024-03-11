@@ -50,7 +50,7 @@ function M.config()
           fmt = function(str)
             return str:gsub("%l", string.upper)
           end,
-          color = { bg = "#393D3D" },
+          color = { bg = "#373737" },
         },
       },
       lualine_z = {
