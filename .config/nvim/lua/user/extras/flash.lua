@@ -11,6 +11,9 @@ function M.config()
       search = {
         enabled = false,
       },
+      char = {
+        jump_labels = true,
+      },
     },
   })
 
