@@ -9,6 +9,7 @@ function M.config()
     cmdline = {
       format = {
         cmdline = { icon = "󰄾" },
+        lua = { icon = "" },
       },
     },
     messages = {
