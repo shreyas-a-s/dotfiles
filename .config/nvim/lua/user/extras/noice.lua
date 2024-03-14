@@ -66,6 +66,10 @@ function M.config()
         filter = { event = "msg_show", find = "after" },
         opts = { skip = true },
       },
+      { -- Disable 'added to clipboard' & 'deleted from clipboard' messages by NvimTree
+        filter = { event = "notify", find = "clipboard" },
+        opts = { skip = true },
+      },
     },
   })
 end
