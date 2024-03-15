@@ -102,7 +102,7 @@ set 	$ws6 	"6"
 floating_modifier $mod
 
 # To close focused window
-bindsym $mod+Shift+c 		kill
+bindsym $mod+q 		kill
 
 # change focus to another window
 bindsym $mod+Left			focus left
