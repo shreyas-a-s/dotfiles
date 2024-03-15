@@ -36,6 +36,9 @@ function M.config()
             unnamed = "",
             newfile = "",
           },
+          fmt = function(str)
+            return str:gsub("/", "  ")
+          end,
         },
       },
       lualine_x = {
