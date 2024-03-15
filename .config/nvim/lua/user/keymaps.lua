@@ -43,14 +43,7 @@ keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 keymap("n", "<leader>w", "<CMD>lua vim.wo.wrap = not vim.wo.wrap<CR>", { desc = "Toggle wrap" })
 
 -- Toggle conceal level
-keymap("n", "<leader>c", function()
-  local conceallevel = vim.api.nvim_get_option_value("conceallevel", { buf = 0})
-  if conceallevel ~= 3 then
-    vim.api.nvim_set_option_value("conceallevel", 3, { buf = 0})
-  else
-    vim.api.nvim_set_option_value("conceallevel", 0, { buf = 0})
-  end
-end, { desc = "Toggle conceal" })
+keymap("n", "<leader>c", ":setlocal <C-R>=&conceallevel ? 'conceallevel=0' : 'conceallevel=3'<CR><CR>", { desc = "Toggle conceal", silent = true })
 
 -- Move chunk of text up and down
 keymap("x", "<M-,>", ":move '>+1<CR>gv-gv", { desc = "Move text down", silent = true })
