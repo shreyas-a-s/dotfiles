@@ -81,11 +81,11 @@ end
 if [ -d "/home/linuxbrew/.linuxbrew/sbin" ]
   set -Ux PATH "/home/linuxbrew/.linuxbrew/sbin:$PATH"
 
-fi
+end
 
 if [ -d "/home/linuxbrew/.linuxbrew/bin" ]
   set -Ux PATH "/home/linuxbrew/.linuxbrew/bin:$PATH"
-fi
+end
 
 ### SET EDITOR ###
 if command -v nvim > /dev/null
