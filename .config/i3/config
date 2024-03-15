@@ -217,7 +217,7 @@ mode "$mode_i3reset"
   # back to normal: ESC
     bindsym Escape 	mode "default"
 }
-bindsym $mod+q mode "$mode_i3reset"
+bindsym $mod+r mode "$mode_i3reset"
 
 
 #####################################################
