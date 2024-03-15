@@ -37,7 +37,11 @@ function M.config()
             newfile = "",
           },
           fmt = function(str)
-            return str:gsub("/", "  ")
+            if str:sub(1, 1) == "/" then
+              return str:sub(2):gsub("/", "  ")
+            else
+              return str:gsub("/", "  ")
+            end
           end,
         },
       },
