@@ -76,11 +76,6 @@ function M.config()
       buffers = {
         theme = "dropdown",
         previewer = false,
-        mappings = {
-          i = {
-            ["dd"] = require("telescope.actions").delete_buffer,
-          },
-        },
       },
 
       diagnostics = {
