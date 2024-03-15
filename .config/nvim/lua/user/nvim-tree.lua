@@ -13,11 +13,7 @@ function M.config()
 
   require("nvim-tree").setup({
     hijack_netrw = false,
-    filters = {
-      custom = { "^.git$" },
-    },
     renderer = {
-      root_folder_label = false,
       icons = {
         glyphs = {
           git = {
@@ -37,24 +33,10 @@ function M.config()
     },
     update_focused_file = {
       enable = true,
-      update_cwd = true,
     },
 
     diagnostics = {
       enable = true,
-      show_on_dirs = false,
-      show_on_open_dirs = true,
-      debounce_delay = 50,
-      severity = {
-        min = vim.diagnostic.severity.HINT,
-        max = vim.diagnostic.severity.ERROR,
-      },
-      icons = {
-        hint = icons.diagnostics.Hint,
-        info = icons.diagnostics.Information,
-        warning = icons.diagnostics.Warning,
-        error = icons.diagnostics.Error,
-      },
     },
   })
 end
