@@ -8,10 +8,6 @@ vim.g.maplocalleader = " "
 -- Redo
 keymap("n", "U", "<CMD>redo<CR>", { desc = "Redo" })
 
--- Mimic shell movements
-keymap("i", "<C-a>", "<ESC>I", { desc = "Go to beginning of line" })
-keymap("i", "<C-e>", "<ESC>A", { desc = "Go to end of line" })
-
 -- Move to window using <ctrl> hjkl keys
 keymap("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
 keymap("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
@@ -57,8 +53,8 @@ keymap("n", "<leader>c", function()
 end, { desc = "Toggle conceal" })
 
 -- Move chunk of text up and down
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", { desc = "Move text up", silent = true })
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", { desc = "Move text down", silent = true })
+keymap("x", "<M-,>", ":move '>+1<CR>gv-gv", { desc = "Move text down", silent = true })
+keymap("x", "<M-.>", ":move '<-2<CR>gv-gv", { desc = "Move text up", silent = true })
 
 -- Delete word in insert mode using Ctrl + Backspace (<C-H> is interpreted by terminals as <C-BS>)
 keymap("i", "<C-H>", "<C-w>")
