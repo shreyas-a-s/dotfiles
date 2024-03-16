@@ -116,6 +116,9 @@ function M.config()
     },
   })
 
+  -- Highlight filename differently than path in Telescope file pickers
+  pcall(require("user.telescope-filename-highlight"))
+
   pcall(require("telescope").load_extension, "ui-select")
   pcall(require("telescope").load_extension, "fzf")
   pcall(require("telescope").load_extension, "projects")
