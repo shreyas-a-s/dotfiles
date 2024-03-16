@@ -28,18 +28,39 @@ function M.config()
         { "diagnostics", icons_enabled = true },
         {
           "filename",
+          file_status = false,
+          newfile_status = false,
+          path = 1,
+          color = { fg = "#4a5057" },
+          padding = { left = 0, right = 0 },
+          separator = { left = "", right = "" },
+          fmt = function(str)
+            local path = str:match("(.*/)")
+            if path then
+              return " " .. path
+            else
+              return " "
+            end
+          end,
+        },
+        {
+          "filename",
           symbols = {
             modified = "●",
             readonly = "",
             unnamed = "",
             newfile = "",
           },
+          padding = { left = 0, right = 1 },
+          separator = { left = "", right = "┊" },
           cond = function()
-            if vim.bo.filetype ~= "TelescopePrompt" and
-              vim.bo.filetype ~= "NvimTree" and
-              vim.bo.filetype ~= "toggleterm" and
-              vim.bo.filetype ~= "harpoon" and
-              vim.bo.filetype ~= "alpha" then
+            if vim.bo.filetype == "TelescopePrompt" or
+              vim.bo.filetype == "NvimTree" or
+              vim.bo.filetype == "toggleterm" or
+              vim.bo.filetype == "harpoon" or
+              vim.bo.filetype == "alpha" then
+              return false
+            else
               return true
             end
           end,
