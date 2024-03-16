@@ -25,7 +25,7 @@ function M.config()
         { "branch", color = { bg = "#373737" } },
       },
       lualine_c = {
-        { "diagnostics", icons_enabled = true },
+        { "diagnostics", icons_enabled = true, color = { bg = "#4D4D4D" } },
         {
           "filename",
           file_status = false,
