@@ -34,6 +34,15 @@ function M.config()
             unnamed = "",
             newfile = "",
           },
+          cond = function()
+            if vim.bo.filetype ~= "TelescopePrompt" and
+              vim.bo.filetype ~= "NvimTree" and
+              vim.bo.filetype ~= "toggleterm" and
+              vim.bo.filetype ~= "harpoon" and
+              vim.bo.filetype ~= "alpha" then
+              return true
+            end
+          end,
         },
       },
       lualine_x = {
