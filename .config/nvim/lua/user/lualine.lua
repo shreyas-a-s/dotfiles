@@ -28,21 +28,12 @@ function M.config()
         { "diagnostics", icons_enabled = true },
         {
           "filename",
-          path = 1,
-          color = { fg = "#A4A4A4" },
           symbols = {
             modified = "●",
             readonly = "",
             unnamed = "",
             newfile = "",
           },
-          fmt = function(str)
-            if str:sub(1, 1) == "/" then
-              return str:sub(2):gsub("/", "  ")
-            else
-              return str:gsub("/", "  ")
-            end
-          end,
         },
       },
       lualine_x = {
@@ -74,7 +65,6 @@ function M.config()
       lualine_c = {
         {
           "filename",
-          path = 1,
           symbols = {
             modified = "●",
             readonly = "",
