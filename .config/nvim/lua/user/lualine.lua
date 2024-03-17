@@ -22,7 +22,7 @@ function M.config()
         },
       },
       lualine_b = {
-        { "branch", color = { bg = "#373737" } },
+        { "branch" },
       },
       lualine_c = {
         { "diagnostics", icons_enabled = true },
@@ -70,7 +70,6 @@ function M.config()
         {
           require("noice").api.status.mode.get,
           cond = require("noice").api.status.mode.has,
-          color = { fg = "#FF9E64" },
         },
       },
       lualine_y = {
@@ -79,7 +78,6 @@ function M.config()
           fmt = function(str)
             return str:gsub("%l", string.upper)
           end,
-          color = { bg = "#373737" },
         },
       },
       lualine_z = {
