@@ -20,14 +20,6 @@ keymap("n", "<C-Down>", "<C-w>j", { desc = "Go to lower window", remap = true })
 keymap("n", "<C-Up>", "<C-w>k", { desc = "Go to upper window", remap = true })
 keymap("n", "<C-Right>", "<C-w>l", { desc = "Go to right window", remap = true })
 
--- Navigate buffers using <ctrl> hl keys
-keymap("n", "<S-h>", "<CMD>bprevious<CR>", { desc = "Prev buffer" })
-keymap("n", "<S-l>", "<CMD>bnext<CR>", { desc = "Next buffer" })
-
--- Navigate buffers using <ctrl> arrow keys
-keymap("n", "<S-Left>", "<CMD>bprevious<CR>", { desc = "Previous buffer" })
-keymap("n", "<S-Right>", "<CMD>bnext<CR>", { desc = "Next buffer" })
-
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
