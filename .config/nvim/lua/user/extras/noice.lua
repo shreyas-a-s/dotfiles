@@ -72,7 +72,7 @@ function M.config()
     },
   })
 
-  -- Add lualine component to show recording status
+  -- Add lualine component to show macro recording status
   local require_ok, lualine = pcall(require, "lualine")
   if require_ok then
     local opts = lualine.get_config()
