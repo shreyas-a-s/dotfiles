@@ -71,6 +71,19 @@ function M.config()
       },
     },
   })
+
+  -- Add lualine component to show recording status
+  local require_ok, lualine = pcall(require, "lualine")
+  if require_ok then
+    local opts = lualine.get_config()
+    local status = {
+      require("noice").api.status.mode.get,
+      cond = require("noice").api.status.mode.has,
+      color = { fg = "#FF9E64" },
+    }
+    table.insert(opts.sections.lualine_x, 1, status)
+    lualine.setup(opts)
+  end
 end
 
 return M

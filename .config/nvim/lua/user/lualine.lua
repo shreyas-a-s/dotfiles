@@ -66,12 +66,7 @@ function M.config()
           end,
         },
       },
-      lualine_x = {
-        {
-          require("noice").api.status.mode.get,
-          cond = require("noice").api.status.mode.has,
-        },
-      },
+      lualine_x = {},
       lualine_y = {
         {
           "encoding",
