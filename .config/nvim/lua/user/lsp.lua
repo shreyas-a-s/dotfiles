@@ -39,7 +39,6 @@ function M.config()
   })
 
   local lspconfig = require("lspconfig")
-  local icons = require("user.icons")
 
   local servers = {
     "lua_ls",
@@ -58,10 +57,10 @@ function M.config()
   local default_diagnostic_config = {
     signs = {
       values = {
-        { name = "DiagnosticSignError", text = icons.diagnostics.Error },
-        { name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
-        { name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
-        { name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
+        { name = "DiagnosticSignError", text = "" },
+        { name = "DiagnosticSignWarn", text = "" },
+        { name = "DiagnosticSignHint", text = "󰌶" },
+        { name = "DiagnosticSignInfo", text = "" },
       },
     },
     virtual_text = {
