@@ -12,6 +12,7 @@ function M.config()
   require("nvim-tree").setup({
     hijack_netrw = false,
     renderer = {
+      root_folder_label = false,
       icons = {
         glyphs = {
           git = {
