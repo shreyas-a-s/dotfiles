@@ -38,6 +38,12 @@ function M.config()
 
     diagnostics = {
       enable = true,
+      icons = {
+        hint = "󰌶",
+        info = "",
+        warning = "",
+        error = "",
+      },
     },
   })
 end
