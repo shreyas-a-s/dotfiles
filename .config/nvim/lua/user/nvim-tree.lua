@@ -11,9 +11,13 @@ function M.config()
 
   require("nvim-tree").setup({
     hijack_netrw = false,
+    view = {
+      signcolumn = "no",
+    },
     renderer = {
       root_folder_label = false,
       icons = {
+        diagnostics_placement = "before",
         glyphs = {
           git = {
             unstaged = "",
