@@ -80,6 +80,10 @@ function M.config()
       require("noice").api.status.mode.get,
       cond = require("noice").api.status.mode.has,
       color = { fg = "#FF9E64" },
+      fmt = function(str)
+        local msg = string.gsub(str, "recording", "")
+        return string.upper(msg)
+      end,
     }
     table.insert(opts.sections.lualine_x, 1, status)
     lualine.setup(opts)
