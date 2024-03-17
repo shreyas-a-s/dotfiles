@@ -69,6 +69,10 @@ function M.config()
         filter = { event = "notify", find = "clipboard" },
         opts = { skip = true },
       },
+      { -- Disable 'Nothing currently selected' message by Telescope
+        filter = { event = "notify", find = "Nothing currently selected" },
+        opts = { skip = true },
+      },
     },
   })
 
