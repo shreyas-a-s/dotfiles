@@ -42,6 +42,19 @@ function M.config()
               return " "
             end
           end,
+          cond = function()
+            if vim.bo.filetype == "TelescopePrompt" or
+              vim.bo.filetype == "NvimTree" or
+              vim.bo.filetype == "toggleterm" or
+              vim.bo.filetype == "harpoon" or
+              vim.bo.filetype == "alpha" or
+              vim.bo.filetype == "lazy" or
+              vim.bo.filetype == "mason" then
+              return false
+            else
+              return true
+            end
+          end,
         },
         {
           "filename",
@@ -58,7 +71,9 @@ function M.config()
               vim.bo.filetype == "NvimTree" or
               vim.bo.filetype == "toggleterm" or
               vim.bo.filetype == "harpoon" or
-              vim.bo.filetype == "alpha" then
+              vim.bo.filetype == "alpha" or
+              vim.bo.filetype == "lazy" or
+              vim.bo.filetype == "mason" then
               return false
             else
               return true
