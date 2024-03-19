@@ -25,3 +25,5 @@ grep -iq nixos /etc/os-release && pt "UPDATING - NIXOS" && sudo nixos-rebuild sw
 [ "$(command -v dnf)" ] && pt "UPDATING - DNF PACKAGES" && sudo dnf upgrade -y
 [ -f "$HOME"/.joplin/Joplin.AppImage ] && pt "UPDATING - JOPLIN" && wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 [ "$(command -v brew)" ] && pt "UPDATING - BREW FORMULAE" && brew update && brew upgrade
+
+pt "UPDATING COMPLETE (HOPEFULLY)"
