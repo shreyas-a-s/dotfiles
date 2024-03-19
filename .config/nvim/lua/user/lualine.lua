@@ -80,6 +80,29 @@ function M.config()
             end
           end,
         },
+        {
+          "filename",
+          file_status = false,
+          newfile_status = false,
+          padding = { left = 0, right = 0 },
+          fmt = function()
+            if vim.bo.filetype == "TelescopePrompt" then
+              return " telescope"
+            elseif vim.bo.filetype == "NvimTree" then
+              return " nvim-tree"
+            elseif vim.bo.filetype == "toggleterm" then
+              return " terminal"
+            elseif vim.bo.filetype == "harpoon" then
+              return " harpoon"
+            elseif vim.bo.filetype == "alpha" then
+              return " alpha"
+            elseif vim.bo.filetype == "lazy" then
+              return " lazy"
+            elseif vim.bo.filetype == "mason" then
+              return " mason"
+            end
+          end
+        },
       },
       lualine_x = {},
       lualine_y = {
