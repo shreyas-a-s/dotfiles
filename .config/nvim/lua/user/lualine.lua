@@ -42,7 +42,7 @@ function M.config()
             end
           end,
         },
-        {
+        { -- file path
           "filename",
           file_status = false,
           newfile_status = false,
@@ -72,7 +72,7 @@ function M.config()
             end
           end,
         },
-        {
+        { -- file name
           "filename",
           symbols = {
             modified = "●",
@@ -96,10 +96,8 @@ function M.config()
             end
           end,
         },
-        {
-          "filename",
-          file_status = false,
-          newfile_status = false,
+        { -- special names for some file types
+          "special-name",
           padding = { left = 0, right = 0 },
           fmt = function()
             if vim.bo.filetype == "TelescopePrompt" then
