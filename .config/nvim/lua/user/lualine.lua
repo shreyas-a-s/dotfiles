@@ -25,7 +25,23 @@ function M.config()
         { "branch" },
       },
       lualine_c = {
-        { "diagnostics", icons_enabled = true },
+        {
+          "diagnostics",
+          icons_enabled = true,
+          cond = function()
+            if vim.bo.filetype == "TelescopePrompt" or
+              vim.bo.filetype == "NvimTree" or
+              vim.bo.filetype == "toggleterm" or
+              vim.bo.filetype == "harpoon" or
+              vim.bo.filetype == "alpha" or
+              vim.bo.filetype == "lazy" or
+              vim.bo.filetype == "mason" then
+              return false
+            else
+              return true
+            end
+          end,
+        },
         {
           "filename",
           file_status = false,
