@@ -75,23 +75,6 @@ function M.config()
       },
     },
   })
-
-  -- Add lualine component to show macro recording status
-  local require_ok, lualine = pcall(require, "lualine")
-  if require_ok then
-    local opts = lualine.get_config()
-    local status = {
-      require("noice").api.status.mode.get,
-      cond = require("noice").api.status.mode.has,
-      color = { fg = "#FF9E64" },
-      fmt = function(str)
-        local msg = string.gsub(str, "recording", "")
-        return string.upper(msg)
-      end,
-    }
-    table.insert(opts.sections.lualine_x, 1, status)
-    lualine.setup(opts)
-  end
 end
 
 return M

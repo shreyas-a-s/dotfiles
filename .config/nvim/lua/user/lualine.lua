@@ -138,6 +138,9 @@ function M.config()
     },
     extensions = { "quickfix", "man", "fugitive" },
   })
+
+  -- Add lualine component to show macro recording status
+  pcall(require("user.lualine-macro-status"))
 end
 
 return M
