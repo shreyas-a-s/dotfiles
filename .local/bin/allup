@@ -18,7 +18,7 @@ elif [ "$(command -v apt)" ]; then
   sudo apt update && sudo apt upgrade -y
 fi
 
-[ "$(command -v snap)" ] && pt "UPDATING - SNAP APPS" && sudo snap refresh
+[ "$(command -v snap)" ] && pt "UPDATING - SNAP APPS" && echo && sudo snap refresh
 [ "$(command -v flatpak)" ] && pt "UPDATING - FLATPAK APPS" && flatpak update
 [ "$(command -v auto-cpufreq)" ] && pt "UPDATING - AUTO-CPUFREQ" && sudo auto-cpufreq --update
 grep -iq nixos /etc/os-release && pt "UPDATING - NIXOS" && sudo nixos-rebuild switch --upgrade --log-format bar-with-logs
