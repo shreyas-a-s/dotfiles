@@ -6,7 +6,11 @@ spice-vdagent &
 sleep 1 &&
 
 # Set screen resolution
-xrandr -s 1366x768 &
+if xrandr | grep -q '1360x768'; then
+  xrandr -s 1360x768 &
+else
+  xrandr -s 1366x768 &
+fi
 sleep 1 &&
 
 # Enable policy kit
