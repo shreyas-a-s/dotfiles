@@ -26,7 +26,6 @@ function M.config()
       }),
       formatting.isort,
       formatting.clang_format,
-      null_ls.builtins.completion.spell,
     },
   })
 end
