@@ -23,5 +23,3 @@ pactl set-sink-volume 0 90% &
 
 # Enable volume control in sys tray
 mate-volume-control-status-icon &
-sleep 1 &&
-
