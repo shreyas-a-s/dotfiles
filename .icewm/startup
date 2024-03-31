@@ -2,7 +2,9 @@
 
 # Daemon for syncing clipboard between host and guest VM &
 # for providing display drivers to set proper resolution
-spice-vdagent &
+if command -v spice-vdagent > /dev/null; then
+  spice-vdagent &
+fi
 sleep 1 &&
 
 # Set screen resolution
@@ -14,12 +16,18 @@ fi
 sleep 1 &&
 
 # Enable policy kit
-lxpolkit &
+if command -v lxpolkit > /dev/null; then
+  lxpolkit &
+fi
 sleep 1 &&
 
 # Set default volume
-pactl set-sink-mute 0 0 &
-pactl set-sink-volume 0 90% &
+if command -v pactl > /dev/null; then
+  pactl set-sink-mute 0 0 &
+  pactl set-sink-volume 0 90% &
+fi
 
 # Enable volume control in sys tray
-mate-volume-control-status-icon &
+if command -v mate-volume-control-status-icon > /dev/null; then
+  mate-volume-control-status-icon &
+fi
