@@ -28,3 +28,10 @@ fi
 if command -v mate-volume-control-status-icon > /dev/null; then
   mate-volume-control-status-icon &
 fi
+
+# Set lxsession-logout as the logout command
+if command -v lxsession-logout > /dev/null; then
+  sed -i '/LogoutCommand/c LogoutCommand="lxsession-logout"' ~/.icewm/preferences
+  sed -i '/ConfirmLogout/c ConfirmLogout=0' ~/.icewm/preferences
+  sed -i '/ShowLogoutSubMenu/c ShowLogoutSubMenu=0' ~/.icewm/preferences
+fi
