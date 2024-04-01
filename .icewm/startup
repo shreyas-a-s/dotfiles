@@ -1,16 +1,19 @@
 #!/bin/sh
 
-# Daemon for syncing clipboard between host and guest VM &
-# for providing display drivers to set proper resolution
-if command -v spice-vdagent > /dev/null; then
-  spice-vdagent &
-fi
+# Vitual machine tweaks
+if grep -q '^flags.*\ hypervisor' /proc/cpuinfo; then
+  # Daemon for syncing clipboard between host and guest VM &
+  # for providing display drivers to set proper resolution
+  if command -v spice-vdagent > /dev/null; then
+    spice-vdagent &
+  fi
 
-# Set screen resolution
-if xrandr | grep -q '1360x768'; then
-  xrandr -s 1360x768 &
-else
-  xrandr -s 1366x768 &
+  # Set screen resolution
+  if xrandr | grep -q '1360x768'; then
+    xrandr -s 1360x768 &
+  else
+    xrandr -s 1366x768 &
+  fi
 fi
 
 # Enable policy kit
