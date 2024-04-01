@@ -5,7 +5,6 @@
 if command -v spice-vdagent > /dev/null; then
   spice-vdagent &
 fi
-sleep 1 &&
 
 # Set screen resolution
 if xrandr | grep -q '1360x768'; then
@@ -13,13 +12,11 @@ if xrandr | grep -q '1360x768'; then
 else
   xrandr -s 1366x768 &
 fi
-sleep 1 &&
 
 # Enable policy kit
 if command -v lxpolkit > /dev/null; then
   lxpolkit &
 fi
-sleep 1 &&
 
 # Set default volume
 if command -v pactl > /dev/null; then
