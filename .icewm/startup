@@ -11,7 +11,7 @@ if grep -q '^flags.*\ hypervisor' /proc/cpuinfo; then
   # Set screen resolution
   if xrandr | grep -q '1360x768'; then
     xrandr -s 1360x768 &
-  else
+  elif xrandr | grep -q '1366x768'; then
     xrandr -s 1366x768 &
   fi
 fi
