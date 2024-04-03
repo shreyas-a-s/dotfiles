@@ -195,6 +195,11 @@ function lazyg
   git push
 end
 
+function gbranch
+  git checkout -b "$argv[1]"
+  git push -u origin "$argv[1]"
+end
+
 # Create and go to the directory
 function mkdircd
   mkdir -pv "$argv"

@@ -214,6 +214,11 @@ function lazyg {
   git push
 }
 
+function gbranch {
+  git checkout -b "$1"
+  git push -u origin "$1"
+}
+
 # Create and go to the directory
 function mkdircd {
   mkdir -p "$1"
