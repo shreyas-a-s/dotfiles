@@ -200,6 +200,12 @@ function gbranch
   git push -u origin "$argv[1]"
 end
 
+function gdelete
+  git push -d origin "$argv[1]"
+  git checkout -
+  git branch -d "$argv[1]"
+end
+
 # Create and go to the directory
 function mkdircd
   mkdir -pv "$argv"

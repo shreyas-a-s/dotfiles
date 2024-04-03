@@ -219,6 +219,12 @@ function gbranch {
   git push -u origin "$1"
 }
 
+function gdelete {
+  git push -d origin "$1"
+  git checkout -
+  git branch -d "$1"
+}
+
 # Create and go to the directory
 function mkdircd {
   mkdir -p "$1"
