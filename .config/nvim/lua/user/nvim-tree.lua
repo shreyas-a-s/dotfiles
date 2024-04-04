@@ -18,6 +18,7 @@ function M.config()
       root_folder_label = false,
       icons = {
         diagnostics_placement = "before",
+        symlink_arrow = "  ",
         glyphs = {
           git = {
             unstaged = "",
