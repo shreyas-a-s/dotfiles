@@ -18,7 +18,7 @@ end
 function M.mark_file()
   require("harpoon.mark").add_file()
   local msg = " " .. vim.fn.expand("%:t") .. " marked"
-  vim.notify(msg, vim.log.levels.INFO, { title = "Harpoon", timeout = 50 })
+  vim.notify(msg, vim.log.levels.INFO, { icon = "󰀱", title = "Harpoon", timeout = 50, replace = false })
 end
 
 return M
