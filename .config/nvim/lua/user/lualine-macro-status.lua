@@ -7,7 +7,7 @@ if vim.api.nvim_get_option_value("cmdheight", { buf = 0 }) == 0 then
     local opts = lualine.get_config()
     local status = {
       "macro-recording",
-      color = { fg = "#FF9E64" },
+      color = { fg = "#FF9E64", bg = "#252525" },
       fmt = function()
         local recording_register = vim.fn.reg_recording()
         if recording_register == "" then

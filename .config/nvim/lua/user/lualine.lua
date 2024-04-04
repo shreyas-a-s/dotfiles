@@ -28,6 +28,7 @@ function M.config()
         {
           "diagnostics",
           icons_enabled = true,
+          color = { bg = "#252525" },
           cond = function()
             if vim.bo.filetype == "TelescopePrompt" or
               vim.bo.filetype == "NvimTree" or
