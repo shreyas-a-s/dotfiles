@@ -17,6 +17,9 @@ end
 
 function M.mark_file()
   require("harpoon.mark").add_file()
+  require("lualine").refresh({
+    place = { "statusline" },
+  })
   local msg = " " .. vim.fn.expand("%:t") .. " marked"
   vim.notify(msg, vim.log.levels.INFO, { icon = "󰀱", title = "Harpoon", timeout = 50, replace = false })
 end

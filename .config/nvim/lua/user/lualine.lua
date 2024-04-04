@@ -156,6 +156,9 @@ function M.config()
 
   -- Add lualine component to show macro recording status
   pcall(require("user.lualine-macro-status"))
+
+  -- Add lualine component for showing whether a file is in harpoon
+  pcall(require("user.lualine-harpoon-indicator"))
 end
 
 return M
