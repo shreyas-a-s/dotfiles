@@ -12,7 +12,7 @@ function M.config()
     ["<leader>fb"] = { "<CMD>Telescope buffers<CR>", "Buffers" },
     ["<leader>fg"] = { "<CMD>Telescope git_branches<CR>", "Checkout branch" },
     ["<leader>ff"] = { "<CMD>Telescope find_files<CR>", "Find files" },
-    ["<leader>fp"] = { "<CMD>Telescope projects theme=dropdown<CR>", "Projects" },
+    ["<leader>fp"] = { "<CMD>Telescope projects<CR>", "Projects" },
     ["<leader>ft"] = { "<CMD>Telescope live_grep<CR>", "Find Text" },
     ["<leader>fh"] = { "<CMD>Telescope help_tags<CR>", "Help" },
     ["<leader>fc"] = { "<CMD>Telescope colorscheme<CR>", "Colorscheme" },
@@ -21,31 +21,34 @@ function M.config()
   })
 
   require("telescope").setup({
-    defaults = {
-      prompt_prefix = " ",
-      selection_caret = " ",
-      entry_prefix = "  ",
-      path_display = { "smart" },
-      vimgrep_arguments = {
-        "rg",
-        "--color=never",
-        "--no-heading",
-        "--with-filename",
-        "--line-number",
-        "--column",
-        "--smart-case",
-        "--hidden",
-        "--glob=!**/.git/*",
-      },
-      mappings = {
-        i = {
-          ["<ESC>"] = require("telescope.actions").close,
+    defaults = vim.tbl_extend(
+      "force",
+      require('telescope.themes').get_dropdown(),
+      {
+        prompt_prefix = " ",
+        selection_caret = " ",
+        entry_prefix = "  ",
+        path_display = { "smart" },
+        vimgrep_arguments = {
+          "rg",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case",
+          "--hidden",
+          "--glob=!**/.git/*",
         },
-      },
-    },
+        mappings = {
+          i = {
+            ["<ESC>"] = require("telescope.actions").close,
+          },
+        },
+      }
+    ),
     pickers = {
       find_files = {
-        theme = "dropdown",
         previewer = false,
         find_command = {
           "fd",
@@ -59,59 +62,31 @@ function M.config()
       },
 
       oldfiles = {
-        theme = "dropdown",
         previewer = false,
       },
 
       live_grep = {
-        theme = "dropdown",
         previewer = false,
       },
 
       git_branches = {
-        theme = "dropdown",
         previewer = false,
       },
 
       buffers = {
-        theme = "dropdown",
         previewer = false,
       },
 
       diagnostics = {
-        theme = "dropdown",
         previewer = false,
       },
 
       colorscheme = {
-        theme = "dropdown",
         enable_preview = false,
       },
 
       help_tags = {
-        theme = "dropdown",
         previewer = false,
-      },
-
-      lsp_references = {
-        theme = "dropdown",
-      },
-
-      lsp_definitions = {
-        theme = "dropdown",
-      },
-
-      lsp_declarations = {
-        theme = "dropdown",
-      },
-
-      lsp_implementations = {
-        theme = "dropdown",
-      },
-    },
-    extensions = {
-      ["ui-select"] = {
-        require("telescope.themes").get_dropdown({}),
       },
     },
   })
