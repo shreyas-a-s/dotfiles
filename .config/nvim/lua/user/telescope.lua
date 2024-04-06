@@ -25,6 +25,7 @@ function M.config()
       "force",
       require('telescope.themes').get_dropdown(),
       {
+        preview = false,
         prompt_prefix = " ",
         selection_caret = " ",
         entry_prefix = "  ",
@@ -49,7 +50,6 @@ function M.config()
     ),
     pickers = {
       find_files = {
-        previewer = false,
         find_command = {
           "fd",
           "--color=never",
@@ -59,34 +59,6 @@ function M.config()
           "--exclude=.cache",
           "--exclude=.git",
         },
-      },
-
-      oldfiles = {
-        previewer = false,
-      },
-
-      live_grep = {
-        previewer = false,
-      },
-
-      git_branches = {
-        previewer = false,
-      },
-
-      buffers = {
-        previewer = false,
-      },
-
-      diagnostics = {
-        previewer = false,
-      },
-
-      colorscheme = {
-        enable_preview = false,
-      },
-
-      help_tags = {
-        previewer = false,
       },
     },
   })
