@@ -10,14 +10,6 @@ function M.config()
     g = { name = "Git" },
     l = { name = "Lsp" },
     s = { name = "Shebang" },
-    t = {
-      name = "Tab",
-      n = { "<CMD>$tabnew<CR>", "New Empty Tab" },
-      N = { "<CMD>tabnew %<CR>", "New Tab" },
-      o = { "<CMD>tabonly<CR>", "Only" },
-      j = { "<CMD>-tabmove<CR>", "Move Left" },
-      k = { "<CMD>+tabmove<CR>", "Move Right" },
-    },
   }
 
   local which_key = require("which-key")
