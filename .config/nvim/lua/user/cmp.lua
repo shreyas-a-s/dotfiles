@@ -110,7 +110,7 @@ function M.config()
       { name = "buffer", max_item_count = 5 },
       { name = "path", max_item_count = 5 },
       { name = "calc", max_item_count = 5 },
-      { name = "emoji", max_item_count = 5 },
+      { name = "emoji"},
     },
     confirm_opts = {
       behavior = cmp.ConfirmBehavior.Replace,
