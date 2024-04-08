@@ -6,6 +6,8 @@ local M = {
 M.config = function()
   local wk = require("which-key")
   wk.register({
+    ["]h"] = { "<CMD>lua require 'gitsigns'.next_hunk()<CR>", "Next Hunk" },
+    ["[h"] = { "<CMD>lua require 'gitsigns'.prev_hunk()<CR>", "Prev Hunk" },
     ["<leader>gp"] = { "<CMD>lua require 'gitsigns'.preview_hunk()<CR>", "Preview Hunk" },
     ["<leader>gr"] = { "<CMD>lua require 'gitsigns'.reset_hunk()<CR>", "Reset Hunk" },
     ["<leader>gR"] = { "<CMD>lua require 'gitsigns'.reset_buffer()<CR>", "Reset Buffer" },
