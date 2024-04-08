@@ -13,6 +13,15 @@ M.config = function()
     ["<leader>gu"] = { "<CMD>lua require 'gitsigns'.undo_stage_hunk()<CR>", "Undo Stage Hunk" },
     ["<leader>gb"] = { "<CMD>lua require 'gitsigns'.toggle_current_line_blame()<CR>", "Toggle line blame" },
   })
+  local function opts(desc)
+    return { noremap = true, silent = true, desc = desc }
+  end
+  vim.keymap.set("v", "<leader>gs", function()
+    require("gitsigns").stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+  end, opts("Stage Hunk"))
+  vim.keymap.set("v", "<leader>gr", function()
+    require("gitsigns").reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+  end, opts("Reset Hunk"))
 
   require("gitsigns").setup({
     signs = {
