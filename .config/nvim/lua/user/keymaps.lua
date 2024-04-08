@@ -43,3 +43,7 @@ keymap("x", "<M-.>", ":move '<-2<CR>gv-gv", { desc = "Move text up", silent = tr
 
 -- Delete word in insert mode using Ctrl + Backspace (<C-H> is interpreted by terminals as <C-BS>)
 keymap("i", "<C-H>", "<C-w>")
+
+-- Move between quickfix items
+keymap("n", "]q", "<CMD>cnext<CR>", { desc = "Next quickfix", silent = true })
+keymap("n", "[q", "<CMD>cprev<CR>", { desc = "Prev quickfix", silent = true })
