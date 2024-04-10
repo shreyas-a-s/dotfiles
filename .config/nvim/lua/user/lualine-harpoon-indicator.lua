@@ -6,7 +6,7 @@ if require_ok then
     "harpoon",
     color = { fg = "#FF9E64", bg = "#282E34" },
     fmt = function()
-      if require("harpoon.mark").get_current_index() or vim.bo.filetype == "harpoon" then
+      if require("harpoon.mark").get_current_index() then
         return "󰀱"
       end
     end,
