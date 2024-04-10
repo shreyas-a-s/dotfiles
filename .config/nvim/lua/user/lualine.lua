@@ -23,6 +23,14 @@ function M.config()
       },
       lualine_b = {
         { "branch" },
+        {
+          "FugitiveHead",
+          cond = function()
+            if vim.bo.filetype == "fugitive" then
+              return true
+            end
+          end
+        },
       },
       lualine_c = {
         {
@@ -66,7 +74,8 @@ function M.config()
               vim.bo.filetype == "harpoon" or
               vim.bo.filetype == "alpha" or
               vim.bo.filetype == "lazy" or
-              vim.bo.filetype == "mason" then
+              vim.bo.filetype == "mason" or
+              vim.bo.filetype == "fugitive" then
               return false
             else
               return true
@@ -90,7 +99,8 @@ function M.config()
               vim.bo.filetype == "harpoon" or
               vim.bo.filetype == "alpha" or
               vim.bo.filetype == "lazy" or
-              vim.bo.filetype == "mason" then
+              vim.bo.filetype == "mason" or
+              vim.bo.filetype == "fugitive" then
               return false
             else
               return true
@@ -151,7 +161,7 @@ function M.config()
       },
       lualine_x = {},
     },
-    extensions = { "quickfix", "man", "fugitive" },
+    extensions = { "quickfix", "man" },
   })
 
   -- Add lualine component to show macro recording status
