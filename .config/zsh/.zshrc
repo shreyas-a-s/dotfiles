@@ -176,6 +176,7 @@ alias grep='grep -i --color=auto'
 alias egrep='grep -E'
 alias fgrep='grep -f'
 alias rgrep='grep -r'
+alias rg='rg -i'
 
 # Adding flags
 alias df='df -h'                          # human-readable sizes
