@@ -13,7 +13,7 @@ M.config = function()
     ["<leader>gR"] = { "<CMD>lua require 'gitsigns'.reset_buffer()<CR>", "Reset Buffer" },
     ["<leader>gs"] = { "<CMD>lua require 'gitsigns'.stage_hunk()<CR>", "Stage Hunk" },
     ["<leader>gu"] = { "<CMD>lua require 'gitsigns'.undo_stage_hunk()<CR>", "Undo Stage Hunk" },
-    ["<leader>gb"] = { "<CMD>lua require 'gitsigns'.toggle_current_line_blame()<CR>", "Toggle line blame" },
+    ["<leader>tb"] = { "<CMD>lua require 'gitsigns'.toggle_current_line_blame()<CR>", "Toggle Line blame" },
   })
   local function opts(desc)
     return { noremap = true, silent = true, desc = desc }

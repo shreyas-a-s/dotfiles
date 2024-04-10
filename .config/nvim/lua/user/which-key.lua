@@ -10,6 +10,7 @@ function M.config()
     g = { name = "Git" },
     l = { name = "Lsp" },
     s = { name = "Shebang" },
+    t = { name = "Toggle" },
   }
 
   local which_key = require("which-key")
