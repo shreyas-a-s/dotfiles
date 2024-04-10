@@ -12,21 +12,14 @@ function M.config()
 
   require("magic-bang").setup({})
 
+  -- Auto add shebang to files even when current directory is not in $PATH
   vim.api.nvim_create_autocmd({ "FileType" }, {
     pattern = {
       "sh",
-    },
-    callback = function()
-      vim.cmd("Bang bash")
-    end,
-  })
-
-  vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = {
       "python",
     },
     callback = function()
-      vim.cmd("Bang python3")
+      vim.cmd("Bang")
     end,
   })
 end
