@@ -34,8 +34,8 @@ function M.config()
     ["<leader>li"] = { "<CMD>LspInfo<CR>", "Info" },
     ["<leader>lr"] = { "<CMD>lua vim.lsp.buf.rename()<CR>", "Rename" },
     ["<leader>dp"] = { "<CMD>lua vim.diagnostic.open_float()<CR>", "Diagnostics Open Float" },
-    ["]d"] = { "<CMD>lua vim.diagnostic.goto_next()<CR>", "Next Diagnostic" },
-    ["[d"] = { "<CMD>lua vim.diagnostic.goto_prev()<CR>", "Prev Diagnostic" },
+    ["]d"] = { "<CMD>lua vim.diagnostic.goto_next({float = false})<CR>", "Next Diagnostic" },
+    ["[d"] = { "<CMD>lua vim.diagnostic.goto_prev({float = false})<CR>", "Prev Diagnostic" },
   })
 
   local lspconfig = require("lspconfig")
