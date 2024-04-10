@@ -22,7 +22,14 @@ function M.config()
         },
       },
       lualine_b = {
-        { "branch" },
+        {
+          "branch",
+          fmt = function(str)
+            if str ~= "" then
+              return " " .. str
+            end
+          end
+        },
         {
           "FugitiveHead",
           cond = function()
