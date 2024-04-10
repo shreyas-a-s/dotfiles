@@ -32,6 +32,11 @@ function M.config()
         },
         {
           "FugitiveHead",
+          fmt = function(str)
+            if str ~= "" then
+              return " " .. str
+            end
+          end,
           cond = function()
             if vim.bo.filetype == "fugitive" then
               return true
