@@ -60,7 +60,7 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   end,
 })
 
--- Enable line wrap and basic spell check in these filetypes
+-- Enable line wrap and conceal in these filetypes
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "gitcommit", "markdown", "NeogitCommitMessage" },
   callback = function()
