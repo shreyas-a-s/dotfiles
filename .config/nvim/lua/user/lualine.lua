@@ -38,7 +38,7 @@ function M.config()
             end
           end,
           cond = function()
-            if vim.bo.filetype == "fugitive" then
+            if vim.bo.filetype == "fugitive" or vim.bo.filetype == "git" then
               return true
             end
           end
