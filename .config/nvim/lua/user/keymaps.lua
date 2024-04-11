@@ -47,3 +47,6 @@ keymap("i", "<C-H>", "<C-w>")
 -- Move between quickfix items
 keymap("n", "]q", "<CMD>cnext<CR>", { desc = "Next quickfix", silent = true })
 keymap("n", "[q", "<CMD>cprev<CR>", { desc = "Prev quickfix", silent = true })
+
+-- Open current file in default program set by xdg based on filetype
+keymap("n", "<leader>o", "<CMD>!xdg-open '%'<CR>", { desc = "Open", silent = true })
