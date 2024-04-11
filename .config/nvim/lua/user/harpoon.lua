@@ -1,7 +1,7 @@
 local M = {
   "ThePrimeagen/harpoon",
   event = "VeryLazy",
-  commit = "ccae1b9bec717ae284906b0bf83d720e59d12b91",
+  commit = "ccae1b9bec717ae284906b0bf83d720e59d12b91", -- Commit is specified to lock Harpoon to v1 i.e. to prevent v2 from getting installed.
   dependencies = { "nvim-lua/plenary.nvim" },
 }
 
