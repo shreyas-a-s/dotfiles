@@ -1,4 +1,4 @@
--- Add lualine component to show inidcator if a file is in harpoon
+-- Add lualine component to show indicator if a file is in harpoon
 local require_ok, lualine = pcall(require, "lualine")
 if require_ok then
   local opts = lualine.get_config()
