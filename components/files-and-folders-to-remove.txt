@@ -13,4 +13,4 @@
 ~/.config/zsh
 ~/.icewm
 ~/.local/bin/allup
-~/.local/share/fonts/NotoSansMNerdFont-Regular.ttf
+~/.local/share/fonts/extra
