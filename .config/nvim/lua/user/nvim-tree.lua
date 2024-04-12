@@ -39,7 +39,6 @@ function M.config()
       enable = true,
       update_cwd = true,
     },
-
     diagnostics = {
       enable = true,
       icons = {
@@ -47,6 +46,13 @@ function M.config()
         info = "",
         warning = "",
         error = "",
+      },
+    },
+    actions = {
+      open_file = {
+        window_picker = {
+          enable = false,
+        },
       },
     },
   })
