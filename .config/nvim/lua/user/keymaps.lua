@@ -50,3 +50,6 @@ keymap("n", "[q", "<CMD>cprev<CR>", { desc = "Prev quickfix", silent = true })
 
 -- Open current file in default program set by xdg based on filetype
 keymap("n", "<leader>o", "<CMD>!xdg-open '%'<CR>", { desc = "Open", silent = true })
+
+-- Use ESC to exit insert mode in terminal windows
+keymap("t", "<ESC>", "<C-\\><C-n>", { silent = true })
