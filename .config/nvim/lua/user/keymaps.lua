@@ -5,9 +5,6 @@ keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Redo
-keymap("n", "U", "<CMD>redo<CR>", { desc = "Redo" })
-
 -- Move to window using <ctrl> hjkl keys
 keymap("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
 keymap("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
