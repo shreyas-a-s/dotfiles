@@ -50,3 +50,6 @@ keymap("n", "<leader>o", "<CMD>!xdg-open '%'<CR>", { desc = "Open", silent = tru
 
 -- Use ESC to exit insert mode in terminal windows
 keymap("t", "<ESC>", "<C-\\><C-n>", { silent = true })
+
+-- Use ESC to remove search higlight
+keymap("n", "<ESC>", "<CMD>nohlsearch<CR>", { silent = true })
