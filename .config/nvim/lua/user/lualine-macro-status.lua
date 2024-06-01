@@ -1,7 +1,7 @@
 -- source: https://www.reddit.com/r/neovim/comments/xy0tu1/comment/irfegvd/
 -- Add lualine component to show macro recording status
 -- Do that only if cmdheight = 0
-if vim.api.nvim_get_option_value("cmdheight", { buf = 0 }) == 0 then
+if vim.api.nvim_get_option_value("cmdheight", {}) == 0 then
   local require_ok, lualine = pcall(require, "lualine")
   if require_ok then
     local opts = lualine.get_config()
