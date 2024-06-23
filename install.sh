@@ -50,6 +50,9 @@ if [ -f ~/.zsh_history ]; then
   fi
 fi
 
+# Create zsh_history if not present
+touch  ~/.local/share/zsh/zsh_history
+
 # Post-installation things
 case "$(sh -c 'ps -p $$ -o ppid=' | xargs ps -o comm= -p)" in
   bash)
