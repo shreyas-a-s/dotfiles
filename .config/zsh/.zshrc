@@ -164,11 +164,11 @@ if command -v lsd > /dev/null; then
       lsd -Al --blocks permission,user,size,date,name --date +%d\ %b\ %H:%M --size short --group-directories-first "$@"
     fi
   }
-  alias lt='lsd -A --tree --group-directories-first'
+  alias lt='lsd -A --tree --group-directories-first -I .git'
 else
   alias ls='ls -A --color=auto --group-directories-first'
   alias ll='ls -Alh --color=auto --group-directories-first'
-  alias lt='tree --dirsfirst'
+  alias lt='tree --dirsfirst -I .git'
 fi
 
 # Colorize grep output (good for log files)
