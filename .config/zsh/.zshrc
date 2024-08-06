@@ -119,6 +119,10 @@ if [ -d "/home/linuxbrew/.linuxbrew/bin" ]; then
   PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 fi
 
+if [ -d "$HOME/github/flutter" ]; then
+  PATH="$HOME/github/flutter/bin:$PATH"
+fi
+
 ### SETOPT ###
 setopt histsavenodups # do not save duplicated command
 setopt histfindnodups # when searching for history entries, do not display duplicates

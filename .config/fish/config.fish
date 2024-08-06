@@ -87,6 +87,10 @@ if [ -d "/home/linuxbrew/.linuxbrew/bin" ]
   set -Ux PATH "/home/linuxbrew/.linuxbrew/bin:$PATH"
 end
 
+if [ -d "$HOME/github/flutter" ]
+  set -Ux PATH "$HOME/github/flutter"
+end
+
 ### SET EDITOR ###
 if command -v nvim > /dev/null
   set EDITOR "nvim"
