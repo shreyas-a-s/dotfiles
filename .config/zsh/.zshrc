@@ -123,6 +123,14 @@ if [ -d "$HOME/github/flutter" ]; then
   PATH="$HOME/github/flutter/bin:$PATH"
 fi
 
+if [ -d "$HOME/.local/share/android/sdk" ]; then
+  ANDROID_HOME="$HOME/.local/share/android/sdk"
+fi
+
+if [ -d "$ANDROID_HOME/cmdline-tools/latest/bin" ]; then
+  PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+fi
+
 ### SETOPT ###
 setopt histsavenodups # do not save duplicated command
 setopt histfindnodups # when searching for history entries, do not display duplicates

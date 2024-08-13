@@ -91,6 +91,14 @@ if [ -d "$HOME/github/flutter" ]
   set -Ux PATH "$HOME/github/flutter"
 end
 
+if [ -d "$HOME/.local/share/android/sdk" ]
+  set -Ux ANDROID_HOME "$HOME/.local/share/android/sdk"
+fi
+
+if [ -d "$ANDROID_HOME/cmdline-tools/latest/bin" ]
+  set -Ux PATH "$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+fi
+
 ### SET EDITOR ###
 if command -v nvim > /dev/null
   set EDITOR "nvim"
