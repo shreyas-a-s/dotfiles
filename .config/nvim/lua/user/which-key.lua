@@ -5,12 +5,12 @@ local M = {
 
 function M.config()
   local mappings = {
-    d = { name = "Diagnostics" },
-    f = { name = "Find" },
-    g = { name = "Git" },
-    l = { name = "Lsp" },
-    s = { name = "Shebang" },
-    t = { name = "Toggle" },
+    { "<leader>d", group = "Diagnostics" },
+    { "<leader>f", group = "Find" },
+    { "<leader>g", group = "Git" },
+    { "<leader>l", group = "Lsp" },
+    { "<leader>s", group = "Shebang" },
+    { "<leader>t", group = "Toggle" },
   }
 
   local which_key = require("which-key")
@@ -21,13 +21,16 @@ function M.config()
         g = false,
       },
     },
-    key_labels = {
-      ["<space>"] = "space",
+    replace = {
+      key ={
+        { "<space>", "SPC" }
+      }
     },
     icons = {
       group = "",
+      mappings = false
     },
-    window = {
+    win = {
       border = "rounded",
       padding = { 1, 1, 1, 1 },
     },
@@ -40,7 +43,7 @@ function M.config()
     prefix = "<leader>",
   }
 
-  which_key.register(mappings, opts)
+  which_key.add(mappings, opts)
 end
 
 return M

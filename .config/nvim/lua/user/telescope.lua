@@ -8,14 +8,14 @@ local M = {
 }
 
 function M.config()
-  require("which-key").register({
-    ["<leader>fb"] = { "<CMD>Telescope git_branches<CR>", "Checkout branch" },
-    ["<leader>ff"] = { "<CMD>Telescope find_files<CR>", "Find files" },
-    ["<leader>fp"] = { "<CMD>Telescope projects<CR>", "Projects" },
-    ["<leader>ft"] = { "<CMD>Telescope live_grep<CR>", "Find Text" },
-    ["<leader>fh"] = { "<CMD>Telescope help_tags<CR>", "Help" },
-    ["<leader>fr"] = { "<CMD>Telescope oldfiles<CR>", "Recent Files" },
-    ["<leader>fd"] = { "<CMD>Telescope diagnostics<CR>", "Diagnostics" },
+  require("which-key").add({
+    { "<leader>fb", "<CMD>Telescope git_branches<CR>", desc = "Checkout branch" },
+    { "<leader>fd", "<CMD>Telescope diagnostics<CR>", desc = "Diagnostics" },
+    { "<leader>ff", "<CMD>Telescope find_files<CR>", desc = "Find files" },
+    { "<leader>fh", "<CMD>Telescope help_tags<CR>", desc = "Help" },
+    { "<leader>fp", "<CMD>Telescope projects<CR>", desc = "Projects" },
+    { "<leader>fr", "<CMD>Telescope oldfiles<CR>", desc = "Recent Files" },
+    { "<leader>ft", "<CMD>Telescope live_grep<CR>", desc = "Find Text" },
   })
 
   require("telescope").setup({

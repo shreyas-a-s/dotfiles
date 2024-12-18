@@ -25,17 +25,14 @@ end
 
 function M.config()
   local wk = require("which-key")
-  wk.register({
-    ["<leader>la"] = { "<CMD>lua vim.lsp.buf.code_action()<CR>", "Code Actions" },
-    ["<leader>lf"] = {
-      "<CMD>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
-      "Format",
-    },
-    ["<leader>li"] = { "<CMD>LspInfo<CR>", "Info" },
-    ["<leader>lr"] = { "<CMD>lua vim.lsp.buf.rename()<CR>", "Rename" },
-    ["<leader>dp"] = { "<CMD>lua vim.diagnostic.open_float()<CR>", "Diagnostics Open Float" },
-    ["]d"] = { "<CMD>lua vim.diagnostic.goto_next({float = false})<CR>", "Next Diagnostic" },
-    ["[d"] = { "<CMD>lua vim.diagnostic.goto_prev({float = false})<CR>", "Prev Diagnostic" },
+  wk.add({
+    { "<leader>dp", "<CMD>lua vim.diagnostic.open_float()<CR>", desc = "Diagnostics Open Float" },
+    { "<leader>la", "<CMD>lua vim.lsp.buf.code_action()<CR>", desc = "Code Actions" },
+    { "<leader>lf", "<CMD>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>", desc = "Format" },
+    { "<leader>li", "<CMD>LspInfo<CR>", desc = "Info" },
+    { "<leader>lr", "<CMD>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
+    { "[d", "<CMD>lua vim.diagnostic.goto_prev({float = false})<CR>", desc = "Prev Diagnostic" },
+    { "]d", "<CMD>lua vim.diagnostic.goto_next({float = false})<CR>", desc = "Next Diagnostic" },
   })
 
   local lspconfig = require("lspconfig")
@@ -45,7 +42,7 @@ function M.config()
     "cssls",
     "html",
     "eslint",
-    "tsserver",
+    "ts_ls",
     "pyright",
     "bashls",
     "jsonls",

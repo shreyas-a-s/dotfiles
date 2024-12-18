@@ -5,15 +5,15 @@ local M = {
 }
 M.config = function()
   local wk = require("which-key")
-  wk.register({
-    ["]h"] = { "<CMD>lua require 'gitsigns'.next_hunk({navigation_message = false})<CR>", "Next Hunk" },
-    ["[h"] = { "<CMD>lua require 'gitsigns'.prev_hunk({navigation_message = false})<CR>", "Prev Hunk" },
-    ["<leader>gp"] = { "<CMD>lua require 'gitsigns'.preview_hunk()<CR>", "Preview Hunk" },
-    ["<leader>gr"] = { "<CMD>lua require 'gitsigns'.reset_hunk()<CR>", "Reset Hunk" },
-    ["<leader>gR"] = { "<CMD>lua require 'gitsigns'.reset_buffer()<CR>", "Reset Buffer" },
-    ["<leader>gs"] = { "<CMD>lua require 'gitsigns'.stage_hunk()<CR>", "Stage Hunk" },
-    ["<leader>gu"] = { "<CMD>lua require 'gitsigns'.undo_stage_hunk()<CR>", "Undo Stage Hunk" },
-    ["<leader>tb"] = { "<CMD>lua require 'gitsigns'.toggle_current_line_blame()<CR>", "Toggle Line blame" },
+  wk.add({
+    { "<leader>gR", "<CMD>lua require 'gitsigns'.reset_buffer()<CR>", desc = "Reset Buffer" },
+    { "<leader>gp", "<CMD>lua require 'gitsigns'.preview_hunk()<CR>", desc = "Preview Hunk" },
+    { "<leader>gr", "<CMD>lua require 'gitsigns'.reset_hunk()<CR>", desc = "Reset Hunk" },
+    { "<leader>gs", "<CMD>lua require 'gitsigns'.stage_hunk()<CR>", desc = "Stage Hunk" },
+    { "<leader>gu", "<CMD>lua require 'gitsigns'.undo_stage_hunk()<CR>", desc = "Undo Stage Hunk" },
+    { "<leader>tb", "<CMD>lua require 'gitsigns'.toggle_current_line_blame()<CR>", desc = "Toggle Line blame" },
+    { "[h", "<CMD>lua require 'gitsigns'.prev_hunk({navigation_message = false})<CR>", desc = "Prev Hunk" },
+    { "]h", "<CMD>lua require 'gitsigns'.next_hunk({navigation_message = false})<CR>", desc = "Next Hunk" },
   })
   local function opts(desc)
     return { noremap = true, silent = true, desc = desc }
