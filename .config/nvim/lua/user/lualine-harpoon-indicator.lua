@@ -11,6 +11,6 @@ if require_ok then
       end
     end,
   }
-  table.insert(opts.sections.lualine_c, 2, indicator)
+  table.insert(opts.sections.lualine_c, 1, indicator)
   lualine.setup(opts)
 end

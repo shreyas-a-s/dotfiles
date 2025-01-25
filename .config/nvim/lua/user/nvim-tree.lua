@@ -4,10 +4,7 @@ local M = {
 }
 
 function M.config()
-  local wk = require("which-key")
-  wk.add({
-    { "<leader>te", "<CMD>NvimTreeToggle<CR>", desc = "Toggle Explorer" },
-  })
+  vim.keymap.set("n", "<leader>te", "<CMD>NvimTreeToggle<CR>", {desc = "Toggle Explorer" })
 
   require("nvim-tree").setup({
     hijack_netrw = false,
