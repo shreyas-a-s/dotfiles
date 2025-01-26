@@ -98,6 +98,10 @@ if [ -d "$ANDROID_HOME/cmdline-tools/latest/bin" ]; then
   PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
 fi
 
+if [ -d "/opt/nvim-linux64/" ]; then
+  PATH="$PATH:/opt/nvim-linux64/bin/"
+fi
+
 ### SET EDITOR ###
 if command -v nvim > /dev/null; then
   export EDITOR="nvim"
