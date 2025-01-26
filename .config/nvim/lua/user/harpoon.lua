@@ -11,15 +11,29 @@ function M.config()
     return { noremap = true, silent = true, desc = desc }
   end
 
-  keymap("n", "<S-m>", "<CMD>lua require('user.harpoon').mark_file()<CR>", opts())
-  keymap("n", "<leader>fm", "<CMD>lua require('harpoon.ui').toggle_quick_menu()<CR>", opts("Marks"))
+  keymap("n", "<S-m>", function() require('user.harpoon').mark_file() end, opts())
+  keymap("n", "<leader>fm", function() require('harpoon.ui').toggle_quick_menu() end, opts("Marks"))
 end
 
 function M.mark_file()
-  require("harpoon.mark").add_file()
-  require("lualine").refresh({
-    place = { "statusline" },
-  })
+  local mark = require("harpoon.mark")
+  local buf_name = vim.fn.expand("%")
+  local mark_exists = mark.get_index_of(buf_name)
+
+  -- Add file to harpoon if it is new, otherwise remove it.
+  if (mark_exists == nil) then
+    mark.add_file()
+  else
+    mark.rm_file(buf_name)
+  end
+
+  -- Refresh lualine if it is loaded.
+  local require_ok, lualine = pcall(require, "lualine")
+  if require_ok then
+    lualine.refresh({
+      place = { "statusline" },
+    })
+  end
 end
 
 return M

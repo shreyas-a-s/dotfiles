@@ -1,6 +1,6 @@
 local M = {
   "lambdalisue/suda.vim",
-  event = "BufRead",
+  cmd = "SudaWrite"
 }
 
 function M.config() end

@@ -16,8 +16,27 @@ local M = {
         },
         "williamboman/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
-        "hrsh7th/cmp-nvim-lsp",
         "b0o/schemastore.nvim",
+        {
+            "saghen/blink.cmp",
+            dependencies = "rafamadriz/friendly-snippets",
+            version = "*",
+            opts = {
+                appearance = {
+                    use_nvim_cmp_as_default = true,
+                    nerd_font_variant = "mono"
+                },
+                sources = {
+                    cmdline = {},
+                },
+                completion = {
+                    menu = {
+                        border = "rounded",
+                    },
+                },
+            },
+        },
+        "nvim-telescope/telescope.nvim",
         {
             "j-hui/fidget.nvim",
             opts = {
@@ -51,19 +70,14 @@ M.on_attach = function(_, bufnr)
     lsp_keymaps(bufnr)
 end
 
-function M.common_capabilities()
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
-    return capabilities
-end
-
 function M.config()
-    local map = vim.keymap.set;
-    map("n", "<leader>la", "<CMD>lua vim.lsp.buf.code_action()<CR>", { desc = "Code Actions" })
-    map("n", "<leader>li", "<CMD>LspInfo<CR>", { desc = "Info" })
-    map("n", "<leader>lr", "<CMD>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
-    map("n", "[d", "<CMD>lua vim.diagnostic.goto_prev({float = false})<CR>", { desc = "Prev Diagnostic" })
-    map("n", "]d", "<CMD>lua vim.diagnostic.goto_next({float = false})<CR>", { desc = "Next Diagnostic" })
+    local keymap = vim.keymap.set;
+    keymap("n", "<leader>dp", "<CMD>lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostics Open Float" })
+    keymap("n", "<leader>la", "<CMD>lua vim.lsp.buf.code_action()<CR>", { desc = "Code Actions" })
+    keymap("n", "<leader>li", vim.cmd.LspInfo, { desc = "Info" })
+    keymap("n", "<leader>lr", "<CMD>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
+    keymap("n", "[d", "<CMD>lua vim.diagnostic.goto_prev({float = false})<CR>", { desc = "Prev Diagnostic" })
+    keymap("n", "]d", "<CMD>lua vim.diagnostic.goto_next({float = false})<CR>", { desc = "Next Diagnostic" })
 
     local lspconfig = require("lspconfig")
 
@@ -118,15 +132,35 @@ function M.config()
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
     require("lspconfig.ui.windows").default_options.border = "rounded"
 
+    local lsp_settings = {
+        lua_ls = {
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim", "spec" },
+                        disable = { "missing-fields" },
+                    },
+                },
+            },
+        },
+        jsonls = {
+            settings = {
+                json = {
+                    schemas = require("schemastore").json.schemas(),
+                    validate = { enable = true },
+                },
+            },
+        }
+    }
+
     for _, server in pairs(servers) do
         local opts = {
             on_attach = M.on_attach,
-            capabilities = M.common_capabilities(),
+            capabilities = require("blink.cmp").get_lsp_capabilities(),
         }
 
-        local require_ok, settings = pcall(require, "user.lspsettings." .. server)
-        if require_ok then
-            opts = vim.tbl_deep_extend("force", settings, opts)
+        if lsp_settings[server] ~= nil then
+            opts = vim.tbl_deep_extend("force", lsp_settings[server], opts)
         end
 
         lspconfig[server].setup(opts)

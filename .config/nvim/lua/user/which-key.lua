@@ -1,6 +1,6 @@
 local M = {
 	"folke/which-key.nvim",
-    event = "VimEnter",
+	event = "VimEnter",
 }
 
 function M.config()
@@ -22,7 +22,7 @@ function M.config()
 			},
 		},
 		replace = {
-			key ={
+			key = {
 				{ "<space>", "SPC" }
 			}
 		},
@@ -39,7 +39,7 @@ function M.config()
 	})
 
 	local opts = {
-		mode = "n", -- NORMAL mode
+		mode = "n",
 		prefix = "<leader>",
 	}
 

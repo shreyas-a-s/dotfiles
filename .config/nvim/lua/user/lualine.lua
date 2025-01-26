@@ -1,6 +1,5 @@
 local M = {
 	"nvim-lualine/lualine.nvim",
-	event = "VeryLazy",
 }
 
 function M.config()
@@ -74,9 +73,9 @@ function M.config()
 					"filename",
 					symbols = {
 						modified = "●",
-						readonly = "",
-						unnamed = "",
-						newfile = "",
+						readonly = "",
+						unnamed = "",
+						newfile = "󰎔",
 					},
 					padding = { left = 0, right = 1 },
 					separator = { left = "", right = "┊" },
@@ -95,6 +94,7 @@ function M.config()
 					"searchcount",
 					padding = { left = 1, right = 0 },
 					fmt = function(str)
+						if str == "[0/0]" then return "" end
 						return str:gsub("[%[%]]", "")
 					end,
 				},
