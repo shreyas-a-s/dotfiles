@@ -1,6 +1,5 @@
 local M = {
-  "b0o/schemastore.nvim",
-  lazy = true,
+	"Darazaki/indent-o-matic"
 }
 
 function M.config() end

@@ -3,27 +3,26 @@ local M = {
   event = "BufEnter",
   cmd = "Gitsigns",
 }
+
 M.config = function()
-  local wk = require("which-key")
-  wk.add({
-    { "<leader>gR", "<CMD>lua require 'gitsigns'.reset_buffer()<CR>", desc = "Reset Buffer" },
-    { "<leader>gp", "<CMD>lua require 'gitsigns'.preview_hunk()<CR>", desc = "Preview Hunk" },
-    { "<leader>gr", "<CMD>lua require 'gitsigns'.reset_hunk()<CR>", desc = "Reset Hunk" },
-    { "<leader>gs", "<CMD>lua require 'gitsigns'.stage_hunk()<CR>", desc = "Stage Hunk" },
-    { "<leader>gu", "<CMD>lua require 'gitsigns'.undo_stage_hunk()<CR>", desc = "Undo Stage Hunk" },
-    { "<leader>tb", "<CMD>lua require 'gitsigns'.toggle_current_line_blame()<CR>", desc = "Toggle Line blame" },
-    { "[h", "<CMD>lua require 'gitsigns'.prev_hunk({navigation_message = false})<CR>", desc = "Prev Hunk" },
-    { "]h", "<CMD>lua require 'gitsigns'.next_hunk({navigation_message = false})<CR>", desc = "Next Hunk" },
-  })
-  local function opts(desc)
-    return { noremap = true, silent = true, desc = desc }
-  end
-  vim.keymap.set("v", "<leader>gs", function()
+  local keymap = vim.keymap.set
+  keymap("n", "<leader>gR", function() require("gitsigns").reset_buffer() end, { desc = "Reset Buffer" })
+  keymap("n", "<leader>gp", function() require("gitsigns").preview_hunk() end, { desc = "Preview Hunk" })
+  keymap("n", "<leader>gr", function() require("gitsigns").reset_hunk() end, { desc = "Reset Hunk" })
+  keymap("n", "<leader>gs", function() require("gitsigns").stage_hunk() end, { desc = "Stage Hunk" })
+  keymap("n", "<leader>gu", function() require("gitsigns").undo_stage_hunk() end, { desc = "Undo Staged Hunk" })
+  keymap("n", "<leader>tb", function() require("gitsigns").toggle_current_line_blame() end,
+    { desc = "Toggle Line blame" })
+  keymap("n", "[c", function() require("gitsigns").prev_hunk({ navigation_message = false }) end,
+    { desc = "Prev Change" })
+  keymap("n", "]c", function() require("gitsigns").next_hunk({ navigation_message = false }) end,
+    { desc = "Next Change" })
+  keymap("v", "<leader>gs", function()
     require("gitsigns").stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-  end, opts("Stage Hunk"))
-  vim.keymap.set("v", "<leader>gr", function()
+  end, { desc = "Stage Hunk" })
+  keymap("v", "<leader>gr", function()
     require("gitsigns").reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-  end, opts("Reset Hunk"))
+  end, { desc = "Reset Hunk" })
 
   require("gitsigns").setup({
     signs = {

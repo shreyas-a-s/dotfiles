@@ -1,9 +1,19 @@
 local M = {
   "folke/noice.nvim",
-  dependencies = { "MunifTanjim/nui.nvim" },
+  dependencies = {
+    "MunifTanjim/nui.nvim",
+    {
+      "rcarriga/nvim-notify",
+      opts = {
+        timeout = 1500
+      }
+    }
+  }
 }
 
+
 function M.config()
+  vim.g.noice = true
   require("noice").setup({
     cmdline = {
       format = {

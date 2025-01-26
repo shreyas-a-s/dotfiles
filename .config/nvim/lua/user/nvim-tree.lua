@@ -1,13 +1,13 @@
 local M = {
   "nvim-tree/nvim-tree.lua",
-  event = "VeryLazy",
+  version = "*",
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+  },
 }
 
 function M.config()
-  local wk = require("which-key")
-  wk.add({
-    { "<leader>te", "<CMD>NvimTreeToggle<CR>", desc = "Toggle Explorer" },
-  })
+  vim.keymap.set("n", "<leader>te", "<CMD>NvimTreeToggle<CR>", { desc = "Toggle Explorer" })
 
   require("nvim-tree").setup({
     hijack_netrw = false,
@@ -37,7 +37,7 @@ function M.config()
     },
     update_focused_file = {
       enable = true,
-      update_cwd = true,
+      update_root = true,
     },
     diagnostics = {
       enable = true,
