@@ -131,6 +131,10 @@ if [ -d "$ANDROID_HOME/cmdline-tools/latest/bin" ]; then
   PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
 fi
 
+if [ -d "/opt/nvim-linux64/" ]; then
+  PATH="$PATH:/opt/nvim-linux64/bin/"
+fi
+
 ### SETOPT ###
 setopt histsavenodups # do not save duplicated command
 setopt histfindnodups # when searching for history entries, do not display duplicates
