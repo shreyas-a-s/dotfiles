@@ -27,7 +27,7 @@ function M.config()
 						if str ~= "" then
 							return " " .. str
 						end
-					end
+					end,
 				},
 				{
 					"diff",
@@ -55,14 +55,16 @@ function M.config()
 						end
 					end,
 					cond = function()
-						if vim.bo.filetype == "TelescopePrompt" or
-							vim.bo.filetype == "NvimTree" or
-							vim.bo.filetype == "toggleterm" or
-							vim.bo.filetype == "harpoon" or
-							vim.bo.filetype == "alpha" or
-							vim.bo.filetype == "lazy" or
-							vim.bo.filetype == "mason" or
-							vim.bo.filetype == "fugitive" then
+						if
+							vim.bo.filetype == "TelescopePrompt"
+							or vim.bo.filetype == "NvimTree"
+							or vim.bo.filetype == "toggleterm"
+							or vim.bo.filetype == "harpoon"
+							or vim.bo.filetype == "alpha"
+							or vim.bo.filetype == "lazy"
+							or vim.bo.filetype == "mason"
+							or vim.bo.filetype == "fugitive"
+						then
 							return false
 						else
 							return true
@@ -78,28 +80,28 @@ function M.config()
 						newfile = "󰎔",
 					},
 					padding = { left = 0, right = 1 },
-					separator = { left = "", right = "┊" },
 				},
 			},
-			lualine_x = {
-			},
+			lualine_x = {},
 			lualine_y = {
 				{
 					"filetype",
-					icons_enabled = true
-				}
+					icons_enabled = true,
+				},
 			},
 			lualine_z = {
 				{
 					"searchcount",
 					padding = { left = 1, right = 0 },
 					fmt = function(str)
-						if str == "[0/0]" then return "" end
+						if str == "[0/0]" then
+							return ""
+						end
 						return str:gsub("[%[%]]", "")
 					end,
 				},
 				{
-					"location"
+					"location",
 				},
 			},
 		},
