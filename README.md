@@ -2,11 +2,7 @@
 Dotfiles are the customization files that are used to personalize your Linux or other Unix-based system. You can tell that a file is a dotfile because the name of the file will begin with a period–a dot! The period at the beginning of a filename or directory name indicates that it is a hidden file or directory. This repository contains my personal dotfiles. They are stored here for convenience so that I may quickly access them on new machines or new installs. Also, others may find some of my configurations helpful in customizing their own dotfiles.
 
 ## Showcase (Neovim)
-| ![alpha-nvim](https://github.com/shreyas-a-s/dotfiles/assets/137637016/aa6297b9-e6e6-4e2e-b9dc-91b338acad83) | 
-|:--:| 
-| *alpha-nvim (startup screen)* |
-
-| ![alpha-nvim](https://github.com/shreyas-a-s/dotfiles/assets/137637016/d547ad7e-b445-49c3-8823-f621741908ec) | 
+| ![nvim-tree](https://github.com/shreyas-a-s/dotfiles/assets/137637016/d547ad7e-b445-49c3-8823-f621741908ec) |
 |:--:| 
 | *nvim-tree (for tree view)* |
 
@@ -30,13 +26,9 @@ Dotfiles are the customization files that are used to personalize your Linux or 
 |:--:| 
 | *telescope (fuzzy finder)* |
 
-| ![none-ls](https://github.com/shreyas-a-s/dotfiles/assets/137637016/0a34fdb7-a043-4ee8-9332-bfb98430dd47) | 
+| ![formatting](https://github.com/shreyas-a-s/dotfiles/assets/137637016/0a34fdb7-a043-4ee8-9332-bfb98430dd47) |
 |:--:| 
-| *none-ls (linting & formatting)* |
-
-| ![toggleterm](https://github.com/shreyas-a-s/dotfiles/assets/137637016/64ce159f-654a-43dc-891c-a9e4f8def847) | 
-|:--:| 
-| *toggleterm (toggling terminal)* |
+| *Linting & Formatting* |
 
 ## Acknowledgements
 - Derek Taylor ([@dwt1](https://gitlab.com/dwt1)) from DistroTube on [Youtube](https://youtube.com/@DistroTube) for inspiring me to create this repo.
