@@ -113,6 +113,9 @@ function M.config()
 
 	-- Add lualine component for showing whether a file is in harpoon
 	pcall(require("user.lualine-harpoon-indicator"))
+
+	-- Add lualine component for showing whether autoformat is enabled or not
+	pcall(require("user.lualine-autoformat-status"))
 end
 
 return M
