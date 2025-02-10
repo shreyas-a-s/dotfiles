@@ -4,8 +4,12 @@ local keymap = vim.keymap.set
 keymap("n", "<leader>tw", "<CMD>lua vim.wo.wrap = not vim.wo.wrap<CR>", { desc = "Toggle Wrap" })
 
 -- Toggle conceal level
-keymap("n", "<leader>tc", ":setlocal <C-R>=&conceallevel ? 'conceallevel=0' : 'conceallevel=3'<CR><CR>",
-	{ desc = "Toggle Conceal", silent = true })
+keymap(
+	"n",
+	"<leader>tc",
+	":setlocal <C-R>=&conceallevel ? 'conceallevel=0' : 'conceallevel=3'<CR><CR>",
+	{ desc = "Toggle Conceal", silent = true }
+)
 
 -- Move chunk of text up and down
 keymap("n", "<M-j>", ":move +1<CR>", { desc = "Move text down", silent = true })
@@ -25,3 +29,7 @@ keymap("t", "<ESC>", "<C-\\><C-n>", { silent = true })
 
 -- Use ESC to remove search higlight
 keymap("n", "<ESC>", vim.cmd.nohlsearch, { silent = true })
+
+-- Center view when moving between search results
+keymap("n", "n", "nzzzv")
+keymap("n", "N", "Nzzzv")
