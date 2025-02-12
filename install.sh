@@ -21,10 +21,8 @@ case $deletion_choice in
     exit 1 ;;
 esac
 
-# Install stow if not already present in system
-if ! command -v stow > /dev/null; then
-  ./scripts/install-stow.sh
-fi
+# Install stow
+./scripts/install-stow.sh
 
 # Remove already existing files & folders
 xargs -a "./components/files-and-folders-to-remove.txt" -I {} sh -c 'eval "rm -rf {}"'

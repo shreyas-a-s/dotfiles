@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 # Installs stow program on most linux distros
 
+# Return if stow is already installed
+if command -v stow > /dev/null; then
+  echo "Stow is already installed."
+  return 0;
+fi
+
 # Install for debian-based distros
 if command -v apt-get > /dev/null; then
   sudo apt-get install -y stow
