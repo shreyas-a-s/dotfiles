@@ -21,8 +21,8 @@ case $deletion_choice in
     exit 1 ;;
 esac
 
-# Install stow
-./scripts/install-stow.sh
+# Install Dependencies
+./scripts/install-dependencies.sh
 
 # Remove already existing files & folders
 xargs -a "./components/files-and-folders-to-remove.txt" -I {} sh -c 'eval "rm -rf {}"'
