@@ -7,8 +7,12 @@
 # ██████╔╝╚██████╔╝   ██║   ██║     ██║███████╗███████╗███████║
 # ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
 
-# Change directory
+# Define Variables
 SCRIPT_DIR=$(dirname -- "$( readlink -f -- "$0"; )") && cd "$SCRIPT_DIR" || exit
+BASH_OLD_HISTORY="$HOME/.bash_history"
+BASH_NEW_HISTORY="$HOME/.local/share/bash/bash_history"
+ZSH_OLD_HISTORY="$HOME/.zsh_history"
+ZSH_NEW_HISTORY="$HOME/.local/share/zsh/zsh_history"
 
 # Gentle reminder
 printf "This script will delete already present config files. Continue? (yes/no): " && read -r deletion_choice
@@ -32,26 +36,45 @@ stow --adopt -vt ~ "$(basename "$SCRIPT_DIR")" --dotfiles --ignore='install.sh|s
 # Restore files if they were moved
 git --git-dir="$SCRIPT_DIR/.git/" --work-tree="$SCRIPT_DIR" restore .
 
-# Move shell history files if they are present
-if [ -f ~/.bash_history ]; then
-  if [ -f ~/.local/share/bash/bash_history ]; then
-    cat ~/.bash_history >> ~/.local/share/bash/bash_history
-    rm ~/.bash_history
-  else
-    mv ~/.bash_history ~/.local/share/bash/bash_history
-  fi
-fi
-if [ -f ~/.zsh_history ]; then
-  if [ -f ~/.local/share/zsh/zsh_history ]; then
-    cat ~/.zsh_history >> ~/.local/share/zsh/zsh_history
-    rm ~/.zsh_history
-  else
-    mv ~/.zsh_history ~/.local/share/zsh/zsh_history
-  fi
+# Ensure the old history file exists and is readable
+if [[ -f "$BASH_OLD_HISTORY" && -r "$BASH_OLD_HISTORY" ]]; then
+    # Ensure the new history directory exists
+    mkdir -p "$(dirname "$BASH_NEW_HISTORY")"
+
+    # If the new history file exists and is writable, append old history
+    if [[ -f "$BASH_NEW_HISTORY" && -w "$BASH_NEW_HISTORY" ]]; then
+        cat "$BASH_OLD_HISTORY" >> "$BASH_NEW_HISTORY"
+    else
+        # Otherwise, move the old history file
+        mv "$BASH_OLD_HISTORY" "$BASH_NEW_HISTORY"
+    fi
+
+    # Remove the old history file if it still exists after appending
+    [[ -f "$BASH_OLD_HISTORY" ]] && rm -f "$BASH_OLD_HISTORY"
+else
+    echo "Error: $BASH_OLD_HISTORY does not exist or is not readable."
+    exit 1
 fi
 
-# Create zsh_history if not present
-touch  ~/.local/share/zsh/zsh_history
+# Ensure the new history directory exists
+mkdir -p "$(dirname "$ZSH_NEW_HISTORY")"
+
+# Ensure the old history file exists and is readable
+if [[ -f "$ZSH_OLD_HISTORY" && -r "$ZSH_OLD_HISTORY" ]]; then
+    # If the new history file exists and is writable, append old history
+    if [[ -f "$ZSH_NEW_HISTORY" && -w "$ZSH_NEW_HISTORY" ]]; then
+        cat "$ZSH_OLD_HISTORY" >> "$ZSH_NEW_HISTORY"
+    else
+        # Otherwise, move the old history file
+        mv "$ZSH_OLD_HISTORY" "$ZSH_NEW_HISTORY"
+    fi
+
+    # Remove the old history file if it still exists after appending
+    [[ -f "$ZSH_OLD_HISTORY" ]] && rm -f "$ZSH_OLD_HISTORY"
+else
+    echo "Error: $ZSH_OLD_HISTORY does not exist or is not readable."
+    exit 1
+fi
 
 # Post-installation things
 case "$(sh -c 'ps -p $$ -o ppid=' | xargs ps -o comm= -p)" in
