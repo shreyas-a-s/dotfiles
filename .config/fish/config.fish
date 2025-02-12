@@ -40,6 +40,11 @@ set fish_cursor_visual      block
 set fish_color_command green
 set -e fish_color_search_match
 
+### SET Chrome executable for Flutter
+if command -v brave-browser > /dev/null
+  set -Ux CHROME_EXECUTABLE "brave-browser"
+end
+
 #### SET MANPAGER ###
 if command -v bat > /dev/null
   set -xU MANPAGER "sh -c 'col -bx | bat -l man -p'"

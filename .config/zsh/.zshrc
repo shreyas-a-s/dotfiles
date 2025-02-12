@@ -72,6 +72,11 @@ bindkey "^[[1;5D" backward-word
 ### Use Ctrl + Backspace to delete word backwards ###
 bindkey "^H" backward-kill-word
 
+### SET Chrome executable for Flutter
+if command -v brave-browser > /dev/null; then
+  export CHROME_EXECUTABLE="brave-browser"
+fi
+
 ### SET MANPAGER
 if command -v bat > /dev/null; then
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
