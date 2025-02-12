@@ -79,11 +79,11 @@ fi
 # Post-installation things
 case "$(sh -c 'ps -p $$ -o ppid=' | xargs ps -o comm= -p)" in
   bash)
-    source ~/.bashrc ;;
+    source "$HOME/.bashrc" ;;
   fish)
-    source ~/.config/fish/config.fish ;;
+    source "$HOME/.config/fish/config.fish" ;;
   zsh)
-    source ~/.config/zsh/.zshrc ;;
+    source "$HOME/.config/zsh/.zshrc" ;;
 esac
 
 # Declutter HOME directory
