@@ -19,7 +19,7 @@ error_symbol = "[✗](red)"
 vicmd_symbol = "[➜](white)"
 
 [directory]
-read_only = " 🔒"
+read_only = " "
 truncation_length = 10
 truncate_to_repo = false # truncates directory to root folder if in github repo
 style = "blue"
