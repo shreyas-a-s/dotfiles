@@ -104,8 +104,8 @@ if [ -d "$ANDROID_HOME/cmdline-tools/latest/bin" ]
   set -Ux PATH "$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
 fi
 
-if [ -d "/opt/nvim-linux64/" ]
-  set -Ux PATH "$PATH:/opt/nvim-linux64/bin/"
+if [ -d "/opt/nvim-linux-x86_64/bin/" ]
+  set -Ux PATH "$PATH:/opt/nvim-linux-x86_64/bin/"
 fi
 
 ### SET EDITOR ###
