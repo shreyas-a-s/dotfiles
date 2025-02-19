@@ -26,5 +26,8 @@ grep -iq nixos /etc/os-release && pt "UPDATING - NIXOS" && sudo nixos-rebuild sw
 [ -f "$HOME"/.joplin/Joplin.AppImage ] && pt "UPDATING - JOPLIN" && wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 [ "$(command -v brew)" ] && pt "UPDATING - BREW FORMULAE" && brew update && brew upgrade
 [ -d "$HOME"/github/flutter ] && pt "UPDATING - FLUTTER" && git -C "$HOME/github/flutter" fetch && git -C "$HOME"/github/flutter pull
+[ -d "/opt/nvim-linux-x86_64/" ] && pt "UPDATING - NVIM" && sudo rm -rf /opt/nvim-linux-x86_64/ && curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz && sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz && rm nvim-linux-x86_64.tar.gz
+
+
 
 pt "UPDATING COMPLETE (HOPEFULLY)"
