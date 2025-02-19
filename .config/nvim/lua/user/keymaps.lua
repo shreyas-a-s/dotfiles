@@ -20,6 +20,8 @@ keymap("x", "<M-k>", ":move '<-2<CR>gv-gv", { desc = "Move text up", silent = tr
 -- Move between quickfix items
 keymap("n", "]q", vim.cmd.cnext, { desc = "Next quickfix", silent = true })
 keymap("n", "[q", vim.cmd.cprev, { desc = "Prev quickfix", silent = true })
+keymap("n", "]Q", vim.cmd.clast, { desc = "Last quickfix", silent = true })
+keymap("n", "[Q", vim.cmd.cfirst, { desc = "First quickfix", silent = true })
 
 -- Open current file in default program set by xdg based on filetype
 keymap("n", "<leader>o", "<CMD>!xdg-open '%'<CR>", { desc = "Open", silent = true })

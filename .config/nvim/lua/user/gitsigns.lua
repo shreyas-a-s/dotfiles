@@ -17,6 +17,10 @@ M.config = function()
     { desc = "Prev Change" })
   keymap("n", "]c", function() require("gitsigns").next_hunk({ navigation_message = false }) end,
     { desc = "Next Change" })
+  keymap("n", "[C", function() require("gitsigns").nav_hunk("first", { navigation_message = false }) end,
+    { desc = "First Change" })
+  keymap("n", "]C", function() require("gitsigns").nav_hunk("last", { navigation_message = false }) end,
+    { desc = "Last Change" })
   keymap("v", "<leader>gs", function()
     require("gitsigns").stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
   end, { desc = "Stage Hunk" })
