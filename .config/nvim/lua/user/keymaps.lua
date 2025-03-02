@@ -35,3 +35,9 @@ keymap("n", "<ESC>", vim.cmd.nohlsearch, { silent = true })
 -- Center view when moving between search results
 keymap("n", "n", "nzzzv")
 keymap("n", "N", "Nzzzv")
+
+-- Tab navigation
+keymap("n", "]t", vim.cmd.tabnext, { desc = "Next tab", silent = true })
+keymap("n", "[t", vim.cmd.tabprevious, { desc = "Previous tab", silent = true })
+keymap("n", "]T", vim.cmd.tablast, { desc = "Last tab", silent = true })
+keymap("n", "[T", vim.cmd.tabfirst, { desc = "First tab", silent = true })
