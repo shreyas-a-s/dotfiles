@@ -28,6 +28,7 @@ style = "blue"
 "~/github" = "~/g"
 
 [git_branch]
+symbol = " "
 style = "purple"
 
 [git_status]
