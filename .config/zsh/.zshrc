@@ -141,6 +141,7 @@ if [ -d "/opt/nvim-linux-x86_64/bin/" ]; then
 fi
 
 ### SETOPT ###
+setopt histignorealldups # do not put duplicated command into history list
 setopt histsavenodups # do not save duplicated command
 setopt histfindnodups # when searching for history entries, do not display duplicates
 setopt histignorespace # don't store command lines in history when the first character is a space 
