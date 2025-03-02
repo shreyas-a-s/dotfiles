@@ -102,6 +102,9 @@ function M.config()
 				},
 				{
 					"location",
+					fmt = function(str)
+						return str:gsub("%s+", "")
+					end,
 				},
 			},
 		},
