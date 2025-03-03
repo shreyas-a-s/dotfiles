@@ -28,6 +28,9 @@ function M.config()
 							return " " .. str
 						end
 					end,
+					cond = function()
+						return vim.api.nvim_win_get_width(0) >= 40
+					end,
 				},
 				{
 					"diff",
@@ -54,22 +57,6 @@ function M.config()
 							return " "
 						end
 					end,
-					cond = function()
-						if
-							vim.bo.filetype == "TelescopePrompt"
-							or vim.bo.filetype == "NvimTree"
-							or vim.bo.filetype == "toggleterm"
-							or vim.bo.filetype == "harpoon"
-							or vim.bo.filetype == "alpha"
-							or vim.bo.filetype == "lazy"
-							or vim.bo.filetype == "mason"
-							or vim.bo.filetype == "fugitive"
-						then
-							return false
-						else
-							return true
-						end
-					end,
 				},
 				{ -- file name
 					"filename",
@@ -87,6 +74,9 @@ function M.config()
 				{
 					"filetype",
 					icons_enabled = true,
+					cond = function()
+						return vim.api.nvim_win_get_width(0) >= 40
+					end,
 				},
 			},
 			lualine_z = {
@@ -107,6 +97,26 @@ function M.config()
 					end,
 				},
 			},
+		},
+		inactive_sections = {
+			lualine_c = {
+				{
+					"filename",
+					symbols = {
+						modified = "●",
+						readonly = "",
+						unnamed = "",
+						newfile = "󰎔",
+					},
+				},
+			},
+			lualine_x = {
+				{
+					"location",
+				},
+			},
+			lualine_y = {},
+			lualine_z = {},
 		},
 		extensions = { "quickfix", "man" },
 	})
