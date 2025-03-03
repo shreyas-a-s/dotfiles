@@ -113,6 +113,9 @@ function M.config()
 			lualine_x = {
 				{
 					"location",
+					fmt = function(str)
+						return str:gsub("%s+", "")
+					end,
 				},
 			},
 			lualine_y = {},
