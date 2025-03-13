@@ -361,6 +361,9 @@ else
   uparrow="$terminfo[kcuu1]"
   downarrow="$terminfo[kcud1]"
 fi
+ctrl_p='^P'
+ctrl_n='^N'
+
 if [ -f /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
   . /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
   unset HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND
@@ -368,13 +371,19 @@ if [ -f /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substrin
   HISTORY_SUBSTRING_SEARCH_PREFIXED='true'
   bindkey "$uparrow" history-substring-search-up
   bindkey "$downarrow" history-substring-search-down
+  bindkey "$ctrl_p" history-substring-search-up
+  bindkey "$ctrl_n" history-substring-search-down
 elif [ -f $XDG_CONFIG_HOME/zsh/zsh-history-substring-search.zsh ]; then
   . $XDG_CONFIG_HOME/zsh/zsh-history-substring-search.zsh
   bindkey "$uparrow" history-substring-search-up
   bindkey "$downarrow" history-substring-search-down
+  bindkey "$ctrl_p" history-substring-search-up
+  bindkey "$ctrl_n" history-substring-search-down
 else
   bindkey "$uparrow" history-beginning-search-backward
   bindkey "$downarrow" history-beginning-search-forward
+  bindkey "$ctrl_p" history-beginning-search-backward
+  bindkey "$ctrl_n" history-beginning-search-forward
 fi
 
 ### SETTING THE STARSHIP PROMPT ###
