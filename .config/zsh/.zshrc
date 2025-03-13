@@ -363,6 +363,7 @@ else
 fi
 ctrl_p='^P'
 ctrl_n='^N'
+ctrl_y='^Y'
 
 if [ -f /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
   . /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -385,6 +386,8 @@ else
   bindkey "$ctrl_p" history-beginning-search-backward
   bindkey "$ctrl_n" history-beginning-search-forward
 fi
+
+bindkey "$ctrl_y" autosuggest-accept
 
 ### SETTING THE STARSHIP PROMPT ###
 if command -v starship > /dev/null; then
