@@ -9,6 +9,7 @@ $directory\
 $git_branch\
 $git_commit\
 $git_status\
+$python\
 $character"""
 
 ### MODULES ###
@@ -42,3 +43,7 @@ diverged = '⇕⇡${ahead_count}⇣${behind_count}'
 behind = "⇣${count}"
 untracked = "[${count}?](blue)" 
 staged = "[${count}+](green)"
+
+[python]
+symbol = " "
+format = "(via [$symbol${virtualenv}]($style) )"
